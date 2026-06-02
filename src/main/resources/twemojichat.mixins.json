@@ -4,7 +4,9 @@
   "package": "com.bruhdows.twemojichat.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
-  "client": [],
+  "client": [
+    "client.ChatScreenAccessor"
+  ],
   "injectors": {
     "defaultRequire": 1
   }
