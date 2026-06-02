@@ -5,6 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import net.minecraft.client.gui.components.CommandSuggestions;
 import net.minecraft.client.gui.Font;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
@@ -18,6 +19,13 @@ public interface CommandSuggestionsAccessor {
 
     @Accessor("suggestionLineLimit")
     int twemojichat$getSuggestionLineLimit();
+
+    @Mutable
+    @Accessor("suggestionLineLimit")
+    void twemojichat$setSuggestionLineLimit(int suggestionLineLimit);
+
+    @Accessor("anchorToBottom")
+    boolean twemojichat$isAnchorToBottom();
 
     @Accessor("pendingSuggestions")
     void twemojichat$setPendingSuggestions(CompletableFuture<Suggestions> pendingSuggestions);
