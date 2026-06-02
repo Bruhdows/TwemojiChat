@@ -3,6 +3,11 @@ package com.bruhdows.twemojichat.mixin.client;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.suggestion.Suggestion;
 import java.util.List;
+import java.util.Locale;
+import com.bruhdows.twemojichat.client.emoji.EmojiDefinition;
+import com.bruhdows.twemojichat.client.emoji.EmojiFont;
+import com.bruhdows.twemojichat.client.emoji.EmojiIndex;
+import com.bruhdows.twemojichat.client.emoji.EmojiIndexReloader;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.CommandSuggestions;
@@ -135,12 +140,7 @@ abstract class CommandSuggestionsSuggestionsListMixin {
             guiGraphics.drawString(font, display, this.rect.getX() + 1, this.rect.getY() + 2 + 12 * row, row + this.offset == this.current ? -256 : defaultTextColor);
         }
 
-        if (hovered) {
-            Message tooltip = this.suggestionList.get(this.current).getTooltip();
-            if (tooltip instanceof Component component) {
-                guiGraphics.renderTooltip(font, component, mouseX, mouseY);
-            }
-        }
+        // No hover tooltip for emoji suggestions.
     }
 
     @Unique
@@ -150,15 +150,28 @@ abstract class CommandSuggestionsSuggestionsListMixin {
 
     @Unique
     private boolean twemojichat$isEmojiSuggestion(Suggestion suggestion) {
-        return suggestion.getText().startsWith(":") && suggestion.getText().endsWith(":") && suggestion.getTooltip() instanceof Component;
+        return suggestion.getText().startsWith(":") && suggestion.getText().endsWith(":");
     }
 
     @Unique
     private Component twemojichat$displayComponent(Suggestion suggestion) {
-        Message tooltip = suggestion.getTooltip();
-        if (tooltip instanceof Component component) {
-            return component;
+        EmojiDefinition definition = this.twemojichat$definitionForSuggestion(suggestion);
+        if (definition == null) {
+            return Component.literal(suggestion.getText());
         }
-        return Component.literal(suggestion.getText());
+
+        return Component.empty()
+            .append(Component.literal(definition.glyph()).withStyle(EmojiFont.style()))
+            .append(Component.literal(" " + suggestion.getText()));
+    }
+
+    @Unique
+    private EmojiDefinition twemojichat$definitionForSuggestion(Suggestion suggestion) {
+        String text = suggestion.getText();
+        if (text.length() < 2 || text.charAt(0) != ':' || text.charAt(text.length() - 1) != ':') {
+            return null;
+        }
+
+        return EmojiIndexReloader.getIndex().byAlias(text.substring(1, text.length() - 1).toLowerCase(Locale.ROOT));
     }
 }

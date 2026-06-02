@@ -8,7 +8,6 @@ import com.bruhdows.twemojichat.client.emoji.EmojiTextRewriter;
 import com.bruhdows.twemojichat.mixin.client.ChatScreenAccessor;
 import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsAccessor;
 import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsSuggestionsListAccessor;
-import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.StringRange;
 import com.mojang.brigadier.suggestion.Suggestion;
 import com.mojang.brigadier.suggestion.Suggestions;
@@ -28,10 +27,13 @@ public final class ChatEmojiController {
     private String lastValue = "";
     private int lastCursor = -1;
     private boolean emojiSuggestionsVisible;
+    private EmojiIndex cachedPopupWidthIndex = EmojiIndex.EMPTY;
+    private int cachedPopupWidth = -1;
 
     public ChatEmojiController(ChatScreen screen) {
         this.screen = screen;
         this.installFormatter();
+        this.primePopupWidth();
     }
 
     public void refresh() {
@@ -79,15 +81,12 @@ public final class ChatEmojiController {
         accessor.twemojichat$setPendingSuggestions(CompletableFuture.completedFuture(suggestions));
         accessor.twemojichat$invokeShowSuggestions(false);
         this.emojiSuggestionsVisible = true;
-        this.resizePopup(accessor, suggestionsList);
+        this.resizePopup(accessor, suggestionsList, index);
     }
 
     private Suggestion toSuggestion(EmojiDefinition definition) {
         String replacement = ":" + definition.primaryAlias() + ":";
-        Message tooltip = Component.empty()
-            .append(Component.literal(definition.glyph()).withStyle(EmojiFont.style()))
-            .append(Component.literal(" " + replacement));
-        return new Suggestion(StringRange.between(this.token.start(), this.token.end()), replacement, tooltip);
+        return new Suggestion(StringRange.between(this.token.start(), this.token.end()), replacement);
     }
 
     private void hideEmojiSuggestions(CommandSuggestions commandSuggestions) {
@@ -118,14 +117,14 @@ public final class ChatEmojiController {
         return ((ChatScreenAccessor)this.screen).twemojichat$getCommandSuggestions();
     }
 
-    private void resizePopup(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions) {
+    private void resizePopup(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions, EmojiIndex index) {
         CommandSuggestions.SuggestionsList suggestionsList = accessor.twemojichat$getSuggestions();
         if (suggestionsList == null) {
             return;
         }
 
         Rect2i rect = ((CommandSuggestionsSuggestionsListAccessor)suggestionsList).twemojichat$getRect();
-        int popupWidth = Math.max(0, this.popupWidth(accessor, suggestions));
+        int popupWidth = Math.max(0, this.popupWidth(accessor, suggestions, index));
         EditBox input = this.input();
         int maxX = Math.max(0, input.getScreenX(0) + input.getInnerWidth() - popupWidth);
         int x = Mth.clamp(input.getScreenX(this.token.start()), 0, maxX);
@@ -133,20 +132,61 @@ public final class ChatEmojiController {
         rect.setWidth(popupWidth + 1);
     }
 
-    private int popupWidth(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions) {
+    private int popupWidth(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions, EmojiIndex index) {
+        if (this.cachedPopupWidth >= 0 && this.cachedPopupWidthIndex == index) {
+            return this.cachedPopupWidth;
+        }
+
         int width = 0;
         for (Suggestion suggestion : suggestions) {
-            width = Math.max(width, accessor.twemojichat$getFont().width(this.displayComponent(suggestion)));
+            width = Math.max(width, accessor.twemojichat$getFont().width(this.displayComponent(suggestion, index)));
+        }
+        this.cachedPopupWidthIndex = index;
+        this.cachedPopupWidth = width;
+        return width;
+    }
+
+    private void primePopupWidth() {
+        EmojiIndex index = EmojiIndexReloader.getIndex();
+        if (index == EmojiIndex.EMPTY) {
+            return;
+        }
+
+        CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)this.commandSuggestions();
+        this.cachedPopupWidth = this.popupWidth(accessor, index.complete("", index.size()));
+        this.cachedPopupWidthIndex = index;
+    }
+
+    private int popupWidth(CommandSuggestionsAccessor accessor, List<EmojiDefinition> definitions) {
+        int width = 0;
+        for (EmojiDefinition definition : definitions) {
+            width = Math.max(width, accessor.twemojichat$getFont().width(this.displayComponent(definition)));
         }
         return width;
     }
 
-    private Component displayComponent(Suggestion suggestion) {
-        Message tooltip = suggestion.getTooltip();
-        if (tooltip instanceof Component component) {
-            return component;
+    private Component displayComponent(Suggestion suggestion, EmojiIndex index) {
+        EmojiDefinition definition = this.definitionForSuggestion(suggestion, index);
+        if (definition == null) {
+            return Component.literal(suggestion.getText());
         }
-        return Component.literal(suggestion.getText());
+
+        return this.displayComponent(definition);
+    }
+
+    private Component displayComponent(EmojiDefinition definition) {
+        return Component.empty()
+            .append(Component.literal(definition.glyph()).withStyle(EmojiFont.style()))
+            .append(Component.literal(" :" + definition.primaryAlias() + ":"));
+    }
+
+    private EmojiDefinition definitionForSuggestion(Suggestion suggestion, EmojiIndex index) {
+        String text = suggestion.getText();
+        if (text.length() < 2 || text.charAt(0) != ':' || text.charAt(text.length() - 1) != ':') {
+            return null;
+        }
+
+        return index.byAlias(text.substring(1, text.length() - 1));
     }
 
     private boolean replaceCompletedShortcode(String value, int cursor, EmojiIndex index) {

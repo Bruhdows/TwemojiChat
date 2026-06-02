@@ -4,3 +4,13 @@
 /.idea/
 /run/
 *.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
