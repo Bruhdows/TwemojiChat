@@ -63,25 +63,24 @@ public final class ChatEmojiController {
             return;
         }
 
-        List<EmojiDefinition> matches = index.complete(this.token.query(), index.size());
+        int suggestionLimit = accessorLineLimit(commandSuggestions);
+        List<EmojiDefinition> matches = index.complete(this.token.query(), suggestionLimit);
         if (matches.isEmpty()) {
             this.hideEmojiSuggestions(commandSuggestions);
             this.token = null;
             return;
         }
 
-        int visibleRows = Math.min(matches.size(), accessorLineLimit(commandSuggestions));
         List<Suggestion> suggestionsList = matches.stream().map(this::toSuggestion).toList();
         Suggestions suggestions = new Suggestions(
             StringRange.between(this.token.start(), this.token.end()),
             suggestionsList
         );
         CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)commandSuggestions;
-        accessor.twemojichat$setSuggestionLineLimit(accessorLineLimit(commandSuggestions));
         accessor.twemojichat$setPendingSuggestions(CompletableFuture.completedFuture(suggestions));
         accessor.twemojichat$invokeShowSuggestions(false);
         this.emojiSuggestionsVisible = true;
-        this.resizePopup(accessor, suggestionsList, Math.min(matches.size(), visibleRows));
+        this.resizePopup(accessor, suggestionsList);
     }
 
     private Suggestion toSuggestion(EmojiDefinition definition) {
@@ -124,7 +123,7 @@ public final class ChatEmojiController {
         return ((CommandSuggestionsAccessor)commandSuggestions).twemojichat$getSuggestionLineLimit();
     }
 
-    private void resizePopup(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions, int visibleRows) {
+    private void resizePopup(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions) {
         CommandSuggestions.SuggestionsList suggestionsList = accessor.twemojichat$getSuggestions();
         if (suggestionsList == null) {
             return;
@@ -137,12 +136,6 @@ public final class ChatEmojiController {
         int x = Mth.clamp(input.getScreenX(this.token.start()), 0, maxX);
         rect.setX(x - (input.isBordered() ? 0 : 1));
         rect.setWidth(popupWidth + 1);
-
-        int bottom = rect.getY() + rect.getHeight();
-        rect.setHeight(visibleRows * 12);
-        if (accessor.twemojichat$isAnchorToBottom()) {
-            rect.setY(bottom - rect.getHeight());
-        }
     }
 
     private int popupWidth(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions) {

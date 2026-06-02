@@ -33,6 +33,10 @@ public final class EmojiTextRewriter {
     }
 
     public static FormattedCharSequence rewriteInput(String text) {
+        if (text.indexOf(':') < 0) {
+            return FormattedCharSequence.forward(text, Style.EMPTY);
+        }
+
         EmojiIndex index = EmojiIndexReloader.getIndex();
         if (index == EmojiIndex.EMPTY) {
             return FormattedCharSequence.forward(text, Style.EMPTY);
