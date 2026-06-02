@@ -65,7 +65,7 @@ public final class EmojiTextRewriter {
         while (cursor < text.length()) {
             EmojiDefinition glyphMatch = index.byGlyph(text.substring(cursor, cursor + 1));
             if (glyphMatch != null) {
-                normalized.append(glyphMatch.unicodeValue());
+                normalized.append(':').append(glyphMatch.primaryAlias()).append(':');
                 cursor++;
                 continue;
             }
