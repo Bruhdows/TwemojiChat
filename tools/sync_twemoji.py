@@ -133,6 +133,7 @@ def apply_manual_aliases(aliases: list[str], shortcode_config: dict) -> list[str
 
 def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntry]:
     entries: list[EmojiEntry] = []
+    used_assets: set[str] = set()
     next_codepoint = PAGES_START
     shortcode_config = read_config()["shortcodes"]
 
@@ -140,6 +141,7 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
         base_aliases = row.get("short_names") or ([row["short_name"]] if row.get("short_name") else [])
         image_name = row.get("image")
         if image_name and image_name in assets:
+            used_assets.add(image_name)
             glyph = chr(next_codepoint)
             next_codepoint += 1
             aliases = apply_manual_aliases(build_aliases(base_aliases, None), shortcode_config)
@@ -159,6 +161,7 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
             image_name = variant.get("image")
             if not image_name or image_name not in assets:
                 continue
+            used_assets.add(image_name)
             glyph = chr(next_codepoint)
             next_codepoint += 1
             aliases = apply_manual_aliases(build_aliases(base_aliases, modifier_key), shortcode_config)
@@ -173,6 +176,29 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
                     unicode_value=unicode_from_unified(variant["unified"]),
                 )
             )
+
+    for image_name in sorted(assets):
+        if image_name in used_assets:
+            continue
+
+        codepoint = Path(image_name).stem
+        alias = codepoint.lower().replace("-", "_")
+        glyph = chr(next_codepoint)
+        next_codepoint += 1
+        base_aliases = [alias]
+        aliases = apply_manual_aliases(base_aliases, shortcode_config)
+        has_manual = len(aliases) > len(base_aliases)
+        entries.append(
+            EmojiEntry(
+                aliases=aliases,
+                glyph=glyph,
+                image_name=image_name,
+                name=codepoint.upper(),
+                primary_alias=aliases[-1] if has_manual else alias,
+                sort_order=10**9,
+                unicode_value=unicode_from_unified(codepoint.upper()),
+            )
+        )
 
     if next_codepoint >= 0xF8FF:
         raise RuntimeError("Generated glyph set exceeds the BMP private-use range")

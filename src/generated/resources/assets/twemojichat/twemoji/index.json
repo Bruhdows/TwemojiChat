@@ -1,5 +1,5 @@
 {
-  "emoji_count": 3566,
+  "emoji_count": 4009,
   "sources": {
     "assets": {
       "repo": "jdecked/twemoji",
@@ -13,6 +13,9 @@
       "manual_aliases": {
         "rolling_on_the_floor_laughing": [
           "rofl"
+        ],
+        "2764": [
+          "heart"
         ]
       }
     },
@@ -38543,6 +38546,4437 @@
       "primary_alias": "flag-wales",
       "sort_order": 1911,
       "unicode": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+    },
+    {
+      "aliases": [
+        "1f170"
+      ],
+      "glyph": "",
+      "name": "1F170",
+      "primary_alias": "1f170",
+      "sort_order": 1000000000,
+      "unicode": "🅰"
+    },
+    {
+      "aliases": [
+        "1f171"
+      ],
+      "glyph": "",
+      "name": "1F171",
+      "primary_alias": "1f171",
+      "sort_order": 1000000000,
+      "unicode": "🅱"
+    },
+    {
+      "aliases": [
+        "1f17e"
+      ],
+      "glyph": "",
+      "name": "1F17E",
+      "primary_alias": "1f17e",
+      "sort_order": 1000000000,
+      "unicode": "🅾"
+    },
+    {
+      "aliases": [
+        "1f17f"
+      ],
+      "glyph": "",
+      "name": "1F17F",
+      "primary_alias": "1f17f",
+      "sort_order": 1000000000,
+      "unicode": "🅿"
+    },
+    {
+      "aliases": [
+        "1f1e6"
+      ],
+      "glyph": "",
+      "name": "1F1E6",
+      "primary_alias": "1f1e6",
+      "sort_order": 1000000000,
+      "unicode": "🇦"
+    },
+    {
+      "aliases": [
+        "1f1e7"
+      ],
+      "glyph": "",
+      "name": "1F1E7",
+      "primary_alias": "1f1e7",
+      "sort_order": 1000000000,
+      "unicode": "🇧"
+    },
+    {
+      "aliases": [
+        "1f1e8"
+      ],
+      "glyph": "",
+      "name": "1F1E8",
+      "primary_alias": "1f1e8",
+      "sort_order": 1000000000,
+      "unicode": "🇨"
+    },
+    {
+      "aliases": [
+        "1f1e9"
+      ],
+      "glyph": "",
+      "name": "1F1E9",
+      "primary_alias": "1f1e9",
+      "sort_order": 1000000000,
+      "unicode": "🇩"
+    },
+    {
+      "aliases": [
+        "1f1ea"
+      ],
+      "glyph": "",
+      "name": "1F1EA",
+      "primary_alias": "1f1ea",
+      "sort_order": 1000000000,
+      "unicode": "🇪"
+    },
+    {
+      "aliases": [
+        "1f1eb"
+      ],
+      "glyph": "",
+      "name": "1F1EB",
+      "primary_alias": "1f1eb",
+      "sort_order": 1000000000,
+      "unicode": "🇫"
+    },
+    {
+      "aliases": [
+        "1f1ec"
+      ],
+      "glyph": "",
+      "name": "1F1EC",
+      "primary_alias": "1f1ec",
+      "sort_order": 1000000000,
+      "unicode": "🇬"
+    },
+    {
+      "aliases": [
+        "1f1ed"
+      ],
+      "glyph": "",
+      "name": "1F1ED",
+      "primary_alias": "1f1ed",
+      "sort_order": 1000000000,
+      "unicode": "🇭"
+    },
+    {
+      "aliases": [
+        "1f1ee"
+      ],
+      "glyph": "",
+      "name": "1F1EE",
+      "primary_alias": "1f1ee",
+      "sort_order": 1000000000,
+      "unicode": "🇮"
+    },
+    {
+      "aliases": [
+        "1f1ef"
+      ],
+      "glyph": "",
+      "name": "1F1EF",
+      "primary_alias": "1f1ef",
+      "sort_order": 1000000000,
+      "unicode": "🇯"
+    },
+    {
+      "aliases": [
+        "1f1f0"
+      ],
+      "glyph": "",
+      "name": "1F1F0",
+      "primary_alias": "1f1f0",
+      "sort_order": 1000000000,
+      "unicode": "🇰"
+    },
+    {
+      "aliases": [
+        "1f1f1"
+      ],
+      "glyph": "",
+      "name": "1F1F1",
+      "primary_alias": "1f1f1",
+      "sort_order": 1000000000,
+      "unicode": "🇱"
+    },
+    {
+      "aliases": [
+        "1f1f2"
+      ],
+      "glyph": "",
+      "name": "1F1F2",
+      "primary_alias": "1f1f2",
+      "sort_order": 1000000000,
+      "unicode": "🇲"
+    },
+    {
+      "aliases": [
+        "1f1f3"
+      ],
+      "glyph": "",
+      "name": "1F1F3",
+      "primary_alias": "1f1f3",
+      "sort_order": 1000000000,
+      "unicode": "🇳"
+    },
+    {
+      "aliases": [
+        "1f1f4"
+      ],
+      "glyph": "",
+      "name": "1F1F4",
+      "primary_alias": "1f1f4",
+      "sort_order": 1000000000,
+      "unicode": "🇴"
+    },
+    {
+      "aliases": [
+        "1f1f5"
+      ],
+      "glyph": "",
+      "name": "1F1F5",
+      "primary_alias": "1f1f5",
+      "sort_order": 1000000000,
+      "unicode": "🇵"
+    },
+    {
+      "aliases": [
+        "1f1f6"
+      ],
+      "glyph": "",
+      "name": "1F1F6",
+      "primary_alias": "1f1f6",
+      "sort_order": 1000000000,
+      "unicode": "🇶"
+    },
+    {
+      "aliases": [
+        "1f1f7"
+      ],
+      "glyph": "",
+      "name": "1F1F7",
+      "primary_alias": "1f1f7",
+      "sort_order": 1000000000,
+      "unicode": "🇷"
+    },
+    {
+      "aliases": [
+        "1f1f8"
+      ],
+      "glyph": "",
+      "name": "1F1F8",
+      "primary_alias": "1f1f8",
+      "sort_order": 1000000000,
+      "unicode": "🇸"
+    },
+    {
+      "aliases": [
+        "1f1f9"
+      ],
+      "glyph": "",
+      "name": "1F1F9",
+      "primary_alias": "1f1f9",
+      "sort_order": 1000000000,
+      "unicode": "🇹"
+    },
+    {
+      "aliases": [
+        "1f1fa"
+      ],
+      "glyph": "",
+      "name": "1F1FA",
+      "primary_alias": "1f1fa",
+      "sort_order": 1000000000,
+      "unicode": "🇺"
+    },
+    {
+      "aliases": [
+        "1f1fb"
+      ],
+      "glyph": "",
+      "name": "1F1FB",
+      "primary_alias": "1f1fb",
+      "sort_order": 1000000000,
+      "unicode": "🇻"
+    },
+    {
+      "aliases": [
+        "1f1fc"
+      ],
+      "glyph": "",
+      "name": "1F1FC",
+      "primary_alias": "1f1fc",
+      "sort_order": 1000000000,
+      "unicode": "🇼"
+    },
+    {
+      "aliases": [
+        "1f1fd"
+      ],
+      "glyph": "",
+      "name": "1F1FD",
+      "primary_alias": "1f1fd",
+      "sort_order": 1000000000,
+      "unicode": "🇽"
+    },
+    {
+      "aliases": [
+        "1f1fe"
+      ],
+      "glyph": "",
+      "name": "1F1FE",
+      "primary_alias": "1f1fe",
+      "sort_order": 1000000000,
+      "unicode": "🇾"
+    },
+    {
+      "aliases": [
+        "1f1ff"
+      ],
+      "glyph": "",
+      "name": "1F1FF",
+      "primary_alias": "1f1ff",
+      "sort_order": 1000000000,
+      "unicode": "🇿"
+    },
+    {
+      "aliases": [
+        "1f202"
+      ],
+      "glyph": "",
+      "name": "1F202",
+      "primary_alias": "1f202",
+      "sort_order": 1000000000,
+      "unicode": "🈂"
+    },
+    {
+      "aliases": [
+        "1f237"
+      ],
+      "glyph": "",
+      "name": "1F237",
+      "primary_alias": "1f237",
+      "sort_order": 1000000000,
+      "unicode": "🈷"
+    },
+    {
+      "aliases": [
+        "1f321"
+      ],
+      "glyph": "",
+      "name": "1F321",
+      "primary_alias": "1f321",
+      "sort_order": 1000000000,
+      "unicode": "🌡"
+    },
+    {
+      "aliases": [
+        "1f324"
+      ],
+      "glyph": "",
+      "name": "1F324",
+      "primary_alias": "1f324",
+      "sort_order": 1000000000,
+      "unicode": "🌤"
+    },
+    {
+      "aliases": [
+        "1f325"
+      ],
+      "glyph": "",
+      "name": "1F325",
+      "primary_alias": "1f325",
+      "sort_order": 1000000000,
+      "unicode": "🌥"
+    },
+    {
+      "aliases": [
+        "1f326"
+      ],
+      "glyph": "",
+      "name": "1F326",
+      "primary_alias": "1f326",
+      "sort_order": 1000000000,
+      "unicode": "🌦"
+    },
+    {
+      "aliases": [
+        "1f327"
+      ],
+      "glyph": "",
+      "name": "1F327",
+      "primary_alias": "1f327",
+      "sort_order": 1000000000,
+      "unicode": "🌧"
+    },
+    {
+      "aliases": [
+        "1f328"
+      ],
+      "glyph": "",
+      "name": "1F328",
+      "primary_alias": "1f328",
+      "sort_order": 1000000000,
+      "unicode": "🌨"
+    },
+    {
+      "aliases": [
+        "1f329"
+      ],
+      "glyph": "",
+      "name": "1F329",
+      "primary_alias": "1f329",
+      "sort_order": 1000000000,
+      "unicode": "🌩"
+    },
+    {
+      "aliases": [
+        "1f32a"
+      ],
+      "glyph": "",
+      "name": "1F32A",
+      "primary_alias": "1f32a",
+      "sort_order": 1000000000,
+      "unicode": "🌪"
+    },
+    {
+      "aliases": [
+        "1f32b"
+      ],
+      "glyph": "",
+      "name": "1F32B",
+      "primary_alias": "1f32b",
+      "sort_order": 1000000000,
+      "unicode": "🌫"
+    },
+    {
+      "aliases": [
+        "1f32c"
+      ],
+      "glyph": "",
+      "name": "1F32C",
+      "primary_alias": "1f32c",
+      "sort_order": 1000000000,
+      "unicode": "🌬"
+    },
+    {
+      "aliases": [
+        "1f336"
+      ],
+      "glyph": "",
+      "name": "1F336",
+      "primary_alias": "1f336",
+      "sort_order": 1000000000,
+      "unicode": "🌶"
+    },
+    {
+      "aliases": [
+        "1f37d"
+      ],
+      "glyph": "",
+      "name": "1F37D",
+      "primary_alias": "1f37d",
+      "sort_order": 1000000000,
+      "unicode": "🍽"
+    },
+    {
+      "aliases": [
+        "1f396"
+      ],
+      "glyph": "",
+      "name": "1F396",
+      "primary_alias": "1f396",
+      "sort_order": 1000000000,
+      "unicode": "🎖"
+    },
+    {
+      "aliases": [
+        "1f397"
+      ],
+      "glyph": "",
+      "name": "1F397",
+      "primary_alias": "1f397",
+      "sort_order": 1000000000,
+      "unicode": "🎗"
+    },
+    {
+      "aliases": [
+        "1f399"
+      ],
+      "glyph": "",
+      "name": "1F399",
+      "primary_alias": "1f399",
+      "sort_order": 1000000000,
+      "unicode": "🎙"
+    },
+    {
+      "aliases": [
+        "1f39a"
+      ],
+      "glyph": "",
+      "name": "1F39A",
+      "primary_alias": "1f39a",
+      "sort_order": 1000000000,
+      "unicode": "🎚"
+    },
+    {
+      "aliases": [
+        "1f39b"
+      ],
+      "glyph": "",
+      "name": "1F39B",
+      "primary_alias": "1f39b",
+      "sort_order": 1000000000,
+      "unicode": "🎛"
+    },
+    {
+      "aliases": [
+        "1f39e"
+      ],
+      "glyph": "",
+      "name": "1F39E",
+      "primary_alias": "1f39e",
+      "sort_order": 1000000000,
+      "unicode": "🎞"
+    },
+    {
+      "aliases": [
+        "1f39f"
+      ],
+      "glyph": "",
+      "name": "1F39F",
+      "primary_alias": "1f39f",
+      "sort_order": 1000000000,
+      "unicode": "🎟"
+    },
+    {
+      "aliases": [
+        "1f3cb"
+      ],
+      "glyph": "",
+      "name": "1F3CB",
+      "primary_alias": "1f3cb",
+      "sort_order": 1000000000,
+      "unicode": "🏋"
+    },
+    {
+      "aliases": [
+        "1f3cc"
+      ],
+      "glyph": "",
+      "name": "1F3CC",
+      "primary_alias": "1f3cc",
+      "sort_order": 1000000000,
+      "unicode": "🏌"
+    },
+    {
+      "aliases": [
+        "1f3cd"
+      ],
+      "glyph": "",
+      "name": "1F3CD",
+      "primary_alias": "1f3cd",
+      "sort_order": 1000000000,
+      "unicode": "🏍"
+    },
+    {
+      "aliases": [
+        "1f3ce"
+      ],
+      "glyph": "",
+      "name": "1F3CE",
+      "primary_alias": "1f3ce",
+      "sort_order": 1000000000,
+      "unicode": "🏎"
+    },
+    {
+      "aliases": [
+        "1f3d4"
+      ],
+      "glyph": "",
+      "name": "1F3D4",
+      "primary_alias": "1f3d4",
+      "sort_order": 1000000000,
+      "unicode": "🏔"
+    },
+    {
+      "aliases": [
+        "1f3d5"
+      ],
+      "glyph": "",
+      "name": "1F3D5",
+      "primary_alias": "1f3d5",
+      "sort_order": 1000000000,
+      "unicode": "🏕"
+    },
+    {
+      "aliases": [
+        "1f3d6"
+      ],
+      "glyph": "",
+      "name": "1F3D6",
+      "primary_alias": "1f3d6",
+      "sort_order": 1000000000,
+      "unicode": "🏖"
+    },
+    {
+      "aliases": [
+        "1f3d7"
+      ],
+      "glyph": "",
+      "name": "1F3D7",
+      "primary_alias": "1f3d7",
+      "sort_order": 1000000000,
+      "unicode": "🏗"
+    },
+    {
+      "aliases": [
+        "1f3d8"
+      ],
+      "glyph": "",
+      "name": "1F3D8",
+      "primary_alias": "1f3d8",
+      "sort_order": 1000000000,
+      "unicode": "🏘"
+    },
+    {
+      "aliases": [
+        "1f3d9"
+      ],
+      "glyph": "",
+      "name": "1F3D9",
+      "primary_alias": "1f3d9",
+      "sort_order": 1000000000,
+      "unicode": "🏙"
+    },
+    {
+      "aliases": [
+        "1f3da"
+      ],
+      "glyph": "",
+      "name": "1F3DA",
+      "primary_alias": "1f3da",
+      "sort_order": 1000000000,
+      "unicode": "🏚"
+    },
+    {
+      "aliases": [
+        "1f3db"
+      ],
+      "glyph": "",
+      "name": "1F3DB",
+      "primary_alias": "1f3db",
+      "sort_order": 1000000000,
+      "unicode": "🏛"
+    },
+    {
+      "aliases": [
+        "1f3dc"
+      ],
+      "glyph": "",
+      "name": "1F3DC",
+      "primary_alias": "1f3dc",
+      "sort_order": 1000000000,
+      "unicode": "🏜"
+    },
+    {
+      "aliases": [
+        "1f3dd"
+      ],
+      "glyph": "",
+      "name": "1F3DD",
+      "primary_alias": "1f3dd",
+      "sort_order": 1000000000,
+      "unicode": "🏝"
+    },
+    {
+      "aliases": [
+        "1f3de"
+      ],
+      "glyph": "",
+      "name": "1F3DE",
+      "primary_alias": "1f3de",
+      "sort_order": 1000000000,
+      "unicode": "🏞"
+    },
+    {
+      "aliases": [
+        "1f3df"
+      ],
+      "glyph": "",
+      "name": "1F3DF",
+      "primary_alias": "1f3df",
+      "sort_order": 1000000000,
+      "unicode": "🏟"
+    },
+    {
+      "aliases": [
+        "1f3f3"
+      ],
+      "glyph": "",
+      "name": "1F3F3",
+      "primary_alias": "1f3f3",
+      "sort_order": 1000000000,
+      "unicode": "🏳"
+    },
+    {
+      "aliases": [
+        "1f3f5"
+      ],
+      "glyph": "",
+      "name": "1F3F5",
+      "primary_alias": "1f3f5",
+      "sort_order": 1000000000,
+      "unicode": "🏵"
+    },
+    {
+      "aliases": [
+        "1f3f7"
+      ],
+      "glyph": "",
+      "name": "1F3F7",
+      "primary_alias": "1f3f7",
+      "sort_order": 1000000000,
+      "unicode": "🏷"
+    },
+    {
+      "aliases": [
+        "1f43f"
+      ],
+      "glyph": "",
+      "name": "1F43F",
+      "primary_alias": "1f43f",
+      "sort_order": 1000000000,
+      "unicode": "🐿"
+    },
+    {
+      "aliases": [
+        "1f441_200d_1f5e8"
+      ],
+      "glyph": "",
+      "name": "1F441-200D-1F5E8",
+      "primary_alias": "1f441_200d_1f5e8",
+      "sort_order": 1000000000,
+      "unicode": "👁‍🗨"
+    },
+    {
+      "aliases": [
+        "1f441"
+      ],
+      "glyph": "",
+      "name": "1F441",
+      "primary_alias": "1f441",
+      "sort_order": 1000000000,
+      "unicode": "👁"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1F384",
+      "primary_alias": "1f468_1f3fb_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🎄"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1f430_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1F430-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3fb_200d_1f430_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🐰‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1f430_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1F430-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3fb_200d_1f430_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🐰‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1f430_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1F430-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3fb_200d_1f430_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🐰‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1f430_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1F430-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fb_200d_1f430_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🐰‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1faef_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1FAEF-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3fb_200d_1faef_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🫯‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1faef_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1FAEF-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3fb_200d_1faef_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🫯‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1faef_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1FAEF-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3fb_200d_1faef_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🫯‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fb_200d_1faef_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FB-200D-1FAEF-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fb_200d_1faef_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏻‍🫯‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1F384",
+      "primary_alias": "1f468_1f3fc_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🎄"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1f430_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1F430-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3fc_200d_1f430_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🐰‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1f430_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1F430-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3fc_200d_1f430_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🐰‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1f430_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1F430-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3fc_200d_1f430_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🐰‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1f430_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1F430-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fc_200d_1f430_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🐰‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1faef_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1FAEF-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3fc_200d_1faef_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🫯‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1faef_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1FAEF-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3fc_200d_1faef_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🫯‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1faef_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1FAEF-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3fc_200d_1faef_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🫯‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fc_200d_1faef_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FC-200D-1FAEF-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fc_200d_1faef_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏼‍🫯‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1F384",
+      "primary_alias": "1f468_1f3fd_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🎄"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1f430_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1F430-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3fd_200d_1f430_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🐰‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1f430_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1F430-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3fd_200d_1f430_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🐰‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1f430_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1F430-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3fd_200d_1f430_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🐰‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1f430_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1F430-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fd_200d_1f430_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🐰‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1faef_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1FAEF-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3fd_200d_1faef_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🫯‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1faef_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1FAEF-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3fd_200d_1faef_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🫯‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1faef_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1FAEF-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3fd_200d_1faef_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🫯‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fd_200d_1faef_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FD-200D-1FAEF-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fd_200d_1faef_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏽‍🫯‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1F384",
+      "primary_alias": "1f468_1f3fe_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🎄"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1f430_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1F430-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3fe_200d_1f430_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🐰‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1f430_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1F430-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3fe_200d_1f430_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🐰‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1f430_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1F430-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3fe_200d_1f430_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🐰‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1f430_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1F430-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fe_200d_1f430_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🐰‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1faef_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1FAEF-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3fe_200d_1faef_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🫯‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1faef_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1FAEF-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3fe_200d_1faef_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🫯‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1faef_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1FAEF-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3fe_200d_1faef_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🫯‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3fe_200d_1faef_200d_1f468_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FE-200D-1FAEF-200D-1F468-1F3FF",
+      "primary_alias": "1f468_1f3fe_200d_1faef_200d_1f468_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👨🏾‍🫯‍👨🏿"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1F384",
+      "primary_alias": "1f468_1f3ff_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🎄"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1f430_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1F430-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3ff_200d_1f430_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🐰‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1f430_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1F430-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3ff_200d_1f430_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🐰‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1f430_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1F430-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3ff_200d_1f430_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🐰‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1f430_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1F430-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3ff_200d_1f430_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🐰‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1faef_200d_1f468_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1FAEF-200D-1F468-1F3FB",
+      "primary_alias": "1f468_1f3ff_200d_1faef_200d_1f468_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🫯‍👨🏻"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1faef_200d_1f468_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1FAEF-200D-1F468-1F3FC",
+      "primary_alias": "1f468_1f3ff_200d_1faef_200d_1f468_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🫯‍👨🏼"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1faef_200d_1f468_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1FAEF-200D-1F468-1F3FD",
+      "primary_alias": "1f468_1f3ff_200d_1faef_200d_1f468_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🫯‍👨🏽"
+    },
+    {
+      "aliases": [
+        "1f468_1f3ff_200d_1faef_200d_1f468_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F468-1F3FF-200D-1FAEF-200D-1F468-1F3FE",
+      "primary_alias": "1f468_1f3ff_200d_1faef_200d_1f468_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👨🏿‍🫯‍👨🏾"
+    },
+    {
+      "aliases": [
+        "1f468_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F468-200D-1F384",
+      "primary_alias": "1f468_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👨‍🎄"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1F384",
+      "primary_alias": "1f469_1f3fb_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🎄"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1f430_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1F430-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3fb_200d_1f430_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🐰‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1f430_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1F430-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3fb_200d_1f430_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🐰‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1f430_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1F430-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3fb_200d_1f430_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🐰‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1f430_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1F430-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fb_200d_1f430_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🐰‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1faef_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1FAEF-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3fb_200d_1faef_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🫯‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1faef_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1FAEF-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3fb_200d_1faef_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🫯‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1faef_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1FAEF-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3fb_200d_1faef_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🫯‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fb_200d_1faef_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FB-200D-1FAEF-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fb_200d_1faef_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏻‍🫯‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1F384",
+      "primary_alias": "1f469_1f3fc_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🎄"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1f430_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1F430-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3fc_200d_1f430_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🐰‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1f430_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1F430-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3fc_200d_1f430_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🐰‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1f430_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1F430-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3fc_200d_1f430_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🐰‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1f430_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1F430-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fc_200d_1f430_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🐰‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1faef_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1FAEF-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3fc_200d_1faef_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🫯‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1faef_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1FAEF-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3fc_200d_1faef_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🫯‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1faef_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1FAEF-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3fc_200d_1faef_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🫯‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fc_200d_1faef_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FC-200D-1FAEF-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fc_200d_1faef_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏼‍🫯‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1F384",
+      "primary_alias": "1f469_1f3fd_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🎄"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1f430_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1F430-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3fd_200d_1f430_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🐰‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1f430_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1F430-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3fd_200d_1f430_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🐰‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1f430_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1F430-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3fd_200d_1f430_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🐰‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1f430_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1F430-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fd_200d_1f430_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🐰‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1faef_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1FAEF-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3fd_200d_1faef_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🫯‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1faef_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1FAEF-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3fd_200d_1faef_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🫯‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1faef_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1FAEF-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3fd_200d_1faef_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🫯‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fd_200d_1faef_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FD-200D-1FAEF-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fd_200d_1faef_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏽‍🫯‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1F384",
+      "primary_alias": "1f469_1f3fe_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🎄"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1f430_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1F430-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3fe_200d_1f430_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🐰‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1f430_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1F430-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3fe_200d_1f430_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🐰‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1f430_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1F430-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3fe_200d_1f430_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🐰‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1f430_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1F430-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fe_200d_1f430_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🐰‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1faef_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1FAEF-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3fe_200d_1faef_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🫯‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1faef_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1FAEF-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3fe_200d_1faef_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🫯‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1faef_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1FAEF-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3fe_200d_1faef_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🫯‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3fe_200d_1faef_200d_1f469_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FE-200D-1FAEF-200D-1F469-1F3FF",
+      "primary_alias": "1f469_1f3fe_200d_1faef_200d_1f469_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👩🏾‍🫯‍👩🏿"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1F384",
+      "primary_alias": "1f469_1f3ff_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🎄"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1f430_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1F430-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3ff_200d_1f430_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🐰‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1f430_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1F430-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3ff_200d_1f430_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🐰‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1f430_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1F430-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3ff_200d_1f430_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🐰‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1f430_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1F430-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3ff_200d_1f430_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🐰‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1faef_200d_1f469_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1FAEF-200D-1F469-1F3FB",
+      "primary_alias": "1f469_1f3ff_200d_1faef_200d_1f469_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🫯‍👩🏻"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1faef_200d_1f469_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1FAEF-200D-1F469-1F3FC",
+      "primary_alias": "1f469_1f3ff_200d_1faef_200d_1f469_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🫯‍👩🏼"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1faef_200d_1f469_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1FAEF-200D-1F469-1F3FD",
+      "primary_alias": "1f469_1f3ff_200d_1faef_200d_1f469_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🫯‍👩🏽"
+    },
+    {
+      "aliases": [
+        "1f469_1f3ff_200d_1faef_200d_1f469_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F469-1F3FF-200D-1FAEF-200D-1F469-1F3FE",
+      "primary_alias": "1f469_1f3ff_200d_1faef_200d_1f469_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👩🏿‍🫯‍👩🏾"
+    },
+    {
+      "aliases": [
+        "1f469_200d_1f384"
+      ],
+      "glyph": "",
+      "name": "1F469-200D-1F384",
+      "primary_alias": "1f469_200d_1f384",
+      "sort_order": 1000000000,
+      "unicode": "👩‍🎄"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fb_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FB-200D-2640-FE0F",
+      "primary_alias": "1f46f_1f3fb_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏻‍♀️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fb_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FB-200D-2642-FE0F",
+      "primary_alias": "1f46f_1f3fb_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏻‍♂️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FB",
+      "primary_alias": "1f46f_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "👯🏻"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fc_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FC-200D-2640-FE0F",
+      "primary_alias": "1f46f_1f3fc_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏼‍♀️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fc_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FC-200D-2642-FE0F",
+      "primary_alias": "1f46f_1f3fc_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏼‍♂️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FC",
+      "primary_alias": "1f46f_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "👯🏼"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fd_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FD-200D-2640-FE0F",
+      "primary_alias": "1f46f_1f3fd_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏽‍♀️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fd_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FD-200D-2642-FE0F",
+      "primary_alias": "1f46f_1f3fd_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏽‍♂️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FD",
+      "primary_alias": "1f46f_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "👯🏽"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fe_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FE-200D-2640-FE0F",
+      "primary_alias": "1f46f_1f3fe_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏾‍♀️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fe_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FE-200D-2642-FE0F",
+      "primary_alias": "1f46f_1f3fe_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏾‍♂️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FE",
+      "primary_alias": "1f46f_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "👯🏾"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3ff_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FF-200D-2640-FE0F",
+      "primary_alias": "1f46f_1f3ff_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏿‍♀️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3ff_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FF-200D-2642-FE0F",
+      "primary_alias": "1f46f_1f3ff_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "👯🏿‍♂️"
+    },
+    {
+      "aliases": [
+        "1f46f_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F46F-1F3FF",
+      "primary_alias": "1f46f_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "👯🏿"
+    },
+    {
+      "aliases": [
+        "1f4fd"
+      ],
+      "glyph": "",
+      "name": "1F4FD",
+      "primary_alias": "1f4fd",
+      "sort_order": 1000000000,
+      "unicode": "📽"
+    },
+    {
+      "aliases": [
+        "1f549"
+      ],
+      "glyph": "",
+      "name": "1F549",
+      "primary_alias": "1f549",
+      "sort_order": 1000000000,
+      "unicode": "🕉"
+    },
+    {
+      "aliases": [
+        "1f54a"
+      ],
+      "glyph": "",
+      "name": "1F54A",
+      "primary_alias": "1f54a",
+      "sort_order": 1000000000,
+      "unicode": "🕊"
+    },
+    {
+      "aliases": [
+        "1f56f"
+      ],
+      "glyph": "",
+      "name": "1F56F",
+      "primary_alias": "1f56f",
+      "sort_order": 1000000000,
+      "unicode": "🕯"
+    },
+    {
+      "aliases": [
+        "1f570"
+      ],
+      "glyph": "",
+      "name": "1F570",
+      "primary_alias": "1f570",
+      "sort_order": 1000000000,
+      "unicode": "🕰"
+    },
+    {
+      "aliases": [
+        "1f573"
+      ],
+      "glyph": "",
+      "name": "1F573",
+      "primary_alias": "1f573",
+      "sort_order": 1000000000,
+      "unicode": "🕳"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fb_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FB-200D-2640-FE0F",
+      "primary_alias": "1f574_1f3fb_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏻‍♀️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fb_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FB-200D-2642-FE0F",
+      "primary_alias": "1f574_1f3fb_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏻‍♂️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fc_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FC-200D-2640-FE0F",
+      "primary_alias": "1f574_1f3fc_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏼‍♀️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fc_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FC-200D-2642-FE0F",
+      "primary_alias": "1f574_1f3fc_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏼‍♂️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fd_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FD-200D-2640-FE0F",
+      "primary_alias": "1f574_1f3fd_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏽‍♀️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fd_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FD-200D-2642-FE0F",
+      "primary_alias": "1f574_1f3fd_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏽‍♂️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fe_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FE-200D-2640-FE0F",
+      "primary_alias": "1f574_1f3fe_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏾‍♀️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3fe_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FE-200D-2642-FE0F",
+      "primary_alias": "1f574_1f3fe_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏾‍♂️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3ff_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FF-200D-2640-FE0F",
+      "primary_alias": "1f574_1f3ff_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏿‍♀️"
+    },
+    {
+      "aliases": [
+        "1f574_1f3ff_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-1F3FF-200D-2642-FE0F",
+      "primary_alias": "1f574_1f3ff_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴🏿‍♂️"
+    },
+    {
+      "aliases": [
+        "1f574_fe0f_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-FE0F-200D-2640-FE0F",
+      "primary_alias": "1f574_fe0f_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴️‍♀️"
+    },
+    {
+      "aliases": [
+        "1f574_fe0f_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F574-FE0F-200D-2642-FE0F",
+      "primary_alias": "1f574_fe0f_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🕴️‍♂️"
+    },
+    {
+      "aliases": [
+        "1f574"
+      ],
+      "glyph": "",
+      "name": "1F574",
+      "primary_alias": "1f574",
+      "sort_order": 1000000000,
+      "unicode": "🕴"
+    },
+    {
+      "aliases": [
+        "1f575"
+      ],
+      "glyph": "",
+      "name": "1F575",
+      "primary_alias": "1f575",
+      "sort_order": 1000000000,
+      "unicode": "🕵"
+    },
+    {
+      "aliases": [
+        "1f576"
+      ],
+      "glyph": "",
+      "name": "1F576",
+      "primary_alias": "1f576",
+      "sort_order": 1000000000,
+      "unicode": "🕶"
+    },
+    {
+      "aliases": [
+        "1f577"
+      ],
+      "glyph": "",
+      "name": "1F577",
+      "primary_alias": "1f577",
+      "sort_order": 1000000000,
+      "unicode": "🕷"
+    },
+    {
+      "aliases": [
+        "1f578"
+      ],
+      "glyph": "",
+      "name": "1F578",
+      "primary_alias": "1f578",
+      "sort_order": 1000000000,
+      "unicode": "🕸"
+    },
+    {
+      "aliases": [
+        "1f579"
+      ],
+      "glyph": "",
+      "name": "1F579",
+      "primary_alias": "1f579",
+      "sort_order": 1000000000,
+      "unicode": "🕹"
+    },
+    {
+      "aliases": [
+        "1f587"
+      ],
+      "glyph": "",
+      "name": "1F587",
+      "primary_alias": "1f587",
+      "sort_order": 1000000000,
+      "unicode": "🖇"
+    },
+    {
+      "aliases": [
+        "1f58a"
+      ],
+      "glyph": "",
+      "name": "1F58A",
+      "primary_alias": "1f58a",
+      "sort_order": 1000000000,
+      "unicode": "🖊"
+    },
+    {
+      "aliases": [
+        "1f58b"
+      ],
+      "glyph": "",
+      "name": "1F58B",
+      "primary_alias": "1f58b",
+      "sort_order": 1000000000,
+      "unicode": "🖋"
+    },
+    {
+      "aliases": [
+        "1f58c"
+      ],
+      "glyph": "",
+      "name": "1F58C",
+      "primary_alias": "1f58c",
+      "sort_order": 1000000000,
+      "unicode": "🖌"
+    },
+    {
+      "aliases": [
+        "1f58d"
+      ],
+      "glyph": "",
+      "name": "1F58D",
+      "primary_alias": "1f58d",
+      "sort_order": 1000000000,
+      "unicode": "🖍"
+    },
+    {
+      "aliases": [
+        "1f590"
+      ],
+      "glyph": "",
+      "name": "1F590",
+      "primary_alias": "1f590",
+      "sort_order": 1000000000,
+      "unicode": "🖐"
+    },
+    {
+      "aliases": [
+        "1f5a5"
+      ],
+      "glyph": "",
+      "name": "1F5A5",
+      "primary_alias": "1f5a5",
+      "sort_order": 1000000000,
+      "unicode": "🖥"
+    },
+    {
+      "aliases": [
+        "1f5a8"
+      ],
+      "glyph": "",
+      "name": "1F5A8",
+      "primary_alias": "1f5a8",
+      "sort_order": 1000000000,
+      "unicode": "🖨"
+    },
+    {
+      "aliases": [
+        "1f5b1"
+      ],
+      "glyph": "",
+      "name": "1F5B1",
+      "primary_alias": "1f5b1",
+      "sort_order": 1000000000,
+      "unicode": "🖱"
+    },
+    {
+      "aliases": [
+        "1f5b2"
+      ],
+      "glyph": "",
+      "name": "1F5B2",
+      "primary_alias": "1f5b2",
+      "sort_order": 1000000000,
+      "unicode": "🖲"
+    },
+    {
+      "aliases": [
+        "1f5bc"
+      ],
+      "glyph": "",
+      "name": "1F5BC",
+      "primary_alias": "1f5bc",
+      "sort_order": 1000000000,
+      "unicode": "🖼"
+    },
+    {
+      "aliases": [
+        "1f5c2"
+      ],
+      "glyph": "",
+      "name": "1F5C2",
+      "primary_alias": "1f5c2",
+      "sort_order": 1000000000,
+      "unicode": "🗂"
+    },
+    {
+      "aliases": [
+        "1f5c3"
+      ],
+      "glyph": "",
+      "name": "1F5C3",
+      "primary_alias": "1f5c3",
+      "sort_order": 1000000000,
+      "unicode": "🗃"
+    },
+    {
+      "aliases": [
+        "1f5c4"
+      ],
+      "glyph": "",
+      "name": "1F5C4",
+      "primary_alias": "1f5c4",
+      "sort_order": 1000000000,
+      "unicode": "🗄"
+    },
+    {
+      "aliases": [
+        "1f5d1"
+      ],
+      "glyph": "",
+      "name": "1F5D1",
+      "primary_alias": "1f5d1",
+      "sort_order": 1000000000,
+      "unicode": "🗑"
+    },
+    {
+      "aliases": [
+        "1f5d2"
+      ],
+      "glyph": "",
+      "name": "1F5D2",
+      "primary_alias": "1f5d2",
+      "sort_order": 1000000000,
+      "unicode": "🗒"
+    },
+    {
+      "aliases": [
+        "1f5d3"
+      ],
+      "glyph": "",
+      "name": "1F5D3",
+      "primary_alias": "1f5d3",
+      "sort_order": 1000000000,
+      "unicode": "🗓"
+    },
+    {
+      "aliases": [
+        "1f5dc"
+      ],
+      "glyph": "",
+      "name": "1F5DC",
+      "primary_alias": "1f5dc",
+      "sort_order": 1000000000,
+      "unicode": "🗜"
+    },
+    {
+      "aliases": [
+        "1f5dd"
+      ],
+      "glyph": "",
+      "name": "1F5DD",
+      "primary_alias": "1f5dd",
+      "sort_order": 1000000000,
+      "unicode": "🗝"
+    },
+    {
+      "aliases": [
+        "1f5de"
+      ],
+      "glyph": "",
+      "name": "1F5DE",
+      "primary_alias": "1f5de",
+      "sort_order": 1000000000,
+      "unicode": "🗞"
+    },
+    {
+      "aliases": [
+        "1f5e1"
+      ],
+      "glyph": "",
+      "name": "1F5E1",
+      "primary_alias": "1f5e1",
+      "sort_order": 1000000000,
+      "unicode": "🗡"
+    },
+    {
+      "aliases": [
+        "1f5e3"
+      ],
+      "glyph": "",
+      "name": "1F5E3",
+      "primary_alias": "1f5e3",
+      "sort_order": 1000000000,
+      "unicode": "🗣"
+    },
+    {
+      "aliases": [
+        "1f5e8"
+      ],
+      "glyph": "",
+      "name": "1F5E8",
+      "primary_alias": "1f5e8",
+      "sort_order": 1000000000,
+      "unicode": "🗨"
+    },
+    {
+      "aliases": [
+        "1f5ef"
+      ],
+      "glyph": "",
+      "name": "1F5EF",
+      "primary_alias": "1f5ef",
+      "sort_order": 1000000000,
+      "unicode": "🗯"
+    },
+    {
+      "aliases": [
+        "1f5f3"
+      ],
+      "glyph": "",
+      "name": "1F5F3",
+      "primary_alias": "1f5f3",
+      "sort_order": 1000000000,
+      "unicode": "🗳"
+    },
+    {
+      "aliases": [
+        "1f5fa"
+      ],
+      "glyph": "",
+      "name": "1F5FA",
+      "primary_alias": "1f5fa",
+      "sort_order": 1000000000,
+      "unicode": "🗺"
+    },
+    {
+      "aliases": [
+        "1f6cb"
+      ],
+      "glyph": "",
+      "name": "1F6CB",
+      "primary_alias": "1f6cb",
+      "sort_order": 1000000000,
+      "unicode": "🛋"
+    },
+    {
+      "aliases": [
+        "1f6cd"
+      ],
+      "glyph": "",
+      "name": "1F6CD",
+      "primary_alias": "1f6cd",
+      "sort_order": 1000000000,
+      "unicode": "🛍"
+    },
+    {
+      "aliases": [
+        "1f6ce"
+      ],
+      "glyph": "",
+      "name": "1F6CE",
+      "primary_alias": "1f6ce",
+      "sort_order": 1000000000,
+      "unicode": "🛎"
+    },
+    {
+      "aliases": [
+        "1f6cf"
+      ],
+      "glyph": "",
+      "name": "1F6CF",
+      "primary_alias": "1f6cf",
+      "sort_order": 1000000000,
+      "unicode": "🛏"
+    },
+    {
+      "aliases": [
+        "1f6d8"
+      ],
+      "glyph": "",
+      "name": "1F6D8",
+      "primary_alias": "1f6d8",
+      "sort_order": 1000000000,
+      "unicode": "🛘"
+    },
+    {
+      "aliases": [
+        "1f6e0"
+      ],
+      "glyph": "",
+      "name": "1F6E0",
+      "primary_alias": "1f6e0",
+      "sort_order": 1000000000,
+      "unicode": "🛠"
+    },
+    {
+      "aliases": [
+        "1f6e1"
+      ],
+      "glyph": "",
+      "name": "1F6E1",
+      "primary_alias": "1f6e1",
+      "sort_order": 1000000000,
+      "unicode": "🛡"
+    },
+    {
+      "aliases": [
+        "1f6e2"
+      ],
+      "glyph": "",
+      "name": "1F6E2",
+      "primary_alias": "1f6e2",
+      "sort_order": 1000000000,
+      "unicode": "🛢"
+    },
+    {
+      "aliases": [
+        "1f6e3"
+      ],
+      "glyph": "",
+      "name": "1F6E3",
+      "primary_alias": "1f6e3",
+      "sort_order": 1000000000,
+      "unicode": "🛣"
+    },
+    {
+      "aliases": [
+        "1f6e4"
+      ],
+      "glyph": "",
+      "name": "1F6E4",
+      "primary_alias": "1f6e4",
+      "sort_order": 1000000000,
+      "unicode": "🛤"
+    },
+    {
+      "aliases": [
+        "1f6e5"
+      ],
+      "glyph": "",
+      "name": "1F6E5",
+      "primary_alias": "1f6e5",
+      "sort_order": 1000000000,
+      "unicode": "🛥"
+    },
+    {
+      "aliases": [
+        "1f6e9"
+      ],
+      "glyph": "",
+      "name": "1F6E9",
+      "primary_alias": "1f6e9",
+      "sort_order": 1000000000,
+      "unicode": "🛩"
+    },
+    {
+      "aliases": [
+        "1f6f0"
+      ],
+      "glyph": "",
+      "name": "1F6F0",
+      "primary_alias": "1f6f0",
+      "sort_order": 1000000000,
+      "unicode": "🛰"
+    },
+    {
+      "aliases": [
+        "1f6f3"
+      ],
+      "glyph": "",
+      "name": "1F6F3",
+      "primary_alias": "1f6f3",
+      "sort_order": 1000000000,
+      "unicode": "🛳"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fb_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FB-200D-2640-FE0F",
+      "primary_alias": "1f93c_1f3fb_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏻‍♀️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fb_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FB-200D-2642-FE0F",
+      "primary_alias": "1f93c_1f3fb_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏻‍♂️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FB",
+      "primary_alias": "1f93c_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏻"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fc_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FC-200D-2640-FE0F",
+      "primary_alias": "1f93c_1f3fc_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏼‍♀️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fc_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FC-200D-2642-FE0F",
+      "primary_alias": "1f93c_1f3fc_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏼‍♂️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FC",
+      "primary_alias": "1f93c_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏼"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fd_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FD-200D-2640-FE0F",
+      "primary_alias": "1f93c_1f3fd_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏽‍♀️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fd_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FD-200D-2642-FE0F",
+      "primary_alias": "1f93c_1f3fd_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏽‍♂️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FD",
+      "primary_alias": "1f93c_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏽"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fe_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FE-200D-2640-FE0F",
+      "primary_alias": "1f93c_1f3fe_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏾‍♀️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fe_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FE-200D-2642-FE0F",
+      "primary_alias": "1f93c_1f3fe_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏾‍♂️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FE",
+      "primary_alias": "1f93c_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏾"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3ff_200d_2640_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FF-200D-2640-FE0F",
+      "primary_alias": "1f93c_1f3ff_200d_2640_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏿‍♀️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3ff_200d_2642_fe0f"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FF-200D-2642-FE0F",
+      "primary_alias": "1f93c_1f3ff_200d_2642_fe0f",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏿‍♂️"
+    },
+    {
+      "aliases": [
+        "1f93c_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F93C-1F3FF",
+      "primary_alias": "1f93c_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🤼🏿"
+    },
+    {
+      "aliases": [
+        "1f9b0"
+      ],
+      "glyph": "",
+      "name": "1F9B0",
+      "primary_alias": "1f9b0",
+      "sort_order": 1000000000,
+      "unicode": "🦰"
+    },
+    {
+      "aliases": [
+        "1f9b1"
+      ],
+      "glyph": "",
+      "name": "1F9B1",
+      "primary_alias": "1f9b1",
+      "sort_order": 1000000000,
+      "unicode": "🦱"
+    },
+    {
+      "aliases": [
+        "1f9b2"
+      ],
+      "glyph": "",
+      "name": "1F9B2",
+      "primary_alias": "1f9b2",
+      "sort_order": 1000000000,
+      "unicode": "🦲"
+    },
+    {
+      "aliases": [
+        "1f9b3"
+      ],
+      "glyph": "",
+      "name": "1F9B3",
+      "primary_alias": "1f9b3",
+      "sort_order": 1000000000,
+      "unicode": "🦳"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1F430-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🐰‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1F430-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🐰‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1F430-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🐰‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1F430-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fb_200d_1f430_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🐰‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1fa70"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1FA70",
+      "primary_alias": "1f9d1_1f3fb_200d_1fa70",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🩰"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1FAEF-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🫯‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1FAEF-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🫯‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1FAEF-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🫯‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FB-200D-1FAEF-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fb_200d_1faef_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏻‍🫯‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1F430-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🐰‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1F430-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🐰‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1F430-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🐰‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1F430-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fc_200d_1f430_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🐰‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1fa70"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1FA70",
+      "primary_alias": "1f9d1_1f3fc_200d_1fa70",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🩰"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1FAEF-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🫯‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1FAEF-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🫯‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1FAEF-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🫯‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FC-200D-1FAEF-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fc_200d_1faef_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏼‍🫯‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1F430-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🐰‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1F430-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🐰‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1F430-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🐰‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1F430-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fd_200d_1f430_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🐰‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1fa70"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1FA70",
+      "primary_alias": "1f9d1_1f3fd_200d_1fa70",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🩰"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1FAEF-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🫯‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1FAEF-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🫯‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1FAEF-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🫯‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FD-200D-1FAEF-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fd_200d_1faef_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏽‍🫯‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1F430-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🐰‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1F430-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🐰‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1F430-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🐰‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1F430-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fe_200d_1f430_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🐰‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1fa70"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1FA70",
+      "primary_alias": "1f9d1_1f3fe_200d_1fa70",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🩰"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1FAEF-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🫯‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1FAEF-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🫯‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1FAEF-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🫯‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3ff"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FE-200D-1FAEF-200D-1F9D1-1F3FF",
+      "primary_alias": "1f9d1_1f3fe_200d_1faef_200d_1f9d1_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏾‍🫯‍🧑🏿"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1F430-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🐰‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1F430-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🐰‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1F430-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🐰‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1F430-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3ff_200d_1f430_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🐰‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1fa70"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1FA70",
+      "primary_alias": "1f9d1_1f3ff_200d_1fa70",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🩰"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fb"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1FAEF-200D-1F9D1-1F3FB",
+      "primary_alias": "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🫯‍🧑🏻"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fc"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1FAEF-200D-1F9D1-1F3FC",
+      "primary_alias": "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🫯‍🧑🏼"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fd"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1FAEF-200D-1F9D1-1F3FD",
+      "primary_alias": "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🫯‍🧑🏽"
+    },
+    {
+      "aliases": [
+        "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fe"
+      ],
+      "glyph": "",
+      "name": "1F9D1-1F3FF-200D-1FAEF-200D-1F9D1-1F3FE",
+      "primary_alias": "1f9d1_1f3ff_200d_1faef_200d_1f9d1_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "🧑🏿‍🫯‍🧑🏾"
+    },
+    {
+      "aliases": [
+        "1f9d1_200d_1fa70"
+      ],
+      "glyph": "",
+      "name": "1F9D1-200D-1FA70",
+      "primary_alias": "1f9d1_200d_1fa70",
+      "sort_order": 1000000000,
+      "unicode": "🧑‍🩰"
+    },
+    {
+      "aliases": [
+        "1fa8a"
+      ],
+      "glyph": "",
+      "name": "1FA8A",
+      "primary_alias": "1fa8a",
+      "sort_order": 1000000000,
+      "unicode": "🪊"
+    },
+    {
+      "aliases": [
+        "1fa8e"
+      ],
+      "glyph": "",
+      "name": "1FA8E",
+      "primary_alias": "1fa8e",
+      "sort_order": 1000000000,
+      "unicode": "🪎"
+    },
+    {
+      "aliases": [
+        "1fac8"
+      ],
+      "glyph": "",
+      "name": "1FAC8",
+      "primary_alias": "1fac8",
+      "sort_order": 1000000000,
+      "unicode": "🫈"
+    },
+    {
+      "aliases": [
+        "1facd"
+      ],
+      "glyph": "",
+      "name": "1FACD",
+      "primary_alias": "1facd",
+      "sort_order": 1000000000,
+      "unicode": "🫍"
+    },
+    {
+      "aliases": [
+        "1faea"
+      ],
+      "glyph": "",
+      "name": "1FAEA",
+      "primary_alias": "1faea",
+      "sort_order": 1000000000,
+      "unicode": "🫪"
+    },
+    {
+      "aliases": [
+        "1faef"
+      ],
+      "glyph": "",
+      "name": "1FAEF",
+      "primary_alias": "1faef",
+      "sort_order": 1000000000,
+      "unicode": "🫯"
+    },
+    {
+      "aliases": [
+        "203c"
+      ],
+      "glyph": "",
+      "name": "203C",
+      "primary_alias": "203c",
+      "sort_order": 1000000000,
+      "unicode": "‼"
+    },
+    {
+      "aliases": [
+        "2049"
+      ],
+      "glyph": "",
+      "name": "2049",
+      "primary_alias": "2049",
+      "sort_order": 1000000000,
+      "unicode": "⁉"
+    },
+    {
+      "aliases": [
+        "2122"
+      ],
+      "glyph": "",
+      "name": "2122",
+      "primary_alias": "2122",
+      "sort_order": 1000000000,
+      "unicode": "™"
+    },
+    {
+      "aliases": [
+        "2139"
+      ],
+      "glyph": "",
+      "name": "2139",
+      "primary_alias": "2139",
+      "sort_order": 1000000000,
+      "unicode": "ℹ"
+    },
+    {
+      "aliases": [
+        "2194"
+      ],
+      "glyph": "",
+      "name": "2194",
+      "primary_alias": "2194",
+      "sort_order": 1000000000,
+      "unicode": "↔"
+    },
+    {
+      "aliases": [
+        "2195"
+      ],
+      "glyph": "",
+      "name": "2195",
+      "primary_alias": "2195",
+      "sort_order": 1000000000,
+      "unicode": "↕"
+    },
+    {
+      "aliases": [
+        "2196"
+      ],
+      "glyph": "",
+      "name": "2196",
+      "primary_alias": "2196",
+      "sort_order": 1000000000,
+      "unicode": "↖"
+    },
+    {
+      "aliases": [
+        "2197"
+      ],
+      "glyph": "",
+      "name": "2197",
+      "primary_alias": "2197",
+      "sort_order": 1000000000,
+      "unicode": "↗"
+    },
+    {
+      "aliases": [
+        "2198"
+      ],
+      "glyph": "",
+      "name": "2198",
+      "primary_alias": "2198",
+      "sort_order": 1000000000,
+      "unicode": "↘"
+    },
+    {
+      "aliases": [
+        "2199"
+      ],
+      "glyph": "",
+      "name": "2199",
+      "primary_alias": "2199",
+      "sort_order": 1000000000,
+      "unicode": "↙"
+    },
+    {
+      "aliases": [
+        "21a9"
+      ],
+      "glyph": "",
+      "name": "21A9",
+      "primary_alias": "21a9",
+      "sort_order": 1000000000,
+      "unicode": "↩"
+    },
+    {
+      "aliases": [
+        "21aa"
+      ],
+      "glyph": "",
+      "name": "21AA",
+      "primary_alias": "21aa",
+      "sort_order": 1000000000,
+      "unicode": "↪"
+    },
+    {
+      "aliases": [
+        "23_20e3"
+      ],
+      "glyph": "",
+      "name": "23-20E3",
+      "primary_alias": "23_20e3",
+      "sort_order": 1000000000,
+      "unicode": "#⃣"
+    },
+    {
+      "aliases": [
+        "2328"
+      ],
+      "glyph": "",
+      "name": "2328",
+      "primary_alias": "2328",
+      "sort_order": 1000000000,
+      "unicode": "⌨"
+    },
+    {
+      "aliases": [
+        "23cf"
+      ],
+      "glyph": "",
+      "name": "23CF",
+      "primary_alias": "23cf",
+      "sort_order": 1000000000,
+      "unicode": "⏏"
+    },
+    {
+      "aliases": [
+        "23ed"
+      ],
+      "glyph": "",
+      "name": "23ED",
+      "primary_alias": "23ed",
+      "sort_order": 1000000000,
+      "unicode": "⏭"
+    },
+    {
+      "aliases": [
+        "23ee"
+      ],
+      "glyph": "",
+      "name": "23EE",
+      "primary_alias": "23ee",
+      "sort_order": 1000000000,
+      "unicode": "⏮"
+    },
+    {
+      "aliases": [
+        "23ef"
+      ],
+      "glyph": "",
+      "name": "23EF",
+      "primary_alias": "23ef",
+      "sort_order": 1000000000,
+      "unicode": "⏯"
+    },
+    {
+      "aliases": [
+        "23f1"
+      ],
+      "glyph": "",
+      "name": "23F1",
+      "primary_alias": "23f1",
+      "sort_order": 1000000000,
+      "unicode": "⏱"
+    },
+    {
+      "aliases": [
+        "23f2"
+      ],
+      "glyph": "",
+      "name": "23F2",
+      "primary_alias": "23f2",
+      "sort_order": 1000000000,
+      "unicode": "⏲"
+    },
+    {
+      "aliases": [
+        "23f8"
+      ],
+      "glyph": "",
+      "name": "23F8",
+      "primary_alias": "23f8",
+      "sort_order": 1000000000,
+      "unicode": "⏸"
+    },
+    {
+      "aliases": [
+        "23f9"
+      ],
+      "glyph": "",
+      "name": "23F9",
+      "primary_alias": "23f9",
+      "sort_order": 1000000000,
+      "unicode": "⏹"
+    },
+    {
+      "aliases": [
+        "23fa"
+      ],
+      "glyph": "",
+      "name": "23FA",
+      "primary_alias": "23fa",
+      "sort_order": 1000000000,
+      "unicode": "⏺"
+    },
+    {
+      "aliases": [
+        "24c2"
+      ],
+      "glyph": "",
+      "name": "24C2",
+      "primary_alias": "24c2",
+      "sort_order": 1000000000,
+      "unicode": "Ⓜ"
+    },
+    {
+      "aliases": [
+        "25aa"
+      ],
+      "glyph": "",
+      "name": "25AA",
+      "primary_alias": "25aa",
+      "sort_order": 1000000000,
+      "unicode": "▪"
+    },
+    {
+      "aliases": [
+        "25ab"
+      ],
+      "glyph": "",
+      "name": "25AB",
+      "primary_alias": "25ab",
+      "sort_order": 1000000000,
+      "unicode": "▫"
+    },
+    {
+      "aliases": [
+        "25b6"
+      ],
+      "glyph": "",
+      "name": "25B6",
+      "primary_alias": "25b6",
+      "sort_order": 1000000000,
+      "unicode": "▶"
+    },
+    {
+      "aliases": [
+        "25c0"
+      ],
+      "glyph": "",
+      "name": "25C0",
+      "primary_alias": "25c0",
+      "sort_order": 1000000000,
+      "unicode": "◀"
+    },
+    {
+      "aliases": [
+        "25fb"
+      ],
+      "glyph": "",
+      "name": "25FB",
+      "primary_alias": "25fb",
+      "sort_order": 1000000000,
+      "unicode": "◻"
+    },
+    {
+      "aliases": [
+        "25fc"
+      ],
+      "glyph": "",
+      "name": "25FC",
+      "primary_alias": "25fc",
+      "sort_order": 1000000000,
+      "unicode": "◼"
+    },
+    {
+      "aliases": [
+        "2600"
+      ],
+      "glyph": "",
+      "name": "2600",
+      "primary_alias": "2600",
+      "sort_order": 1000000000,
+      "unicode": "☀"
+    },
+    {
+      "aliases": [
+        "2601"
+      ],
+      "glyph": "",
+      "name": "2601",
+      "primary_alias": "2601",
+      "sort_order": 1000000000,
+      "unicode": "☁"
+    },
+    {
+      "aliases": [
+        "2602"
+      ],
+      "glyph": "",
+      "name": "2602",
+      "primary_alias": "2602",
+      "sort_order": 1000000000,
+      "unicode": "☂"
+    },
+    {
+      "aliases": [
+        "2603"
+      ],
+      "glyph": "",
+      "name": "2603",
+      "primary_alias": "2603",
+      "sort_order": 1000000000,
+      "unicode": "☃"
+    },
+    {
+      "aliases": [
+        "2604"
+      ],
+      "glyph": "",
+      "name": "2604",
+      "primary_alias": "2604",
+      "sort_order": 1000000000,
+      "unicode": "☄"
+    },
+    {
+      "aliases": [
+        "260e"
+      ],
+      "glyph": "",
+      "name": "260E",
+      "primary_alias": "260e",
+      "sort_order": 1000000000,
+      "unicode": "☎"
+    },
+    {
+      "aliases": [
+        "2611"
+      ],
+      "glyph": "",
+      "name": "2611",
+      "primary_alias": "2611",
+      "sort_order": 1000000000,
+      "unicode": "☑"
+    },
+    {
+      "aliases": [
+        "2618"
+      ],
+      "glyph": "",
+      "name": "2618",
+      "primary_alias": "2618",
+      "sort_order": 1000000000,
+      "unicode": "☘"
+    },
+    {
+      "aliases": [
+        "261d"
+      ],
+      "glyph": "",
+      "name": "261D",
+      "primary_alias": "261d",
+      "sort_order": 1000000000,
+      "unicode": "☝"
+    },
+    {
+      "aliases": [
+        "2620"
+      ],
+      "glyph": "",
+      "name": "2620",
+      "primary_alias": "2620",
+      "sort_order": 1000000000,
+      "unicode": "☠"
+    },
+    {
+      "aliases": [
+        "2622"
+      ],
+      "glyph": "",
+      "name": "2622",
+      "primary_alias": "2622",
+      "sort_order": 1000000000,
+      "unicode": "☢"
+    },
+    {
+      "aliases": [
+        "2623"
+      ],
+      "glyph": "",
+      "name": "2623",
+      "primary_alias": "2623",
+      "sort_order": 1000000000,
+      "unicode": "☣"
+    },
+    {
+      "aliases": [
+        "2626"
+      ],
+      "glyph": "",
+      "name": "2626",
+      "primary_alias": "2626",
+      "sort_order": 1000000000,
+      "unicode": "☦"
+    },
+    {
+      "aliases": [
+        "262a"
+      ],
+      "glyph": "",
+      "name": "262A",
+      "primary_alias": "262a",
+      "sort_order": 1000000000,
+      "unicode": "☪"
+    },
+    {
+      "aliases": [
+        "262e"
+      ],
+      "glyph": "",
+      "name": "262E",
+      "primary_alias": "262e",
+      "sort_order": 1000000000,
+      "unicode": "☮"
+    },
+    {
+      "aliases": [
+        "262f"
+      ],
+      "glyph": "",
+      "name": "262F",
+      "primary_alias": "262f",
+      "sort_order": 1000000000,
+      "unicode": "☯"
+    },
+    {
+      "aliases": [
+        "2638"
+      ],
+      "glyph": "",
+      "name": "2638",
+      "primary_alias": "2638",
+      "sort_order": 1000000000,
+      "unicode": "☸"
+    },
+    {
+      "aliases": [
+        "2639"
+      ],
+      "glyph": "",
+      "name": "2639",
+      "primary_alias": "2639",
+      "sort_order": 1000000000,
+      "unicode": "☹"
+    },
+    {
+      "aliases": [
+        "263a"
+      ],
+      "glyph": "",
+      "name": "263A",
+      "primary_alias": "263a",
+      "sort_order": 1000000000,
+      "unicode": "☺"
+    },
+    {
+      "aliases": [
+        "2640"
+      ],
+      "glyph": "",
+      "name": "2640",
+      "primary_alias": "2640",
+      "sort_order": 1000000000,
+      "unicode": "♀"
+    },
+    {
+      "aliases": [
+        "2642"
+      ],
+      "glyph": "",
+      "name": "2642",
+      "primary_alias": "2642",
+      "sort_order": 1000000000,
+      "unicode": "♂"
+    },
+    {
+      "aliases": [
+        "265f"
+      ],
+      "glyph": "",
+      "name": "265F",
+      "primary_alias": "265f",
+      "sort_order": 1000000000,
+      "unicode": "♟"
+    },
+    {
+      "aliases": [
+        "2660"
+      ],
+      "glyph": "",
+      "name": "2660",
+      "primary_alias": "2660",
+      "sort_order": 1000000000,
+      "unicode": "♠"
+    },
+    {
+      "aliases": [
+        "2663"
+      ],
+      "glyph": "",
+      "name": "2663",
+      "primary_alias": "2663",
+      "sort_order": 1000000000,
+      "unicode": "♣"
+    },
+    {
+      "aliases": [
+        "2665"
+      ],
+      "glyph": "",
+      "name": "2665",
+      "primary_alias": "2665",
+      "sort_order": 1000000000,
+      "unicode": "♥"
+    },
+    {
+      "aliases": [
+        "2666"
+      ],
+      "glyph": "",
+      "name": "2666",
+      "primary_alias": "2666",
+      "sort_order": 1000000000,
+      "unicode": "♦"
+    },
+    {
+      "aliases": [
+        "2668"
+      ],
+      "glyph": "",
+      "name": "2668",
+      "primary_alias": "2668",
+      "sort_order": 1000000000,
+      "unicode": "♨"
+    },
+    {
+      "aliases": [
+        "267b"
+      ],
+      "glyph": "",
+      "name": "267B",
+      "primary_alias": "267b",
+      "sort_order": 1000000000,
+      "unicode": "♻"
+    },
+    {
+      "aliases": [
+        "267e"
+      ],
+      "glyph": "",
+      "name": "267E",
+      "primary_alias": "267e",
+      "sort_order": 1000000000,
+      "unicode": "♾"
+    },
+    {
+      "aliases": [
+        "2692"
+      ],
+      "glyph": "",
+      "name": "2692",
+      "primary_alias": "2692",
+      "sort_order": 1000000000,
+      "unicode": "⚒"
+    },
+    {
+      "aliases": [
+        "2694"
+      ],
+      "glyph": "",
+      "name": "2694",
+      "primary_alias": "2694",
+      "sort_order": 1000000000,
+      "unicode": "⚔"
+    },
+    {
+      "aliases": [
+        "2695"
+      ],
+      "glyph": "",
+      "name": "2695",
+      "primary_alias": "2695",
+      "sort_order": 1000000000,
+      "unicode": "⚕"
+    },
+    {
+      "aliases": [
+        "2696"
+      ],
+      "glyph": "",
+      "name": "2696",
+      "primary_alias": "2696",
+      "sort_order": 1000000000,
+      "unicode": "⚖"
+    },
+    {
+      "aliases": [
+        "2697"
+      ],
+      "glyph": "",
+      "name": "2697",
+      "primary_alias": "2697",
+      "sort_order": 1000000000,
+      "unicode": "⚗"
+    },
+    {
+      "aliases": [
+        "2699"
+      ],
+      "glyph": "",
+      "name": "2699",
+      "primary_alias": "2699",
+      "sort_order": 1000000000,
+      "unicode": "⚙"
+    },
+    {
+      "aliases": [
+        "269b"
+      ],
+      "glyph": "",
+      "name": "269B",
+      "primary_alias": "269b",
+      "sort_order": 1000000000,
+      "unicode": "⚛"
+    },
+    {
+      "aliases": [
+        "269c"
+      ],
+      "glyph": "",
+      "name": "269C",
+      "primary_alias": "269c",
+      "sort_order": 1000000000,
+      "unicode": "⚜"
+    },
+    {
+      "aliases": [
+        "26a0"
+      ],
+      "glyph": "",
+      "name": "26A0",
+      "primary_alias": "26a0",
+      "sort_order": 1000000000,
+      "unicode": "⚠"
+    },
+    {
+      "aliases": [
+        "26a7"
+      ],
+      "glyph": "",
+      "name": "26A7",
+      "primary_alias": "26a7",
+      "sort_order": 1000000000,
+      "unicode": "⚧"
+    },
+    {
+      "aliases": [
+        "26b0"
+      ],
+      "glyph": "",
+      "name": "26B0",
+      "primary_alias": "26b0",
+      "sort_order": 1000000000,
+      "unicode": "⚰"
+    },
+    {
+      "aliases": [
+        "26b1"
+      ],
+      "glyph": "",
+      "name": "26B1",
+      "primary_alias": "26b1",
+      "sort_order": 1000000000,
+      "unicode": "⚱"
+    },
+    {
+      "aliases": [
+        "26c8"
+      ],
+      "glyph": "",
+      "name": "26C8",
+      "primary_alias": "26c8",
+      "sort_order": 1000000000,
+      "unicode": "⛈"
+    },
+    {
+      "aliases": [
+        "26cf"
+      ],
+      "glyph": "",
+      "name": "26CF",
+      "primary_alias": "26cf",
+      "sort_order": 1000000000,
+      "unicode": "⛏"
+    },
+    {
+      "aliases": [
+        "26d1"
+      ],
+      "glyph": "",
+      "name": "26D1",
+      "primary_alias": "26d1",
+      "sort_order": 1000000000,
+      "unicode": "⛑"
+    },
+    {
+      "aliases": [
+        "26d3"
+      ],
+      "glyph": "",
+      "name": "26D3",
+      "primary_alias": "26d3",
+      "sort_order": 1000000000,
+      "unicode": "⛓"
+    },
+    {
+      "aliases": [
+        "26e9"
+      ],
+      "glyph": "",
+      "name": "26E9",
+      "primary_alias": "26e9",
+      "sort_order": 1000000000,
+      "unicode": "⛩"
+    },
+    {
+      "aliases": [
+        "26f0"
+      ],
+      "glyph": "",
+      "name": "26F0",
+      "primary_alias": "26f0",
+      "sort_order": 1000000000,
+      "unicode": "⛰"
+    },
+    {
+      "aliases": [
+        "26f1"
+      ],
+      "glyph": "",
+      "name": "26F1",
+      "primary_alias": "26f1",
+      "sort_order": 1000000000,
+      "unicode": "⛱"
+    },
+    {
+      "aliases": [
+        "26f4"
+      ],
+      "glyph": "",
+      "name": "26F4",
+      "primary_alias": "26f4",
+      "sort_order": 1000000000,
+      "unicode": "⛴"
+    },
+    {
+      "aliases": [
+        "26f7_1f3fb"
+      ],
+      "glyph": "",
+      "name": "26F7-1F3FB",
+      "primary_alias": "26f7_1f3fb",
+      "sort_order": 1000000000,
+      "unicode": "⛷🏻"
+    },
+    {
+      "aliases": [
+        "26f7_1f3fc"
+      ],
+      "glyph": "",
+      "name": "26F7-1F3FC",
+      "primary_alias": "26f7_1f3fc",
+      "sort_order": 1000000000,
+      "unicode": "⛷🏼"
+    },
+    {
+      "aliases": [
+        "26f7_1f3fd"
+      ],
+      "glyph": "",
+      "name": "26F7-1F3FD",
+      "primary_alias": "26f7_1f3fd",
+      "sort_order": 1000000000,
+      "unicode": "⛷🏽"
+    },
+    {
+      "aliases": [
+        "26f7_1f3fe"
+      ],
+      "glyph": "",
+      "name": "26F7-1F3FE",
+      "primary_alias": "26f7_1f3fe",
+      "sort_order": 1000000000,
+      "unicode": "⛷🏾"
+    },
+    {
+      "aliases": [
+        "26f7_1f3ff"
+      ],
+      "glyph": "",
+      "name": "26F7-1F3FF",
+      "primary_alias": "26f7_1f3ff",
+      "sort_order": 1000000000,
+      "unicode": "⛷🏿"
+    },
+    {
+      "aliases": [
+        "26f7"
+      ],
+      "glyph": "",
+      "name": "26F7",
+      "primary_alias": "26f7",
+      "sort_order": 1000000000,
+      "unicode": "⛷"
+    },
+    {
+      "aliases": [
+        "26f8"
+      ],
+      "glyph": "",
+      "name": "26F8",
+      "primary_alias": "26f8",
+      "sort_order": 1000000000,
+      "unicode": "⛸"
+    },
+    {
+      "aliases": [
+        "26f9"
+      ],
+      "glyph": "",
+      "name": "26F9",
+      "primary_alias": "26f9",
+      "sort_order": 1000000000,
+      "unicode": "⛹"
+    },
+    {
+      "aliases": [
+        "2702"
+      ],
+      "glyph": "",
+      "name": "2702",
+      "primary_alias": "2702",
+      "sort_order": 1000000000,
+      "unicode": "✂"
+    },
+    {
+      "aliases": [
+        "2708"
+      ],
+      "glyph": "",
+      "name": "2708",
+      "primary_alias": "2708",
+      "sort_order": 1000000000,
+      "unicode": "✈"
+    },
+    {
+      "aliases": [
+        "2709"
+      ],
+      "glyph": "",
+      "name": "2709",
+      "primary_alias": "2709",
+      "sort_order": 1000000000,
+      "unicode": "✉"
+    },
+    {
+      "aliases": [
+        "270c"
+      ],
+      "glyph": "",
+      "name": "270C",
+      "primary_alias": "270c",
+      "sort_order": 1000000000,
+      "unicode": "✌"
+    },
+    {
+      "aliases": [
+        "270d"
+      ],
+      "glyph": "",
+      "name": "270D",
+      "primary_alias": "270d",
+      "sort_order": 1000000000,
+      "unicode": "✍"
+    },
+    {
+      "aliases": [
+        "270f"
+      ],
+      "glyph": "",
+      "name": "270F",
+      "primary_alias": "270f",
+      "sort_order": 1000000000,
+      "unicode": "✏"
+    },
+    {
+      "aliases": [
+        "2712"
+      ],
+      "glyph": "",
+      "name": "2712",
+      "primary_alias": "2712",
+      "sort_order": 1000000000,
+      "unicode": "✒"
+    },
+    {
+      "aliases": [
+        "2714"
+      ],
+      "glyph": "",
+      "name": "2714",
+      "primary_alias": "2714",
+      "sort_order": 1000000000,
+      "unicode": "✔"
+    },
+    {
+      "aliases": [
+        "2716"
+      ],
+      "glyph": "",
+      "name": "2716",
+      "primary_alias": "2716",
+      "sort_order": 1000000000,
+      "unicode": "✖"
+    },
+    {
+      "aliases": [
+        "271d"
+      ],
+      "glyph": "",
+      "name": "271D",
+      "primary_alias": "271d",
+      "sort_order": 1000000000,
+      "unicode": "✝"
+    },
+    {
+      "aliases": [
+        "2721"
+      ],
+      "glyph": "",
+      "name": "2721",
+      "primary_alias": "2721",
+      "sort_order": 1000000000,
+      "unicode": "✡"
+    },
+    {
+      "aliases": [
+        "2733"
+      ],
+      "glyph": "",
+      "name": "2733",
+      "primary_alias": "2733",
+      "sort_order": 1000000000,
+      "unicode": "✳"
+    },
+    {
+      "aliases": [
+        "2734"
+      ],
+      "glyph": "",
+      "name": "2734",
+      "primary_alias": "2734",
+      "sort_order": 1000000000,
+      "unicode": "✴"
+    },
+    {
+      "aliases": [
+        "2744"
+      ],
+      "glyph": "",
+      "name": "2744",
+      "primary_alias": "2744",
+      "sort_order": 1000000000,
+      "unicode": "❄"
+    },
+    {
+      "aliases": [
+        "2747"
+      ],
+      "glyph": "",
+      "name": "2747",
+      "primary_alias": "2747",
+      "sort_order": 1000000000,
+      "unicode": "❇"
+    },
+    {
+      "aliases": [
+        "2763"
+      ],
+      "glyph": "",
+      "name": "2763",
+      "primary_alias": "2763",
+      "sort_order": 1000000000,
+      "unicode": "❣"
+    },
+    {
+      "aliases": [
+        "2764",
+        "heart"
+      ],
+      "glyph": "",
+      "name": "2764",
+      "primary_alias": "heart",
+      "sort_order": 1000000000,
+      "unicode": "❤"
+    },
+    {
+      "aliases": [
+        "27a1"
+      ],
+      "glyph": "",
+      "name": "27A1",
+      "primary_alias": "27a1",
+      "sort_order": 1000000000,
+      "unicode": "➡"
+    },
+    {
+      "aliases": [
+        "2934"
+      ],
+      "glyph": "",
+      "name": "2934",
+      "primary_alias": "2934",
+      "sort_order": 1000000000,
+      "unicode": "⤴"
+    },
+    {
+      "aliases": [
+        "2935"
+      ],
+      "glyph": "",
+      "name": "2935",
+      "primary_alias": "2935",
+      "sort_order": 1000000000,
+      "unicode": "⤵"
+    },
+    {
+      "aliases": [
+        "2a_20e3"
+      ],
+      "glyph": "",
+      "name": "2A-20E3",
+      "primary_alias": "2a_20e3",
+      "sort_order": 1000000000,
+      "unicode": "*⃣"
+    },
+    {
+      "aliases": [
+        "2b05"
+      ],
+      "glyph": "",
+      "name": "2B05",
+      "primary_alias": "2b05",
+      "sort_order": 1000000000,
+      "unicode": "⬅"
+    },
+    {
+      "aliases": [
+        "2b06"
+      ],
+      "glyph": "",
+      "name": "2B06",
+      "primary_alias": "2b06",
+      "sort_order": 1000000000,
+      "unicode": "⬆"
+    },
+    {
+      "aliases": [
+        "2b07"
+      ],
+      "glyph": "",
+      "name": "2B07",
+      "primary_alias": "2b07",
+      "sort_order": 1000000000,
+      "unicode": "⬇"
+    },
+    {
+      "aliases": [
+        "30_20e3"
+      ],
+      "glyph": "",
+      "name": "30-20E3",
+      "primary_alias": "30_20e3",
+      "sort_order": 1000000000,
+      "unicode": "0⃣"
+    },
+    {
+      "aliases": [
+        "3030"
+      ],
+      "glyph": "",
+      "name": "3030",
+      "primary_alias": "3030",
+      "sort_order": 1000000000,
+      "unicode": "〰"
+    },
+    {
+      "aliases": [
+        "303d"
+      ],
+      "glyph": "",
+      "name": "303D",
+      "primary_alias": "303d",
+      "sort_order": 1000000000,
+      "unicode": "〽"
+    },
+    {
+      "aliases": [
+        "31_20e3"
+      ],
+      "glyph": "",
+      "name": "31-20E3",
+      "primary_alias": "31_20e3",
+      "sort_order": 1000000000,
+      "unicode": "1⃣"
+    },
+    {
+      "aliases": [
+        "32_20e3"
+      ],
+      "glyph": "",
+      "name": "32-20E3",
+      "primary_alias": "32_20e3",
+      "sort_order": 1000000000,
+      "unicode": "2⃣"
+    },
+    {
+      "aliases": [
+        "3297"
+      ],
+      "glyph": "",
+      "name": "3297",
+      "primary_alias": "3297",
+      "sort_order": 1000000000,
+      "unicode": "㊗"
+    },
+    {
+      "aliases": [
+        "3299"
+      ],
+      "glyph": "",
+      "name": "3299",
+      "primary_alias": "3299",
+      "sort_order": 1000000000,
+      "unicode": "㊙"
+    },
+    {
+      "aliases": [
+        "33_20e3"
+      ],
+      "glyph": "",
+      "name": "33-20E3",
+      "primary_alias": "33_20e3",
+      "sort_order": 1000000000,
+      "unicode": "3⃣"
+    },
+    {
+      "aliases": [
+        "34_20e3"
+      ],
+      "glyph": "",
+      "name": "34-20E3",
+      "primary_alias": "34_20e3",
+      "sort_order": 1000000000,
+      "unicode": "4⃣"
+    },
+    {
+      "aliases": [
+        "35_20e3"
+      ],
+      "glyph": "",
+      "name": "35-20E3",
+      "primary_alias": "35_20e3",
+      "sort_order": 1000000000,
+      "unicode": "5⃣"
+    },
+    {
+      "aliases": [
+        "36_20e3"
+      ],
+      "glyph": "",
+      "name": "36-20E3",
+      "primary_alias": "36_20e3",
+      "sort_order": 1000000000,
+      "unicode": "6⃣"
+    },
+    {
+      "aliases": [
+        "37_20e3"
+      ],
+      "glyph": "",
+      "name": "37-20E3",
+      "primary_alias": "37_20e3",
+      "sort_order": 1000000000,
+      "unicode": "7⃣"
+    },
+    {
+      "aliases": [
+        "38_20e3"
+      ],
+      "glyph": "",
+      "name": "38-20E3",
+      "primary_alias": "38_20e3",
+      "sort_order": 1000000000,
+      "unicode": "8⃣"
+    },
+    {
+      "aliases": [
+        "39_20e3"
+      ],
+      "glyph": "",
+      "name": "39-20E3",
+      "primary_alias": "39_20e3",
+      "sort_order": 1000000000,
+      "unicode": "9⃣"
+    },
+    {
+      "aliases": [
+        "a9"
+      ],
+      "glyph": "",
+      "name": "A9",
+      "primary_alias": "a9",
+      "sort_order": 1000000000,
+      "unicode": "©"
+    },
+    {
+      "aliases": [
+        "ae"
+      ],
+      "glyph": "",
+      "name": "AE",
+      "primary_alias": "ae",
+      "sort_order": 1000000000,
+      "unicode": "®"
+    },
+    {
+      "aliases": [
+        "e50a"
+      ],
+      "glyph": "",
+      "name": "E50A",
+      "primary_alias": "e50a",
+      "sort_order": 1000000000,
+      "unicode": ""
     }
   ]
 }
