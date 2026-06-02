@@ -6,7 +6,6 @@ import com.bruhdows.twemojichat.client.emoji.EmojiIndex;
 import com.bruhdows.twemojichat.client.emoji.EmojiIndexReloader;
 import com.bruhdows.twemojichat.mixin.client.ChatScreenAccessor;
 import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsAccessor;
-import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsSuggestionsListAccessor;
 import com.mojang.brigadier.Message;
 import com.mojang.brigadier.context.StringRange;
 import com.mojang.brigadier.suggestion.Suggestion;
@@ -70,10 +69,6 @@ public final class ChatEmojiController {
         CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)commandSuggestions;
         accessor.twemojichat$setPendingSuggestions(CompletableFuture.completedFuture(suggestions));
         accessor.twemojichat$invokeShowSuggestions(false);
-
-        if (accessor.twemojichat$getSuggestions() != null) {
-            ((CommandSuggestionsSuggestionsListAccessor)accessor.twemojichat$getSuggestions()).twemojichat$setTabCycles(false);
-        }
     }
 
     private Suggestion toSuggestion(EmojiDefinition definition) {
