@@ -7,7 +7,12 @@
   "shortcodes": {
     "repo": "iamcal/emoji-data",
     "ref": "097705020bcf82331c9ef10df3425aad15f5043c",
-    "data_path": "emoji.json"
+    "data_path": "emoji.json",
+    "manual_aliases": {
+      "rolling_on_the_floor_laughing": [
+        "rofl"
+      ]
+    }
   },
   "font": {
     "columns": 16,

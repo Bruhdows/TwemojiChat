@@ -105,6 +105,13 @@ def unicode_from_unified(value: str) -> str:
 
 def build_aliases(base_aliases: list[str], modifier_key: str | None) -> list[str]:
     aliases = list(dict.fromkeys(alias.strip(":").lower() for alias in base_aliases if alias))
+    variants: list[str] = []
+    for alias in aliases:
+        if "_" in alias:
+            variants.append(alias.replace("_", "-"))
+        if "-" in alias:
+            variants.append(alias.replace("-", "_"))
+    aliases = list(dict.fromkeys([*aliases, *variants]))
     if modifier_key is None:
         return aliases
     tone = SKIN_TONE_NAMES.get(modifier_key)
@@ -113,9 +120,21 @@ def build_aliases(base_aliases: list[str], modifier_key: str | None) -> list[str
     return [f"{alias}_{tone}" for alias in aliases]
 
 
+def apply_manual_aliases(aliases: list[str], shortcode_config: dict) -> list[str]:
+    manual_aliases = shortcode_config.get("manual_aliases", {})
+    extra_aliases: list[str] = []
+
+    for alias in aliases:
+        extra_aliases.extend(manual_aliases.get(alias, []))
+
+    normalized = [alias.strip(":").lower() for alias in extra_aliases if alias]
+    return list(dict.fromkeys([*aliases, *normalized]))
+
+
 def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntry]:
     entries: list[EmojiEntry] = []
     next_codepoint = PAGES_START
+    shortcode_config = read_config()["shortcodes"]
 
     for row in sorted(rows, key=lambda item: item.get("sort_order", 10**9)):
         base_aliases = row.get("short_names") or ([row["short_name"]] if row.get("short_name") else [])
@@ -123,7 +142,7 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
         if image_name and image_name in assets:
             glyph = chr(next_codepoint)
             next_codepoint += 1
-            aliases = build_aliases(base_aliases, None)
+            aliases = apply_manual_aliases(build_aliases(base_aliases, None), shortcode_config)
             entries.append(
                 EmojiEntry(
                     aliases=aliases,
@@ -142,7 +161,7 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
                 continue
             glyph = chr(next_codepoint)
             next_codepoint += 1
-            aliases = build_aliases(base_aliases, modifier_key)
+            aliases = apply_manual_aliases(build_aliases(base_aliases, modifier_key), shortcode_config)
             entries.append(
                 EmojiEntry(
                     aliases=aliases,

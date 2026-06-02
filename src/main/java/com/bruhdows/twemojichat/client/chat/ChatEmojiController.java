@@ -4,6 +4,7 @@ import com.bruhdows.twemojichat.client.emoji.EmojiDefinition;
 import com.bruhdows.twemojichat.client.emoji.EmojiFont;
 import com.bruhdows.twemojichat.client.emoji.EmojiIndex;
 import com.bruhdows.twemojichat.client.emoji.EmojiIndexReloader;
+import com.bruhdows.twemojichat.client.emoji.EmojiTextRewriter;
 import com.bruhdows.twemojichat.mixin.client.ChatScreenAccessor;
 import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsAccessor;
 import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsSuggestionsListAccessor;
@@ -29,6 +30,7 @@ public final class ChatEmojiController {
 
     public ChatEmojiController(ChatScreen screen) {
         this.screen = screen;
+        this.installFormatter();
     }
 
     public void refresh() {
@@ -45,6 +47,12 @@ public final class ChatEmojiController {
         CommandSuggestions commandSuggestions = this.commandSuggestions();
         if (value.startsWith("/")) {
             this.token = null;
+            this.hideEmojiSuggestions(commandSuggestions);
+            return;
+        }
+
+        EmojiIndex index = EmojiIndexReloader.getIndex();
+        if (this.replaceCompletedShortcode(value, cursor, index)) {
             return;
         }
 
@@ -54,7 +62,6 @@ public final class ChatEmojiController {
             return;
         }
 
-        EmojiIndex index = EmojiIndexReloader.getIndex();
         int visibleRows = this.visibleSuggestionRows();
         List<EmojiDefinition> matches = index.complete(this.token.query(), index.size());
         if (matches.isEmpty()) {
@@ -88,6 +95,14 @@ public final class ChatEmojiController {
         accessor.twemojichat$setPendingSuggestions(Suggestions.empty());
         accessor.twemojichat$invokeHide();
         this.input().setSuggestion(null);
+    }
+
+    private void installFormatter() {
+        EditBox input = this.input();
+        CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)this.commandSuggestions();
+        input.setFormatter((text, cursor) -> text.startsWith("/")
+            ? accessor.twemojichat$invokeFormatChat(text, cursor)
+            : EmojiTextRewriter.rewriteInput(text));
     }
 
     private EditBox input() {
@@ -139,9 +154,38 @@ public final class ChatEmojiController {
         return Component.literal(suggestion.getText());
     }
 
+    private boolean replaceCompletedShortcode(String value, int cursor, EmojiIndex index) {
+        ShortcodeMatch match = ShortcodeMatch.completed(value, cursor);
+        if (match == null) {
+            return false;
+        }
+
+        EmojiDefinition definition = index.byAlias(match.alias());
+        if (definition == null) {
+            return false;
+        }
+
+        String replacement = definition.glyph();
+        String updated = value.substring(0, match.start()) + replacement + value.substring(match.end());
+        int newCursor = match.start() + replacement.length();
+        EditBox input = this.input();
+        input.setValue(updated);
+        input.setCursorPosition(newCursor);
+        input.setHighlightPos(newCursor);
+        this.lastValue = updated;
+        this.lastCursor = newCursor;
+        this.token = null;
+        this.hideEmojiSuggestions(this.commandSuggestions());
+        return true;
+    }
+
     private record ActiveToken(int start, int end, String query) {
         private static ActiveToken find(String text, int cursor) {
             if (cursor <= 0 || cursor > text.length()) {
+                return null;
+            }
+
+            if (ShortcodeMatch.completed(text, cursor) != null) {
                 return null;
             }
 
@@ -174,6 +218,30 @@ public final class ChatEmojiController {
 
         private static boolean isAliasCharacter(char character) {
             return Character.isLetterOrDigit(character) || character == '_' || character == '+' || character == '-';
+        }
+    }
+
+    private record ShortcodeMatch(int start, int end, String alias) {
+        private static ShortcodeMatch completed(String text, int cursor) {
+            if (cursor < 3 || cursor > text.length() || text.charAt(cursor - 1) != ':') {
+                return null;
+            }
+
+            int start = cursor - 2;
+            while (start >= 0 && ActiveToken.isAliasCharacter(text.charAt(start))) {
+                start--;
+            }
+
+            if (start < 0 || text.charAt(start) != ':' || start == cursor - 1) {
+                return null;
+            }
+
+            String alias = text.substring(start + 1, cursor - 1).toLowerCase(Locale.ROOT);
+            if (alias.isEmpty()) {
+                return null;
+            }
+
+            return new ShortcodeMatch(start, cursor, alias);
         }
     }
 }

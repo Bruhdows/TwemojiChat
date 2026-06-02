@@ -6,6 +6,7 @@
   "mixins": [],
   "client": [
     "client.ChatScreenAccessor",
+    "client.ChatScreenMixin",
     "client.CommandSuggestionsAccessor",
     "client.CommandSuggestionsSuggestionsListAccessor",
     "client.CommandSuggestionsSuggestionsListMixin"

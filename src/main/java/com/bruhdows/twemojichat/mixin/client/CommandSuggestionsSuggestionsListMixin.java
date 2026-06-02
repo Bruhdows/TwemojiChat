@@ -13,9 +13,12 @@ import net.minecraft.world.phys.Vec2;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.lwjgl.glfw.GLFW;
 
 @Mixin(SuggestionsList.class)
 abstract class CommandSuggestionsSuggestionsListMixin {
@@ -40,8 +43,21 @@ abstract class CommandSuggestionsSuggestionsListMixin {
     public abstract void select(int index);
 
     @Shadow
+    public abstract void useSuggestion();
+
+    @Shadow
     @Final
     CommandSuggestions this$0;
+
+    @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
+    private void twemojichat$commitEmojiSuggestionOnTab(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
+        if (!this.twemojichat$hasEmojiSuggestions() || keyCode != GLFW.GLFW_KEY_TAB) {
+            return;
+        }
+
+        this.useSuggestion();
+        cir.setReturnValue(true);
+    }
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
     private void twemojichat$renderEmojiFirst(GuiGraphics guiGraphics, int mouseX, int mouseY, CallbackInfo ci) {
@@ -127,14 +143,17 @@ abstract class CommandSuggestionsSuggestionsListMixin {
         }
     }
 
+    @Unique
     private boolean twemojichat$hasEmojiSuggestions() {
         return !this.suggestionList.isEmpty() && this.suggestionList.stream().allMatch(this::twemojichat$isEmojiSuggestion);
     }
 
+    @Unique
     private boolean twemojichat$isEmojiSuggestion(Suggestion suggestion) {
         return suggestion.getText().startsWith(":") && suggestion.getText().endsWith(":") && suggestion.getTooltip() instanceof Component;
     }
 
+    @Unique
     private Component twemojichat$displayComponent(Suggestion suggestion) {
         Message tooltip = suggestion.getTooltip();
         if (tooltip instanceof Component component) {

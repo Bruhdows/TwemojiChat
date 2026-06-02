@@ -13,14 +13,16 @@ import java.util.Locale;
 import java.util.Map;
 
 public final class EmojiIndex {
-    public static final EmojiIndex EMPTY = new EmojiIndex(Map.of(), List.of(), new UnicodeNode());
+    public static final EmojiIndex EMPTY = new EmojiIndex(Map.of(), Map.of(), List.of(), new UnicodeNode());
 
     private final Map<String, EmojiDefinition> byAlias;
+    private final Map<String, EmojiDefinition> byGlyph;
     private final List<EmojiDefinition> suggestions;
     private final UnicodeNode unicodeRoot;
 
-    private EmojiIndex(Map<String, EmojiDefinition> byAlias, List<EmojiDefinition> suggestions, UnicodeNode unicodeRoot) {
+    private EmojiIndex(Map<String, EmojiDefinition> byAlias, Map<String, EmojiDefinition> byGlyph, List<EmojiDefinition> suggestions, UnicodeNode unicodeRoot) {
         this.byAlias = byAlias;
+        this.byGlyph = byGlyph;
         this.suggestions = suggestions;
         this.unicodeRoot = unicodeRoot;
     }
@@ -29,6 +31,7 @@ public final class EmojiIndex {
         JsonObject root = JsonParser.parseReader(reader).getAsJsonObject();
         JsonArray entries = root.getAsJsonArray("entries");
         Map<String, EmojiDefinition> byAlias = new HashMap<>();
+        Map<String, EmojiDefinition> byGlyph = new HashMap<>();
         List<EmojiDefinition> suggestions = new ArrayList<>();
         UnicodeNode unicodeRoot = new UnicodeNode();
 
@@ -54,6 +57,7 @@ public final class EmojiIndex {
             for (String alias : aliases) {
                 byAlias.putIfAbsent(alias, definition);
             }
+            byGlyph.putIfAbsent(definition.glyph(), definition);
 
             if (primaryAlias != null) {
                 suggestions.add(definition);
@@ -63,7 +67,7 @@ public final class EmojiIndex {
         }
 
         suggestions.sort(Comparator.comparingInt(EmojiDefinition::sortOrder).thenComparing(EmojiDefinition::primaryAlias));
-        return new EmojiIndex(Map.copyOf(byAlias), List.copyOf(suggestions), unicodeRoot);
+        return new EmojiIndex(Map.copyOf(byAlias), Map.copyOf(byGlyph), List.copyOf(suggestions), unicodeRoot);
     }
 
     public List<EmojiDefinition> complete(String query, int limit) {
@@ -99,6 +103,10 @@ public final class EmojiIndex {
 
     public EmojiDefinition byAlias(String alias) {
         return this.byAlias.get(alias.toLowerCase(Locale.ROOT));
+    }
+
+    public EmojiDefinition byGlyph(String glyph) {
+        return this.byGlyph.get(glyph);
     }
 
     public EmojiUnicodeMatch matchUnicode(String text, int startIndex) {

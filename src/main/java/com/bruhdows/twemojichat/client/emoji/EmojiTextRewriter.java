@@ -6,6 +6,7 @@ import java.util.Locale;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.util.FormattedCharSequence;
 
 public final class EmojiTextRewriter {
     private EmojiTextRewriter() {
@@ -31,6 +32,48 @@ public final class EmojiTextRewriter {
         return changed ? rewritten : original;
     }
 
+    public static FormattedCharSequence rewriteInput(String text) {
+        EmojiIndex index = EmojiIndexReloader.getIndex();
+        if (index == EmojiIndex.EMPTY) {
+            return FormattedCharSequence.forward(text, Style.EMPTY);
+        }
+
+        RewriteResult result = rewriteSegment(text, Style.EMPTY, index);
+        if (!result.changed()) {
+            return FormattedCharSequence.forward(text, Style.EMPTY);
+        }
+
+        MutableComponent rewritten = Component.empty();
+        for (Component piece : result.components()) {
+            rewritten.append(piece);
+        }
+        return rewritten.getVisualOrderText();
+    }
+
+    public static String normalizeOutgoing(String text) {
+        EmojiIndex index = EmojiIndexReloader.getIndex();
+        if (index == EmojiIndex.EMPTY) {
+            return text;
+        }
+
+        StringBuilder normalized = new StringBuilder(text.length());
+        int cursor = 0;
+        while (cursor < text.length()) {
+            EmojiDefinition glyphMatch = index.byGlyph(text.substring(cursor, cursor + 1));
+            if (glyphMatch != null) {
+                normalized.append(glyphMatch.unicodeValue());
+                cursor++;
+                continue;
+            }
+
+            int codePoint = text.codePointAt(cursor);
+            normalized.appendCodePoint(codePoint);
+            cursor += Character.charCount(codePoint);
+        }
+
+        return normalized.toString();
+    }
+
     private static RewriteResult rewriteSegment(String text, Style style, EmojiIndex index) {
         List<Component> components = new ArrayList<>();
         StringBuilder pending = new StringBuilder();
@@ -49,6 +92,15 @@ public final class EmojiTextRewriter {
                     changed = true;
                     continue;
                 }
+            }
+
+            EmojiDefinition glyphMatch = index.byGlyph(text.substring(cursor, cursor + 1));
+            if (glyphMatch != null) {
+                flushPending(components, pending, style);
+                components.add(Component.literal(glyphMatch.glyph()).withStyle(emojiStyle(style)));
+                cursor++;
+                changed = true;
+                continue;
             }
 
             EmojiIndex.EmojiUnicodeMatch unicodeMatch = index.matchUnicode(text, cursor);

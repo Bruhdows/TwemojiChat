@@ -4,6 +4,7 @@ import com.mojang.brigadier.suggestion.Suggestions;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.client.gui.components.CommandSuggestions;
 import net.minecraft.client.gui.Font;
+import net.minecraft.util.FormattedCharSequence;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
@@ -38,4 +39,7 @@ public interface CommandSuggestionsAccessor {
 
     @Invoker("hide")
     void twemojichat$invokeHide();
+
+    @Invoker("formatChat")
+    FormattedCharSequence twemojichat$invokeFormatChat(String command, int maxLength);
 }
