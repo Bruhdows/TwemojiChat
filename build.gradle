@@ -118,6 +118,11 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
+tasks.register('syncTwemoji', Exec) {
+    workingDir = project.projectDir
+    commandLine 'python3', 'tools/sync_twemoji.py'
+}
+
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
