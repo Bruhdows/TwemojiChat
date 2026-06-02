@@ -63,8 +63,7 @@ public final class ChatEmojiController {
             return;
         }
 
-        int suggestionLimit = accessorLineLimit(commandSuggestions);
-        List<EmojiDefinition> matches = index.complete(this.token.query(), suggestionLimit);
+        List<EmojiDefinition> matches = index.complete(this.token.query(), index.size());
         if (matches.isEmpty()) {
             this.hideEmojiSuggestions(commandSuggestions);
             this.token = null;
@@ -117,10 +116,6 @@ public final class ChatEmojiController {
 
     private CommandSuggestions commandSuggestions() {
         return ((ChatScreenAccessor)this.screen).twemojichat$getCommandSuggestions();
-    }
-
-    private int accessorLineLimit(CommandSuggestions commandSuggestions) {
-        return ((CommandSuggestionsAccessor)commandSuggestions).twemojichat$getSuggestionLineLimit();
     }
 
     private void resizePopup(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions) {

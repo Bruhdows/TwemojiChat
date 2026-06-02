@@ -33,7 +33,7 @@ public final class EmojiTextRewriter {
     }
 
     public static FormattedCharSequence rewriteInput(String text) {
-        if (text.indexOf(':') < 0) {
+        if (text.indexOf(':') < 0 && !containsEmojiGlyph(text)) {
             return FormattedCharSequence.forward(text, Style.EMPTY);
         }
 
@@ -165,6 +165,18 @@ public final class EmojiTextRewriter {
 
     private static boolean isAliasCharacter(char character) {
         return Character.isLetterOrDigit(character) || character == '_' || character == '+' || character == '-';
+    }
+
+    private static boolean containsEmojiGlyph(String text) {
+        for (int index = 0; index < text.length(); ) {
+            int codePoint = text.codePointAt(index);
+            if (codePoint >= 0xE000 && codePoint <= 0xF8FF) {
+                return true;
+            }
+            index += Character.charCount(codePoint);
+        }
+
+        return false;
     }
 
     private record RewriteResult(List<Component> components, boolean changed) {
