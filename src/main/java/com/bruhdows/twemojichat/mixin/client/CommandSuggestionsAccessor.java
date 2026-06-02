@@ -23,7 +23,7 @@ public interface CommandSuggestionsAccessor {
     void twemojichat$setPendingSuggestions(CompletableFuture<Suggestions> pendingSuggestions);
 
     @Accessor("suggestions")
-    Object twemojichat$getSuggestions();
+    CommandSuggestions.SuggestionsList twemojichat$getSuggestions();
 
     @Invoker("showSuggestions")
     void twemojichat$invokeShowSuggestions(boolean narrateFirstSuggestion);
