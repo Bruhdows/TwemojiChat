@@ -34,22 +34,7 @@ public final class TwemojiChatEvents {
     @SubscribeEvent
     public void onScreenRender(ScreenEvent.Render.Post event) {
         if (event.getScreen() instanceof ChatScreen chatScreen) {
-            this.controller(chatScreen).render(event.getGuiGraphics(), event.getMouseX(), event.getMouseY());
-        }
-    }
-
-    @SubscribeEvent
-    public void onKeyPressed(ScreenEvent.KeyPressed.Pre event) {
-        if (event.getScreen() instanceof ChatScreen chatScreen && this.controller(chatScreen).handleKeyPressed(event.getKeyCode())) {
-            event.setCanceled(true);
-        }
-    }
-
-    @SubscribeEvent
-    public void onMousePressed(ScreenEvent.MouseButtonPressed.Pre event) {
-        if (event.getScreen() instanceof ChatScreen chatScreen
-            && this.controller(chatScreen).handleMouseClicked(event.getMouseX(), event.getMouseY(), event.getButton())) {
-            event.setCanceled(true);
+            this.controller(chatScreen).refresh();
         }
     }
 

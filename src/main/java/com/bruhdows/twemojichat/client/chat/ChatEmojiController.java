@@ -5,31 +5,26 @@ import com.bruhdows.twemojichat.client.emoji.EmojiFont;
 import com.bruhdows.twemojichat.client.emoji.EmojiIndex;
 import com.bruhdows.twemojichat.client.emoji.EmojiIndexReloader;
 import com.bruhdows.twemojichat.mixin.client.ChatScreenAccessor;
+import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsAccessor;
+import com.bruhdows.twemojichat.mixin.client.CommandSuggestionsSuggestionsListAccessor;
+import com.mojang.brigadier.Message;
+import com.mojang.brigadier.context.StringRange;
+import com.mojang.brigadier.suggestion.Suggestion;
+import com.mojang.brigadier.suggestion.Suggestions;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import java.util.concurrent.CompletableFuture;
+import net.minecraft.client.gui.components.CommandSuggestions;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.ChatScreen;
-import org.lwjgl.glfw.GLFW;
+import net.minecraft.network.chat.Component;
 
 public final class ChatEmojiController {
-    private static final int BACKGROUND_COLOR = 0xD0101010;
-    private static final int BORDER_COLOR = 0xFF3F3F46;
-    private static final int HIGHLIGHT_COLOR = 0xFF2563EB;
     private static final int MAX_SUGGESTIONS = 8;
-    private static final int PADDING = 4;
-    private static final int ROW_HEIGHT = 12;
 
     private final ChatScreen screen;
     private ActiveToken token;
-    private int popupHeight;
-    private int popupWidth;
-    private int popupX;
-    private int popupY;
-    private int selectedIndex;
-    private List<EmojiDefinition> suggestions = List.of();
     private String lastValue = "";
     private int lastCursor = -1;
 
@@ -37,99 +32,7 @@ public final class ChatEmojiController {
         this.screen = screen;
     }
 
-    public boolean handleKeyPressed(int keyCode) {
-        this.refresh();
-        if (!this.isVisible()) {
-            return false;
-        }
-
-        if (keyCode == GLFW.GLFW_KEY_TAB) {
-            this.accept(this.selectedIndex);
-            return true;
-        }
-
-        if (keyCode == GLFW.GLFW_KEY_UP) {
-            this.selectedIndex = Math.floorMod(this.selectedIndex - 1, this.suggestions.size());
-            return true;
-        }
-
-        if (keyCode == GLFW.GLFW_KEY_DOWN) {
-            this.selectedIndex = Math.floorMod(this.selectedIndex + 1, this.suggestions.size());
-            return true;
-        }
-
-        return false;
-    }
-
-    public boolean handleMouseClicked(double mouseX, double mouseY, int button) {
-        this.refresh();
-        if (!this.isVisible() || button != GLFW.GLFW_MOUSE_BUTTON_LEFT) {
-            return false;
-        }
-
-        if (mouseX < this.popupX || mouseX > this.popupX + this.popupWidth || mouseY < this.popupY || mouseY > this.popupY + this.popupHeight) {
-            return false;
-        }
-
-        int row = (int)((mouseY - this.popupY - PADDING) / ROW_HEIGHT);
-        if (row < 0 || row >= this.suggestions.size()) {
-            return false;
-        }
-
-        this.accept(row);
-        return true;
-    }
-
-    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-        this.refresh();
-        if (!this.isVisible()) {
-            return;
-        }
-
-        Font font = Minecraft.getInstance().font;
-        guiGraphics.fill(this.popupX, this.popupY, this.popupX + this.popupWidth, this.popupY + this.popupHeight, BACKGROUND_COLOR);
-        guiGraphics.renderOutline(this.popupX, this.popupY, this.popupWidth, this.popupHeight, BORDER_COLOR);
-
-        for (int index = 0; index < this.suggestions.size(); index++) {
-            int rowTop = this.popupY + PADDING + index * ROW_HEIGHT;
-            if (index == this.selectedIndex) {
-                guiGraphics.fill(this.popupX + 1, rowTop - 1, this.popupX + this.popupWidth - 1, rowTop + ROW_HEIGHT - 1, HIGHLIGHT_COLOR);
-            }
-
-            guiGraphics.drawString(font, this.labelFor(this.suggestions.get(index)), this.popupX + PADDING, rowTop + 1, 0xFFFFFFFF, false);
-        }
-    }
-
-    private void accept(int index) {
-        if (this.token == null || index < 0 || index >= this.suggestions.size()) {
-            return;
-        }
-
-        EditBox input = this.input();
-        EmojiDefinition definition = this.suggestions.get(index);
-        String replacement = ":" + definition.primaryAlias() + ":";
-        String value = input.getValue();
-        String updated = value.substring(0, this.token.start()) + replacement + value.substring(this.token.end());
-        int cursor = this.token.start() + replacement.length();
-
-        input.setValue(updated);
-        input.setCursorPosition(cursor);
-        input.setHighlightPos(cursor);
-
-        this.lastValue = "";
-        this.lastCursor = -1;
-        this.refresh();
-    }
-
-    private EditBox input() {
-        return ((ChatScreenAccessor)this.screen).twemojichat$getInput();
-    }
-
-    private boolean isVisible() {
-        return this.token != null && !this.suggestions.isEmpty();
-    }
-
-    private void refresh() {
+    public void refresh() {
         EditBox input = this.input();
         String value = input.getValue();
         int cursor = input.getCursorPosition();
@@ -139,50 +42,66 @@ public final class ChatEmojiController {
 
         this.lastValue = value;
         this.lastCursor = cursor;
-        this.token = ActiveToken.find(value, cursor);
-        this.suggestions = List.of();
 
-        if (this.token == null) {
-            return;
-        }
-
-        EmojiIndex index = EmojiIndexReloader.getIndex();
-        this.suggestions = index.complete(this.token.query(), MAX_SUGGESTIONS);
-        if (this.suggestions.isEmpty()) {
+        CommandSuggestions commandSuggestions = this.commandSuggestions();
+        if (value.startsWith("/")) {
             this.token = null;
             return;
         }
 
-        this.selectedIndex = Math.min(this.selectedIndex, this.suggestions.size() - 1);
-        this.selectedIndex = Math.max(this.selectedIndex, 0);
-        this.layoutPopup(input);
-    }
+        this.token = ActiveToken.find(value, cursor);
+        if (this.token == null) {
+            this.hideEmojiSuggestions(commandSuggestions);
+            return;
+        }
 
-    private void layoutPopup(EditBox input) {
-        Font font = Minecraft.getInstance().font;
-        int widestLabel = this.suggestions.stream().mapToInt(definition -> font.width(this.labelFor(definition))).max().orElse(0);
-        this.popupWidth = Math.max(120, widestLabel + PADDING * 2);
-        this.popupHeight = this.suggestions.size() * ROW_HEIGHT + PADDING * 2;
-        this.popupX = input.getX();
-        this.popupY = input.getY() - this.popupHeight - 4;
-        if (this.popupY < 4) {
-            this.popupY = input.getY() + input.getHeight() + 4;
+        EmojiIndex index = EmojiIndexReloader.getIndex();
+        List<EmojiDefinition> matches = index.complete(this.token.query(), MAX_SUGGESTIONS);
+        if (matches.isEmpty()) {
+            this.hideEmojiSuggestions(commandSuggestions);
+            this.token = null;
+            return;
+        }
+
+        Suggestions suggestions = new Suggestions(
+            StringRange.between(this.token.start(), this.token.end()),
+            matches.stream().map(this::toSuggestion).toList()
+        );
+        CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)commandSuggestions;
+        accessor.twemojichat$setPendingSuggestions(CompletableFuture.completedFuture(suggestions));
+        accessor.twemojichat$invokeShowSuggestions(false);
+
+        if (accessor.twemojichat$getSuggestions() != null) {
+            ((CommandSuggestionsSuggestionsListAccessor)accessor.twemojichat$getSuggestions()).twemojichat$setTabCycles(false);
         }
     }
 
-    private net.minecraft.network.chat.Component labelFor(EmojiDefinition definition) {
-        return net.minecraft.network.chat.Component.empty()
-            .append(net.minecraft.network.chat.Component.literal(":" + definition.primaryAlias() + ": "))
-            .append(net.minecraft.network.chat.Component.literal(definition.glyph()).withStyle(EmojiFont.style()));
+    private Suggestion toSuggestion(EmojiDefinition definition) {
+        String replacement = ":" + definition.primaryAlias() + ":";
+        Message tooltip = Component.empty()
+            .append(Component.literal(replacement + " "))
+            .append(Component.literal(definition.glyph()).withStyle(EmojiFont.style()));
+        return new Suggestion(StringRange.between(this.token.start(), this.token.end()), replacement, tooltip);
+    }
+
+    private void hideEmojiSuggestions(CommandSuggestions commandSuggestions) {
+        CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)commandSuggestions;
+        accessor.twemojichat$setPendingSuggestions(Suggestions.empty());
+        accessor.twemojichat$invokeHide();
+        this.input().setSuggestion(null);
+    }
+
+    private EditBox input() {
+        return ((ChatScreenAccessor)this.screen).twemojichat$getInput();
+    }
+
+    private CommandSuggestions commandSuggestions() {
+        return ((ChatScreenAccessor)this.screen).twemojichat$getCommandSuggestions();
     }
 
     private record ActiveToken(int start, int end, String query) {
         private static ActiveToken find(String text, int cursor) {
             if (cursor <= 0 || cursor > text.length()) {
-                return null;
-            }
-
-            if (text.charAt(cursor - 1) == ':') {
                 return null;
             }
 

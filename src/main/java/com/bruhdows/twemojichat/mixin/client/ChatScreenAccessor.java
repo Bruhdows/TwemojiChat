@@ -1,6 +1,7 @@
 package com.bruhdows.twemojichat.mixin.client;
 
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.components.CommandSuggestions;
 import net.minecraft.client.gui.screens.ChatScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
@@ -9,4 +10,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 public interface ChatScreenAccessor {
     @Accessor("input")
     EditBox twemojichat$getInput();
+
+    @Accessor("commandSuggestions")
+    CommandSuggestions twemojichat$getCommandSuggestions();
 }

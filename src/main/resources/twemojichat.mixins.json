@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "client.ChatScreenAccessor"
+    "client.ChatScreenAccessor",
+    "client.CommandSuggestionsAccessor",
+    "client.CommandSuggestionsSuggestionsListAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
