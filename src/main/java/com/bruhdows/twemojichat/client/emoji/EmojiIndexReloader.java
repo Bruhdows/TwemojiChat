@@ -8,6 +8,7 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
+import org.jetbrains.annotations.NotNull;
 
 public final class EmojiIndexReloader extends SimplePreparableReloadListener<EmojiIndex> {
     private static final ResourceLocation INDEX_RESOURCE = ResourceLocation.fromNamespaceAndPath(TwemojiChat.MOD_ID, "twemoji/index.json");
@@ -22,7 +23,7 @@ public final class EmojiIndexReloader extends SimplePreparableReloadListener<Emo
     }
 
     @Override
-    protected EmojiIndex prepare(ResourceManager resourceManager, ProfilerFiller profiler) {
+    protected @NotNull EmojiIndex prepare(@NotNull ResourceManager resourceManager, @NotNull ProfilerFiller profiler) {
         try (Reader reader = resourceManager.openAsReader(INDEX_RESOURCE)) {
             return EmojiIndex.load(reader);
         } catch (IOException exception) {
@@ -32,7 +33,7 @@ public final class EmojiIndexReloader extends SimplePreparableReloadListener<Emo
     }
 
     @Override
-    protected void apply(EmojiIndex prepared, ResourceManager resourceManager, ProfilerFiller profiler) {
+    protected void apply(EmojiIndex prepared, @NotNull ResourceManager resourceManager, @NotNull ProfilerFiller profiler) {
         index = prepared;
         TwemojiChat.LOGGER.info("Loaded {} Twemoji definitions", prepared.size());
     }
