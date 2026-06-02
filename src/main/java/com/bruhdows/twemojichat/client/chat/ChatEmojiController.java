@@ -27,6 +27,7 @@ public final class ChatEmojiController {
     private ActiveToken token;
     private String lastValue = "";
     private int lastCursor = -1;
+    private boolean emojiSuggestionsVisible;
 
     public ChatEmojiController(ChatScreen screen) {
         this.screen = screen;
@@ -47,7 +48,7 @@ public final class ChatEmojiController {
         CommandSuggestions commandSuggestions = this.commandSuggestions();
         if (value.startsWith("/")) {
             this.token = null;
-            this.hideEmojiSuggestions(commandSuggestions);
+            this.emojiSuggestionsVisible = false;
             return;
         }
 
@@ -62,7 +63,6 @@ public final class ChatEmojiController {
             return;
         }
 
-        int visibleRows = this.visibleSuggestionRows();
         List<EmojiDefinition> matches = index.complete(this.token.query(), index.size());
         if (matches.isEmpty()) {
             this.hideEmojiSuggestions(commandSuggestions);
@@ -70,15 +70,17 @@ public final class ChatEmojiController {
             return;
         }
 
+        int visibleRows = Math.min(matches.size(), accessorLineLimit(commandSuggestions));
         List<Suggestion> suggestionsList = matches.stream().map(this::toSuggestion).toList();
         Suggestions suggestions = new Suggestions(
             StringRange.between(this.token.start(), this.token.end()),
             suggestionsList
         );
         CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)commandSuggestions;
-        accessor.twemojichat$setSuggestionLineLimit(Math.min(matches.size(), visibleRows));
+        accessor.twemojichat$setSuggestionLineLimit(accessorLineLimit(commandSuggestions));
         accessor.twemojichat$setPendingSuggestions(CompletableFuture.completedFuture(suggestions));
         accessor.twemojichat$invokeShowSuggestions(false);
+        this.emojiSuggestionsVisible = true;
         this.resizePopup(accessor, suggestionsList, Math.min(matches.size(), visibleRows));
     }
 
@@ -91,10 +93,15 @@ public final class ChatEmojiController {
     }
 
     private void hideEmojiSuggestions(CommandSuggestions commandSuggestions) {
+        if (!this.emojiSuggestionsVisible) {
+            return;
+        }
+
         CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor)commandSuggestions;
         accessor.twemojichat$setPendingSuggestions(Suggestions.empty());
         accessor.twemojichat$invokeHide();
         this.input().setSuggestion(null);
+        this.emojiSuggestionsVisible = false;
     }
 
     private void installFormatter() {
@@ -113,8 +120,8 @@ public final class ChatEmojiController {
         return ((ChatScreenAccessor)this.screen).twemojichat$getCommandSuggestions();
     }
 
-    private int visibleSuggestionRows() {
-        return Math.max(1, (this.input().getY() - 6) / 12);
+    private int accessorLineLimit(CommandSuggestions commandSuggestions) {
+        return ((CommandSuggestionsAccessor)commandSuggestions).twemojichat$getSuggestionLineLimit();
     }
 
     private void resizePopup(CommandSuggestionsAccessor accessor, List<Suggestion> suggestions, int visibleRows) {
