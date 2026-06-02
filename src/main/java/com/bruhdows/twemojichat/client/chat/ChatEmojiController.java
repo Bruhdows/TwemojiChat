@@ -79,8 +79,8 @@ public final class ChatEmojiController {
     private Suggestion toSuggestion(EmojiDefinition definition) {
         String replacement = ":" + definition.primaryAlias() + ":";
         Message tooltip = Component.empty()
-            .append(Component.literal(replacement + " "))
-            .append(Component.literal(definition.glyph()).withStyle(EmojiFont.style()));
+            .append(Component.literal(definition.glyph()).withStyle(EmojiFont.style()))
+            .append(Component.literal(" " + replacement));
         return new Suggestion(StringRange.between(this.token.start(), this.token.end()), replacement, tooltip);
     }
 
