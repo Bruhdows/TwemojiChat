@@ -4,6 +4,7 @@ import org.gradle.api.publish.tasks.GenerateModuleMetadata
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.plugins.ide.idea.model.IdeaModel
 
 plugins {
     id("net.fabricmc.fabric-loom-remap") version "1.14.10"
@@ -77,4 +78,11 @@ tasks.withType<Jar>().configureEach {
 
 tasks.withType<RemapJarTask>().configureEach {
     destinationDirectory.set(layout.buildDirectory.dir("libs"))
+}
+
+extensions.configure<IdeaModel> {
+    module {
+        sourceDirs =
+            sourceDirs + setOf(commonDir.resolve("src/main/java"), parentDir.resolve("src/main/java"))
+    }
 }

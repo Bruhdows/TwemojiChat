@@ -6,6 +6,7 @@ import org.gradle.api.tasks.bundling.Jar
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.plugins.ide.idea.model.IdeaModel
 
 plugins {
     id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
@@ -67,6 +68,17 @@ tasks.named("processResources") {
 }
 
 tasks.named("sourcesJar") {
+    dependsOn(prepareVersionedJava, prepareVersionedResources)
+}
+
+extensions.configure<IdeaModel> {
+    module {
+        sourceDirs = sourceDirs + setOf(parentDir.resolve("src/main/java"), parentDir.resolve("src/261/java"))
+        generatedSourceDirs = generatedSourceDirs + setOf(layout.buildDirectory.dir("generated/versionedMain/java").get().asFile)
+    }
+}
+
+tasks.matching { it.name == "ideaSyncTask" }.configureEach {
     dependsOn(prepareVersionedJava, prepareVersionedResources)
 }
 

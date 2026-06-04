@@ -4,6 +4,7 @@ import org.gradle.api.publish.tasks.GenerateModuleMetadata
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.plugins.ide.idea.model.IdeaModel
 import org.slf4j.event.Level
 
 plugins {
@@ -83,4 +84,11 @@ tasks.withType<GenerateModuleMetadata>().configureEach {
 
 tasks.withType<Jar>().configureEach {
     destinationDirectory.set(layout.buildDirectory.dir("libs"))
+}
+
+extensions.configure<IdeaModel> {
+    module {
+        sourceDirs =
+            sourceDirs + setOf(commonDir.resolve("src/main/java"), parentDir.resolve("src/main/java"))
+    }
 }

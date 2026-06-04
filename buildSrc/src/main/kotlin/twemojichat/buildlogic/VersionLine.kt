@@ -27,8 +27,8 @@ val SUPPORTED_VERSION_LINES = listOf(
         fabricApiVersion = "0.92.9+1.20.1",
         fabricPluginId = "net.fabricmc.fabric-loom-remap",
         fabricUsesRemapJar = true,
-        neoVersion = "1.20.1-47.1.106",
-        neoVersionRange = "[47.1,)",
+        neoVersion = "1.20.1-47.4.0",
+        neoVersionRange = "[47.4,)",
         loaderVersionRange = "[47,)",
         usesLegacyForge = true
     ),

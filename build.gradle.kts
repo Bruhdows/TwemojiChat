@@ -1,4 +1,5 @@
 import org.gradle.api.tasks.Exec
+import org.gradle.plugins.ide.idea.model.IdeaModel
 import twemojichat.buildlogic.SUPPORTED_VERSION_LINES
 
 plugins {
@@ -17,6 +18,8 @@ version = prop("mod_version")
 group = prop("mod_group_id")
 
 allprojects {
+    apply(plugin = "idea")
+
     version = rootProject.version
     group = rootProject.group
 
@@ -26,6 +29,13 @@ allprojects {
         maven("https://maven.fabricmc.net/")
         maven("https://maven.neoforged.net/releases")
         maven("https://maven.parchmentmc.org")
+    }
+
+    extensions.configure<IdeaModel> {
+        module {
+            isDownloadSources = true
+            isDownloadJavadoc = false
+        }
     }
 }
 
@@ -57,12 +67,30 @@ val versionedModules = SUPPORTED_VERSION_LINES.flatMap { line ->
     )
 }
 
+val overlayModules = SUPPORTED_VERSION_LINES
+    .filter { it.sourceSetDirectory != null }
+    .flatMap { line ->
+        listOf(
+            ":common:${line.projectName}",
+            ":fabric:${line.projectName}",
+            ":neoforge:${line.projectName}"
+        )
+    }
+
 tasks.register("compileMatrix") {
     dependsOn(versionedModules.map { "$it:compileJava" })
 }
 
 tasks.register("buildMatrix") {
     dependsOn(versionedModules.map { "$it:build" })
+}
+
+tasks.register("prepareIdeSources") {
+    dependsOn(
+        overlayModules.flatMap { module ->
+            listOf("$module:prepareVersionedJava", "$module:prepareVersionedResources")
+        }
+    )
 }
 
 tasks.named("assemble") {
