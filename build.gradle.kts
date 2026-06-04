@@ -97,5 +97,12 @@ tasks.named("build") {
 }
 
 tasks.register("modrinth") {
-    dependsOn(versionedModules.map { "$it:modrinth" })
+    val loaderModules = SUPPORTED_VERSION_LINES.flatMap { line ->
+        buildList {
+            if (LoaderKind.FABRIC in line.loaders) add(":fabric:${line.projectName}")
+            if (LoaderKind.FORGE in line.loaders) add(":forge:${line.projectName}")
+            if (LoaderKind.NEOFORGE in line.loaders) add(":neoforge:${line.projectName}")
+        }
+    }
+    dependsOn(loaderModules.map { "$it:modrinth" })
 }
