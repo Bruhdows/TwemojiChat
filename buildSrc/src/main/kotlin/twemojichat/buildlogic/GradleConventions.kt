@@ -31,7 +31,14 @@ fun Project.configureJavaModule(javaVersion: Int) {
 
     extensions.configure(BasePluginExtension::class.java) {
         val loader = project.parent?.name
-        archivesName.set(if (loader != null) "${modProp("mod_id")}-$loader" else modProp("mod_id"))
+        archivesName.set(
+            if (loader != null) {
+                val mcVersion = versionLineForProject().minecraftVersion
+                "${modProp("mod_id")}-$loader-$mcVersion"
+            } else {
+                modProp("mod_id")
+            }
+        )
     }
 }
 
@@ -72,28 +79,34 @@ fun Project.configureCommonModuleSources() {
     )
 }
 
-fun Project.configureLoaderModuleSources(includeLoaderMainSources: Boolean = true) {
+fun Project.configureLoaderModuleSources(
+    includeLoaderMainSources: Boolean = true,
+    loaderSourceDirOverride: String? = null
+) {
     val commonDir = sharedCommonDir()
     val parentDir = project.parent!!.projectDir
-    val sourceDir = moduleSourceDir()
+    val commonSourceDir = moduleSourceDir()
+    val loaderSourceDir = loaderSourceDirOverride ?: commonSourceDir
 
     val javaDirs = buildList {
         add(commonDir.resolve("src/main/java"))
-        if (sourceDir != null) {
-            add(commonDir.resolve("src/$sourceDir/java"))
+        if (commonSourceDir != null) {
+            add(commonDir.resolve("src/$commonSourceDir/java"))
         }
         if (includeLoaderMainSources) {
             add(parentDir.resolve("src/main/java"))
         }
-        if (sourceDir != null) {
-            add(parentDir.resolve("src/$sourceDir/java"))
+        if (loaderSourceDir != null) {
+            add(parentDir.resolve("src/$loaderSourceDir/java"))
         }
     }
 
     val resourceDirs = buildList {
-        if (sourceDir != null) {
-            add(commonDir.resolve("src/$sourceDir/resources"))
-            add(parentDir.resolve("src/$sourceDir/resources"))
+        if (commonSourceDir != null) {
+            add(commonDir.resolve("src/$commonSourceDir/resources"))
+        }
+        if (loaderSourceDir != null) {
+            add(parentDir.resolve("src/$loaderSourceDir/resources"))
         }
         add(commonDir.resolve("src/generated/resources"))
         add(commonDir.resolve("src/main/resources"))
@@ -137,7 +150,6 @@ fun Project.configureModrinthPublishing() {
     val loaderName = project.parent?.name ?: return
 
     extensions.configure(ModrinthExtension::class.java) {
-        token.set(System.getenv("MODRINTH_TOKEN"))
         projectId.set(modProp("modrinth_id"))
         versionNumber.set(modProp("mod_version"))
         versionType.set("release")

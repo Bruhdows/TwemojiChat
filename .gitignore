@@ -20,3 +20,6 @@ Thumbs.db
 
 # Environment
 .env
+
+# Local scripts
+/scripts/

@@ -35,29 +35,153 @@ jobs:
       matrix:
         include:
           - name: fabric-1.20.1
-            java: '21'
+            java: '17'
             task: ':fabric:1_20_1:build'
+            artifact: fabric-1_20_1
           - name: forge-1.20.1
-            java: '21'
+            java: '17'
             task: ':forge:1_20_1:build'
+            artifact: forge-1_20_1
+          - name: fabric-1.20.2
+            java: '17'
+            task: ':fabric:1_20_2:build'
+            artifact: fabric-1_20_2
+          - name: forge-1.20.2
+            java: '17'
+            task: ':forge:1_20_2:build'
+            artifact: forge-1_20_2
+          - name: fabric-1.20.3
+            java: '17'
+            task: ':fabric:1_20_3:build'
+            artifact: fabric-1_20_3
+          - name: forge-1.20.3
+            java: '17'
+            task: ':forge:1_20_3:build'
+            artifact: forge-1_20_3
+          - name: fabric-1.20.4
+            java: '17'
+            task: ':fabric:1_20_4:build'
+            artifact: fabric-1_20_4
+          - name: forge-1.20.4
+            java: '17'
+            task: ':forge:1_20_4:build'
+            artifact: forge-1_20_4
+          - name: fabric-1.20.5
+            java: '21'
+            task: ':fabric:1_20_5:build'
+            artifact: fabric-1_20_5
+          - name: fabric-1.20.6
+            java: '21'
+            task: ':fabric:1_20_6:build'
+            artifact: fabric-1_20_6
+          - name: neoforge-1.20.6
+            java: '21'
+            task: ':neoforge:1_20_6:build'
+            artifact: neoforge-1_20_6
+          - name: fabric-1.21
+            java: '21'
+            task: ':fabric:1_21:build'
+            artifact: fabric-1_21
+          - name: neoforge-1.21
+            java: '21'
+            task: ':neoforge:1_21:build'
+            artifact: neoforge-1_21
           - name: fabric-1.21.1
             java: '21'
             task: ':fabric:1_21_1:build'
+            artifact: fabric-1_21_1
           - name: neoforge-1.21.1
             java: '21'
             task: ':neoforge:1_21_1:build'
+            artifact: neoforge-1_21_1
+          - name: fabric-1.21.2
+            java: '21'
+            task: ':fabric:1_21_2:build'
+            artifact: fabric-1_21_2
+          - name: neoforge-1.21.2
+            java: '21'
+            task: ':neoforge:1_21_2:build'
+            artifact: neoforge-1_21_2
+          - name: fabric-1.21.3
+            java: '21'
+            task: ':fabric:1_21_3:build'
+            artifact: fabric-1_21_3
+          - name: neoforge-1.21.3
+            java: '21'
+            task: ':neoforge:1_21_3:build'
+            artifact: neoforge-1_21_3
+          - name: fabric-1.21.4
+            java: '21'
+            task: ':fabric:1_21_4:build'
+            artifact: fabric-1_21_4
+          - name: neoforge-1.21.4
+            java: '21'
+            task: ':neoforge:1_21_4:build'
+            artifact: neoforge-1_21_4
+          - name: fabric-1.21.5
+            java: '21'
+            task: ':fabric:1_21_5:build'
+            artifact: fabric-1_21_5
+          - name: neoforge-1.21.5
+            java: '21'
+            task: ':neoforge:1_21_5:build'
+            artifact: neoforge-1_21_5
+          - name: fabric-1.21.6
+            java: '21'
+            task: ':fabric:1_21_6:build'
+            artifact: fabric-1_21_6
+          - name: neoforge-1.21.6
+            java: '21'
+            task: ':neoforge:1_21_6:build'
+            artifact: neoforge-1_21_6
+          - name: fabric-1.21.7
+            java: '21'
+            task: ':fabric:1_21_7:build'
+            artifact: fabric-1_21_7
+          - name: neoforge-1.21.7
+            java: '21'
+            task: ':neoforge:1_21_7:build'
+            artifact: neoforge-1_21_7
+          - name: fabric-1.21.8
+            java: '21'
+            task: ':fabric:1_21_8:build'
+            artifact: fabric-1_21_8
+          - name: neoforge-1.21.8
+            java: '21'
+            task: ':neoforge:1_21_8:build'
+            artifact: neoforge-1_21_8
+          - name: fabric-1.21.9
+            java: '21'
+            task: ':fabric:1_21_9:build'
+            artifact: fabric-1_21_9
+          - name: neoforge-1.21.9
+            java: '21'
+            task: ':neoforge:1_21_9:build'
+            artifact: neoforge-1_21_9
+          - name: fabric-1.21.10
+            java: '21'
+            task: ':fabric:1_21_10:build'
+            artifact: fabric-1_21_10
+          - name: neoforge-1.21.10
+            java: '21'
+            task: ':neoforge:1_21_10:build'
+            artifact: neoforge-1_21_10
           - name: fabric-1.21.11
             java: '21'
             task: ':fabric:1_21_11:build'
+            artifact: fabric-1_21_11
           - name: neoforge-1.21.11
             java: '21'
             task: ':neoforge:1_21_11:build'
+            artifact: neoforge-1_21_11
           - name: fabric-26.1
             java: '25'
             task: ':fabric:26_1:build'
+            artifact: fabric-26_1
           - name: neoforge-26.1
             java: '25'
             task: ':neoforge:26_1:build'
+            artifact: neoforge-26_1
 
     steps:
       - uses: actions/checkout@v4
@@ -77,9 +201,6 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: twemojichat-${{ matrix.name }}-${{ github.sha }}
-          path: |
-            fabric/*/build/libs/*.jar
-            forge/*/build/libs/*.jar
-            neoforge/*/build/libs/*.jar
+          name: twemojichat-${{ matrix.artifact }}
+          path: ${{ matrix.artifact }}/*/build/libs/*.jar
           retention-days: 14

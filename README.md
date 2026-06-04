@@ -30,7 +30,22 @@ No server setup is required.
 | Minecraft | Fabric | NeoForge | Forge |
 | --------- | ------ | -------- | ----- |
 | 1.20.1    | Yes    |          | Yes   |
+| 1.20.2    | Yes    |          | Yes   |
+| 1.20.3    | Yes    |          | Yes   |
+| 1.20.4    | Yes    |          | Yes   |
+| 1.20.5    | Yes    | Yes      |       |
+| 1.20.6    | Yes    | Yes      |       |
+| 1.21      | Yes    | Yes      |       |
 | 1.21.1    | Yes    | Yes      |       |
+| 1.21.2    | Yes    | Yes      |       |
+| 1.21.3    | Yes    | Yes      |       |
+| 1.21.4    | Yes    | Yes      |       |
+| 1.21.5    | Yes    | Yes      |       |
+| 1.21.6    | Yes    | Yes      |       |
+| 1.21.7    | Yes    | Yes      |       |
+| 1.21.8    | Yes    | Yes      |       |
+| 1.21.9    | Yes    | Yes      |       |
+| 1.21.10   | Yes    | Yes      |       |
 | 1.21.11   | Yes    | Yes      |       |
 | 26.1      | Yes    | Yes      |       |
 

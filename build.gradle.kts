@@ -12,6 +12,8 @@ plugins {
     id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT" apply false
     id("net.neoforged.moddev") version "2.0.141" apply false
     id("net.neoforged.moddev.legacyforge") version "2.0.141" apply false
+    id("net.minecraftforge.renamer") version "1.1.0" apply false
+    id("net.minecraftforge.gradle") version "7.0.25" apply false
 }
 
 fun prop(name: String): String = providers.gradleProperty(name).get()
@@ -31,6 +33,7 @@ allprojects {
         maven("https://maven.fabricmc.net/")
         maven("https://maven.neoforged.net/releases")
         maven("https://maven.parchmentmc.org")
+        maven("https://maven.minecraftforge.net/")
     }
 
     extensions.configure<IdeaModel> {
