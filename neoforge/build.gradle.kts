@@ -10,6 +10,10 @@ fun prop(name: String): String = rootProject.providers.gradleProperty(name).get(
 val commonProject = rootProject.childProjects.getValue("common")
 val commonSourceSets = commonProject.extensions.getByType<SourceSetContainer>()
 
+dependencies {
+    implementation(commonSourceSets.named("main").get().output)
+}
+
 neoForge {
     version = prop("neo_version")
 
