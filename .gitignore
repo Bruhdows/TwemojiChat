@@ -4,6 +4,9 @@
 **/build/
 **/.gradle/
 /.idea/
+/.serena/
+/.eclipse/
+/bin/
 /run/
 *.iml
 
