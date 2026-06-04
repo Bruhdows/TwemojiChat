@@ -17,7 +17,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "tools" / "twemoji_sources.json"
-GENERATED_ROOT = ROOT / "src" / "generated" / "resources"
+GENERATED_ROOT = ROOT / "common" / "src" / "generated" / "resources"
 FONT_TEXTURE_ROOT = GENERATED_ROOT / "assets" / "twemojichat" / "textures" / "font"
 FONT_JSON_PATH = GENERATED_ROOT / "assets" / "twemojichat" / "font" / "emoji.json"
 INDEX_PATH = GENERATED_ROOT / "assets" / "twemojichat" / "twemoji" / "index.json"

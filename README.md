@@ -1,6 +1,6 @@
 # TwemojiChat
 
-TwemojiChat is a NeoForge client-side mod for Minecraft 1.21.1 that adds Twemoji-backed emoji completion and chat rendering.
+TwemojiChat is a client-side Minecraft mod that now builds for both Fabric and NeoForge from a shared `common` source set.
 
 ## What it does
 
@@ -8,6 +8,12 @@ TwemojiChat is a NeoForge client-side mod for Minecraft 1.21.1 that adds Twemoji
 - Shows the shortcode and emoji preview in the suggestion popup
 - Rewrites `:shortcode:` and Unicode emoji in received chat into local Twemoji glyphs
 - Stays fully client side with no server plugin or server mod requirement
+
+## Project Layout
+
+- `common`: shared chat logic, mixins, resources, and generated emoji assets
+- `fabric`: Fabric loader bootstrap and metadata
+- `neoforge`: NeoForge loader bootstrap and metadata
 
 ## Development
 
@@ -21,16 +27,18 @@ Useful commands:
 ```bash
 ./gradlew build
 ./gradlew syncTwemoji
+./gradlew fabric:runClient
+./gradlew neoforge:runClient
 ```
 
-`syncTwemoji` regenerates the checked-in emoji font sheets and index from pinned upstream sources in [`tools/twemoji_sources.json`](/home/bruhdows/TwemojiChat/tools/twemoji_sources.json).
+`syncTwemoji` regenerates the checked-in emoji font sheets and index under `common/src/generated/resources` from pinned upstream sources in [`tools/twemoji_sources.json`](/home/bruhdows/TwemojiChat/tools/twemoji_sources.json).
 
 ## Updating emoji data
 
 1. Change the pinned refs in [`tools/twemoji_sources.json`](/home/bruhdows/TwemojiChat/tools/twemoji_sources.json).
 2. Run `./gradlew syncTwemoji`.
 3. Run `./gradlew build`.
-4. Commit the updated generated resources in `src/generated/resources`.
+4. Commit the updated generated resources in `common/src/generated/resources`.
 
 ## Sources
 

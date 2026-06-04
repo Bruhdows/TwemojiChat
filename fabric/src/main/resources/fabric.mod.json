@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "TwemojiChat",
+  "description": "Client-side Twemoji emoji completion and chat rendering for Minecraft.",
+  "authors": [
+    "bruhdows"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.bruhdows.twemojichat.fabric.TwemojiChatFabricClient"
+    ]
+  },
+  "mixins": [
+    "twemojichat.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "fabric-api": "*",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=21"
+  }
+}
