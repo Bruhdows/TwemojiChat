@@ -1,47 +1,15 @@
 import net.fabricmc.loom.task.RemapJarTask
-import org.gradle.api.file.DuplicatesStrategy
-import org.gradle.api.plugins.BasePluginExtension
-import org.gradle.api.publish.tasks.GenerateModuleMetadata
-import org.gradle.api.tasks.bundling.Jar
-import org.gradle.api.tasks.compile.JavaCompile
-import org.gradle.jvm.toolchain.JavaLanguageVersion
+import twemojichat.buildlogic.configureJavaModule
+import twemojichat.buildlogic.configureLoaderModuleSources
+import twemojichat.buildlogic.configureStandardModuleTasks
+import twemojichat.buildlogic.modProp
 
 plugins {
     id("net.fabricmc.fabric-loom-remap") version "1.14.10"
 }
 
-fun prop(name: String): String = rootProject.providers.gradleProperty(name).get()
-val parentDir = project.parent!!.projectDir
-val commonDir = project.rootProject.projectDir.resolve("common")
-
-extensions.configure<org.gradle.api.plugins.JavaPluginExtension> {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-    withSourcesJar()
-}
-
-extensions.configure<BasePluginExtension> {
-    archivesName.set(prop("mod_id"))
-}
-
-sourceSets.main {
-    java.setSrcDirs(
-        listOf(
-            commonDir.resolve("src/main/java"),
-            commonDir.resolve("src/1201/java"),
-            parentDir.resolve("src/main/java"),
-            parentDir.resolve("src/1201/java"),
-        )
-    )
-    resources.setSrcDirs(
-        listOf(
-            commonDir.resolve("src/1201/resources"),
-            parentDir.resolve("src/1201/resources"),
-            commonDir.resolve("src/generated/resources"),
-            commonDir.resolve("src/main/resources"),
-            parentDir.resolve("src/main/resources"),
-        )
-    )
-}
+configureJavaModule(17)
+configureLoaderModuleSources()
 
 dependencies {
     minecraft("com.mojang:minecraft:1.20.1")
@@ -65,12 +33,11 @@ loom {
 }
 
 tasks.processResources {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     filesMatching("fabric.mod.json") {
         expand(
             mapOf(
-                "mod_id" to prop("mod_id"),
-                "mod_version" to prop("mod_version"),
+                "mod_id" to modProp("mod_id"),
+                "mod_version" to modProp("mod_version"),
                 "minecraft_version" to "1.20.1",
                 "fabric_loader_version" to "0.16.14",
                 "java_version" to "17"
@@ -79,18 +46,7 @@ tasks.processResources {
     }
 }
 
-tasks.withType<JavaCompile>().configureEach {
-    options.encoding = "UTF-8"
-    options.release.set(17)
-}
-
-tasks.withType<GenerateModuleMetadata>().configureEach {
-    enabled = false
-}
-
-tasks.withType<Jar>().configureEach {
-    destinationDirectory.set(layout.buildDirectory.dir("libs"))
-}
+configureStandardModuleTasks(17)
 
 tasks.withType<RemapJarTask>().configureEach {
     destinationDirectory.set(layout.buildDirectory.dir("libs"))
