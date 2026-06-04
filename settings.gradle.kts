@@ -23,7 +23,7 @@ include(
     "fabric:1_21_1",
     "fabric:1_21_11",
     "fabric:26_1",
-    "neoforge:1_20_1",
+    "forge:1_20_1",
     "neoforge:1_21_1",
     "neoforge:1_21_11",
     "neoforge:26_1"

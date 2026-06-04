@@ -1,20 +1,20 @@
-package com.bruhdows.twemojichat.neoforge;
+package com.bruhdows.twemojichat.forge;
 
 import com.bruhdows.twemojichat.client.TwemojiChatClientEntrypoint;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 
-public final class TwemojiChatNeoForgeClient {
+public final class TwemojiChatForgeClient {
   private static final TwemojiChatClientEntrypoint ENTRYPOINT = new TwemojiChatClientEntrypoint();
 
-  private TwemojiChatNeoForgeClient() {}
+  private TwemojiChatForgeClient() {}
 
   public static void init(IEventBus modEventBus) {
     ENTRYPOINT.initialize();
     modEventBus.addListener(
         (RegisterClientReloadListenersEvent event) ->
-            TwemojiChatNeoForgeReloadListener.register(event, ENTRYPOINT));
-    MinecraftForge.EVENT_BUS.register(new TwemojiChatNeoForgeEvents(ENTRYPOINT));
+            TwemojiChatForgeReloadListener.register(event, ENTRYPOINT));
+    MinecraftForge.EVENT_BUS.register(new TwemojiChatForgeEvents(ENTRYPOINT));
   }
 }

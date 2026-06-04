@@ -3,6 +3,7 @@ package twemojichat.buildlogic
 data class VersionLine(
     val projectName: String,
     val sourceSetDirectory: String?,
+    val loaders: Set<LoaderKind>,
     val minecraftVersion: String,
     val minecraftVersionRange: String,
     val javaVersion: Int,
@@ -16,10 +17,17 @@ data class VersionLine(
     val usesLegacyForge: Boolean
 )
 
+enum class LoaderKind {
+    FABRIC,
+    FORGE,
+    NEOFORGE
+}
+
 val SUPPORTED_VERSION_LINES = listOf(
     VersionLine(
         projectName = "1_20_1",
         sourceSetDirectory = "1201",
+        loaders = setOf(LoaderKind.FABRIC, LoaderKind.FORGE),
         minecraftVersion = "1.20.1",
         minecraftVersionRange = "[1.20.1,1.21)",
         javaVersion = 17,
@@ -35,6 +43,7 @@ val SUPPORTED_VERSION_LINES = listOf(
     VersionLine(
         projectName = "1_21_1",
         sourceSetDirectory = "1211",
+        loaders = setOf(LoaderKind.FABRIC, LoaderKind.NEOFORGE),
         minecraftVersion = "1.21.1",
         minecraftVersionRange = "[1.21.1,1.22)",
         javaVersion = 21,
@@ -50,6 +59,7 @@ val SUPPORTED_VERSION_LINES = listOf(
     VersionLine(
         projectName = "1_21_11",
         sourceSetDirectory = "12111",
+        loaders = setOf(LoaderKind.FABRIC, LoaderKind.NEOFORGE),
         minecraftVersion = "1.21.11",
         minecraftVersionRange = "[1.21.11,1.22)",
         javaVersion = 21,
@@ -65,6 +75,7 @@ val SUPPORTED_VERSION_LINES = listOf(
     VersionLine(
         projectName = "26_1",
         sourceSetDirectory = "261",
+        loaders = setOf(LoaderKind.FABRIC, LoaderKind.NEOFORGE),
         minecraftVersion = "26.1.2",
         minecraftVersionRange = "[26.1,26.2)",
         javaVersion = 25,

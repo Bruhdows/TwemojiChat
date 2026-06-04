@@ -1,4 +1,4 @@
-package com.bruhdows.twemojichat.neoforge;
+package com.bruhdows.twemojichat.forge;
 
 import com.bruhdows.twemojichat.client.TwemojiChatClientEntrypoint;
 import net.minecraft.client.gui.screens.ChatScreen;
@@ -6,10 +6,10 @@ import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-public final class TwemojiChatNeoForgeEvents {
+public final class TwemojiChatForgeEvents {
   private final TwemojiChatClientEntrypoint entrypoint;
 
-  public TwemojiChatNeoForgeEvents(TwemojiChatClientEntrypoint entrypoint) {
+  public TwemojiChatForgeEvents(TwemojiChatClientEntrypoint entrypoint) {
     this.entrypoint = entrypoint;
   }
 

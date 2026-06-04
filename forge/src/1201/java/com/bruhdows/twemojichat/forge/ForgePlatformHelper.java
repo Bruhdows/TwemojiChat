@@ -1,4 +1,4 @@
-package com.bruhdows.twemojichat.neoforge;
+package com.bruhdows.twemojichat.forge;
 
 import com.bruhdows.twemojichat.platform.LoaderKind;
 import com.bruhdows.twemojichat.platform.PlatformHelper;
@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import net.minecraftforge.fml.loading.FMLLoader;
 import net.minecraftforge.fml.loading.FMLPaths;
 
-public final class NeoForgePlatformHelper implements PlatformHelper {
+public final class ForgePlatformHelper implements PlatformHelper {
   @Override
   public Path getConfigDirectory() {
     return FMLPaths.CONFIGDIR.get();

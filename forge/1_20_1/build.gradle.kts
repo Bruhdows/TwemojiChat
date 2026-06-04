@@ -29,7 +29,6 @@ sourceSets.main {
         listOf(
             commonDir.resolve("src/main/java"),
             commonDir.resolve("src/1201/java"),
-            parentDir.resolve("src/main/java"),
             parentDir.resolve("src/1201/java"),
         )
     )
@@ -39,10 +38,8 @@ sourceSets.main {
             parentDir.resolve("src/1201/resources"),
             commonDir.resolve("src/generated/resources"),
             commonDir.resolve("src/main/resources"),
-            parentDir.resolve("src/main/resources"),
         )
     )
-    resources.exclude("META-INF/neoforge.mods.toml")
 }
 
 dependencies {}
@@ -53,7 +50,7 @@ extensions.configure<LegacyForgeExtension> {
     runs {
         create("client") {
             client()
-            gameDirectory.set(project.layout.projectDirectory.dir("run/neoforge/1_20_1"))
+            gameDirectory.set(project.layout.projectDirectory.dir("run/forge/1_20_1"))
         }
 
         configureEach {

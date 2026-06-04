@@ -1,5 +1,7 @@
+import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.tasks.Exec
 import org.gradle.plugins.ide.idea.model.IdeaModel
+import twemojichat.buildlogic.LoaderKind
 import twemojichat.buildlogic.SUPPORTED_VERSION_LINES
 
 plugins {
@@ -37,11 +39,15 @@ allprojects {
             isDownloadJavadoc = false
         }
     }
+
+    tasks.withType<org.gradle.api.tasks.bundling.Jar>().configureEach {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
 }
 
 spotless {
     java {
-        target("common/src/**/*.java", "fabric/src/**/*.java", "neoforge/src/**/*.java")
+        target("common/src/**/*.java", "fabric/src/**/*.java", "forge/src/**/*.java", "neoforge/src/**/*.java")
         targetExclude("**/build/**")
         googleJavaFormat()
         trimTrailingWhitespace()
@@ -60,11 +66,18 @@ tasks.register<Exec>("syncTwemoji") {
 }
 
 val versionedModules = SUPPORTED_VERSION_LINES.flatMap { line ->
-    listOf(
-        ":common:${line.projectName}",
-        ":fabric:${line.projectName}",
-        ":neoforge:${line.projectName}"
-    )
+    buildList {
+        add(":common:${line.projectName}")
+        if (LoaderKind.FABRIC in line.loaders) {
+            add(":fabric:${line.projectName}")
+        }
+        if (LoaderKind.FORGE in line.loaders) {
+            add(":forge:${line.projectName}")
+        }
+        if (LoaderKind.NEOFORGE in line.loaders) {
+            add(":neoforge:${line.projectName}")
+        }
+    }
 }
 
 tasks.register("compileMatrix") {

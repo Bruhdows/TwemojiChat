@@ -37,9 +37,9 @@ jobs:
           - name: fabric-1.20.1
             java: '17'
             task: ':fabric:1_20_1:build'
-          - name: neoforge-1.20.1
+          - name: forge-1.20.1
             java: '17'
-            task: ':neoforge:1_20_1:build'
+            task: ':forge:1_20_1:build'
           - name: fabric-1.21.1
             java: '21'
             task: ':fabric:1_21_1:build'
@@ -80,5 +80,6 @@ jobs:
           name: twemojichat-${{ matrix.name }}-${{ github.sha }}
           path: |
             fabric/*/build/libs/*.jar
+            forge/*/build/libs/*.jar
             neoforge/*/build/libs/*.jar
           retention-days: 14
