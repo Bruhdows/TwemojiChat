@@ -1,112 +1,90 @@
 # TwemojiChat
 
-Bring Twemoji to Minecraft chat.
+Twemoji in Minecraft chat.
 
-TwemojiChat is a client-side mod that renders chat emoji using Twitter's Twemoji artwork and provides instant `:shortcode:` autocomplete directly in the chat box.
+TwemojiChat is a client-side mod that adds Twemoji rendering and `:shortcode:` autocomplete to Minecraft chat.
 
-No server-side setup required—install the mod and start using emoji immediately.
+No server setup is required.
 
-![Emoji autocomplete suggestions](assets/tab-completion.png)
+![Emoji autocomplete](assets/tab-completion.png)
 
 ## Features
 
-### Emoji Autocomplete
-Type `:` while chatting to open an autocomplete menu with matching emoji shortcodes, names, and live previews.
+* Autocomplete emoji shortcodes while typing in chat
+* Render both `:shortcode:` and Unicode emoji using Twemoji
+* Works on any server
+* Client-side only
+* Supports the full Twemoji emoji set
 
-### Twemoji Rendering
-Both `:shortcode:` syntax and standard Unicode emoji are automatically rendered using Twemoji artwork in chat messages.
-
-### Client-Side Only
-Works on any vanilla or modded server without plugins, server mods, or additional configuration.
-
-### Extensive Emoji Support
-Includes hundreds of emoji from the Twemoji project and can be updated as new emoji are added upstream.
-
-![Twemoji rendering comparison](assets/comparasion.png)
+![Comparison](assets/comparasion.png)
 
 ## Installation
 
-1. Install Fabric or NeoForge for your Minecraft version.
-2. Download the latest TwemojiChat release for your mod loader.
-3. Place the `.jar` file in your `mods` directory.
-4. Launch Minecraft.
+1. Install Fabric, NeoForge, or Forge for your Minecraft version.
+2. Download the correct TwemojiChat release.
+3. Place the `.jar` file in your `mods` folder.
+4. Start Minecraft.
 
 ## Supported Versions
 
 | Minecraft | Fabric | NeoForge | Forge |
-|-----------|---------|-----------|--------|
-| 1.20.1 | ✓ | | ✓ |
-| 1.21.1 | ✓ | ✓ | |
-| 1.21.11 | ✓ | ✓ | |
-| 26.1 | ✓ | ✓ | |
+| --------- | ------ | -------- | ----- |
+| 1.20.1    | Yes    |          | Yes   |
+| 1.21.1    | Yes    | Yes      |       |
+| 1.21.11   | Yes    | Yes      |       |
+| 26.1      | Yes    | Yes      |       |
 
 ## Usage
 
-Use emoji in chat as you normally would:
+* Type `:smile:` and press **Tab** to insert an emoji
+* Type or paste Unicode emoji such as 😊
+* Browse emoji from the autocomplete menu
 
-- Type `:smile:` and press **Tab** to insert the corresponding emoji.
-- Paste or type Unicode emoji such as 😊 and they will render using Twemoji.
-- Browse available emoji through the autocomplete menu while typing.
+## For Developers
 
-## Development
+This project uses a shared `common` module with loader-specific modules for Fabric, NeoForge, and Forge.
 
-TwemojiChat uses a shared `common` module alongside loader-specific implementations for Fabric, NeoForge, and Forge.
+### Building
 
-### Requirements
+Requirements:
 
-- Java 21+
-- Python 3
-- Pillow (for emoji asset generation)
-
-### Build
+* Java 21+
+* Python 3
+* Pillow
 
 ```bash
 ./gradlew build
 ```
 
-### Run a Development Client
+### Running a Development Client
 
 ```bash
 ./gradlew :fabric:1_21_1:runClient
 ./gradlew :neoforge:1_21_1:runClient
 ```
 
-### Updating Emoji Assets
+### Updating Emoji Data
 
-1. Update the pinned references in `tools/twemoji_sources.json`
-2. Run:
-
-```bash
-./gradlew syncTwemoji
-```
-
-3. Rebuild the project:
-
-```bash
-./gradlew build
-```
-
-4. Commit the updated files from:
-
-```
-common/src/generated/resources
-```
+1. Update `tools/twemoji_sources.json`
+2. Run `./gradlew syncTwemoji`
+3. Run `./gradlew build`
+4. Commit the updated files in `common/src/generated/resources`
 
 ## Project Structure
 
 ```text
-common/     Shared chat logic, mixins, resources, and generated emoji assets
-fabric/     Fabric loader integration and metadata
-forge/      Forge loader integration and metadata
-neoforge/   NeoForge loader integration and metadata
-tools/      Scripts for synchronizing Twemoji data
+common/     Shared code and generated emoji assets
+fabric/     Fabric loader implementation
+forge/      Forge loader implementation
+neoforge/   NeoForge loader implementation
+tools/      Twemoji sync tools
 ```
 
 ## Credits
 
-- Twemoji artwork: https://github.com/jdecked/twemoji
-- Emoji shortcode data: https://github.com/iamcal/emoji-data
+* Twemoji artwork: https://github.com/jdecked/twemoji
+* Shortcode data: https://github.com/iamcal/emoji-data
 
 ## License
 
-Licensed under the MIT License.
+MIT
