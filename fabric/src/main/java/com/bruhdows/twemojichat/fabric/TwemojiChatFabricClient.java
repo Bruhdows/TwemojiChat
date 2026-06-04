@@ -22,7 +22,7 @@ public final class TwemojiChatFabricClient implements ClientModInitializer {
         ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
             RUNTIME.onScreenInit(screen);
             ScreenEvents.afterRender(screen).register((currentScreen, drawContext, mouseX, mouseY, tickDelta) -> RUNTIME.onScreenRender(currentScreen));
-            ScreenEvents.remove(screen).register(currentScreen -> RUNTIME.onScreenClosing(currentScreen));
+            ScreenEvents.remove(screen).register(RUNTIME::onScreenClosing);
         });
     }
 }
