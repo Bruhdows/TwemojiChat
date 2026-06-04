@@ -1,24 +1,28 @@
 import net.fabricmc.loom.task.RemapJarTask
 import twemojichat.buildlogic.configureJavaModule
 import twemojichat.buildlogic.configureLoaderModuleSources
+import twemojichat.buildlogic.configureModrinthPublishing
 import twemojichat.buildlogic.configureStandardModuleTasks
 import twemojichat.buildlogic.modProp
+import twemojichat.buildlogic.versionLineForProject
 
 plugins {
     id("net.fabricmc.fabric-loom-remap") version "1.14.10"
 }
 
-configureJavaModule(17)
+val vl = versionLineForProject()
+
+configureJavaModule(vl.javaVersion)
 configureLoaderModuleSources()
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.20.1")
+    minecraft("com.mojang:minecraft:${vl.minecraftVersion}")
     mappings(loom.officialMojangMappings())
-    modImplementation("net.fabricmc:fabric-loader:0.16.14")
-    modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:0.92.9+1.20.1")
-    modImplementation(fabricApi.module("fabric-message-api-v1", "0.92.9+1.20.1"))
-    modImplementation(fabricApi.module("fabric-screen-api-v1", "0.92.9+1.20.1"))
-    modImplementation(fabricApi.module("fabric-resource-loader-v0", "0.92.9+1.20.1"))
+    modImplementation("net.fabricmc:fabric-loader:${vl.fabricLoaderVersion}")
+    modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:${vl.fabricApiVersion}")
+    modImplementation(fabricApi.module("fabric-message-api-v1", vl.fabricApiVersion))
+    modImplementation(fabricApi.module("fabric-screen-api-v1", vl.fabricApiVersion))
+    modImplementation(fabricApi.module("fabric-resource-loader-v0", vl.fabricApiVersion))
 }
 
 loom {
@@ -38,16 +42,18 @@ tasks.processResources {
             mapOf(
                 "mod_id" to modProp("mod_id"),
                 "mod_version" to modProp("mod_version"),
-                "minecraft_version" to "1.20.1",
-                "fabric_loader_version" to "0.16.14",
-                "java_version" to "17"
+                "minecraft_version" to vl.minecraftVersion,
+                "fabric_loader_version" to vl.fabricLoaderVersion,
+                "java_version" to "${vl.javaVersion}"
             )
         )
     }
 }
 
-configureStandardModuleTasks(17)
+configureStandardModuleTasks(vl.javaVersion)
 
 tasks.withType<RemapJarTask>().configureEach {
     destinationDirectory.set(layout.buildDirectory.dir("libs"))
 }
+
+configureModrinthPublishing()

@@ -2,6 +2,7 @@ import net.neoforged.moddevgradle.dsl.NeoForgeExtension
 import org.slf4j.event.Level
 import twemojichat.buildlogic.configureJavaModule
 import twemojichat.buildlogic.configureLoaderModuleSources
+import twemojichat.buildlogic.configureModrinthPublishing
 import twemojichat.buildlogic.configureStandardModuleTasks
 import twemojichat.buildlogic.modProp
 
@@ -57,3 +58,5 @@ tasks.processResources {
 }
 
 configureStandardModuleTasks(21)
+
+configureModrinthPublishing()

@@ -1,5 +1,6 @@
 package twemojichat.buildlogic
 
+import com.modrinth.minotaur.ModrinthExtension
 import org.gradle.api.Project
 import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.plugins.BasePluginExtension
@@ -23,11 +24,14 @@ fun Project.moduleSourceDir() = versionLineForProject().sourceSetDirectory
 fun Project.configureJavaModule(javaVersion: Int) {
     extensions.configure(JavaPluginExtension::class.java) {
         toolchain.languageVersion.set(JavaLanguageVersion.of(javaVersion))
-        withSourcesJar()
+        if (project.parent?.name != "common") {
+            withSourcesJar()
+        }
     }
 
     extensions.configure(BasePluginExtension::class.java) {
-        archivesName.set(modProp("mod_id"))
+        val loader = project.parent?.name
+        archivesName.set(if (loader != null) "${modProp("mod_id")}-$loader" else modProp("mod_id"))
     }
 }
 
@@ -123,5 +127,34 @@ fun Project.configureStandardModuleTasks(javaVersion: Int, useJUnit: Boolean = f
 
     tasks.withType(Jar::class.java).configureEach {
         destinationDirectory.set(layout.buildDirectory.dir("libs"))
+    }
+}
+
+fun Project.configureModrinthPublishing() {
+    project.plugins.apply("com.modrinth.minotaur")
+
+    val vl = versionLineForProject()
+    val loaderName = project.parent?.name ?: return
+
+    extensions.configure(ModrinthExtension::class.java) {
+        token.set(System.getenv("MODRINTH_TOKEN"))
+        projectId.set(modProp("modrinth_id"))
+        versionNumber.set(modProp("mod_version"))
+        versionType.set("release")
+        gameVersions.set(listOf(vl.minecraftVersion))
+        loaders.set(listOf(loaderName))
+
+        when (loaderName) {
+            "fabric" -> {
+                if (tasks.names.contains("remapJar")) {
+                    uploadFile.set(tasks.named("remapJar"))
+                } else {
+                    uploadFile.set(tasks.named("jar"))
+                }
+            }
+            "forge", "neoforge" -> {
+                uploadFile.set(tasks.named("jar"))
+            }
+        }
     }
 }

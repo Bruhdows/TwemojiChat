@@ -95,3 +95,7 @@ tasks.named("assemble") {
 tasks.named("build") {
     dependsOn(versionedModules.map { "$it:build" })
 }
+
+tasks.register("modrinth") {
+    dependsOn(versionedModules.map { "$it:modrinth" })
+}
