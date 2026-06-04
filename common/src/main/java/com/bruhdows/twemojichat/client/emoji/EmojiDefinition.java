@@ -8,6 +8,4 @@ public record EmojiDefinition(
     String name,
     String primaryAlias,
     int sortOrder,
-    String unicodeValue
-) {
-}
+    String unicodeValue) {}

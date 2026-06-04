@@ -8,31 +8,31 @@ import net.minecraft.client.gui.screens.ChatScreen;
 import net.minecraft.network.chat.Component;
 
 public final class TwemojiChatClientRuntime {
-    private final Map<ChatScreen, ChatEmojiController> controllers = new WeakHashMap<>();
+  private final Map<ChatScreen, ChatEmojiController> controllers = new WeakHashMap<>();
 
-    public Component rewriteReceivedMessage(Component message) {
-        return EmojiTextRewriter.rewrite(message);
-    }
+  public Component rewriteReceivedMessage(Component message) {
+    return EmojiTextRewriter.rewrite(message);
+  }
 
-    public void onScreenInit(Object screen) {
-        if (screen instanceof ChatScreen chatScreen) {
-            this.controllers.put(chatScreen, new ChatEmojiController(chatScreen));
-        }
+  public void onScreenInit(Object screen) {
+    if (screen instanceof ChatScreen chatScreen) {
+      this.controllers.put(chatScreen, new ChatEmojiController(chatScreen));
     }
+  }
 
-    public void onScreenClosing(Object screen) {
-        if (screen instanceof ChatScreen chatScreen) {
-            this.controllers.remove(chatScreen);
-        }
+  public void onScreenClosing(Object screen) {
+    if (screen instanceof ChatScreen chatScreen) {
+      this.controllers.remove(chatScreen);
     }
+  }
 
-    public void onScreenRender(Object screen) {
-        if (screen instanceof ChatScreen chatScreen) {
-            this.controller(chatScreen).refresh();
-        }
+  public void onScreenRender(Object screen) {
+    if (screen instanceof ChatScreen chatScreen) {
+      this.controller(chatScreen).refresh();
     }
+  }
 
-    private ChatEmojiController controller(ChatScreen chatScreen) {
-        return this.controllers.computeIfAbsent(chatScreen, ChatEmojiController::new);
-    }
+  private ChatEmojiController controller(ChatScreen chatScreen) {
+    return this.controllers.computeIfAbsent(chatScreen, ChatEmojiController::new);
+  }
 }

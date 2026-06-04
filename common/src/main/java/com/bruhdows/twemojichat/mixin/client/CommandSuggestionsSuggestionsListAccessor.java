@@ -7,6 +7,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(CommandSuggestions.SuggestionsList.class)
 public interface CommandSuggestionsSuggestionsListAccessor {
-    @Accessor("rect")
-    Rect2i twemojichat$getRect();
+  @Accessor("rect")
+  Rect2i twemojichat$getRect();
 }

@@ -6,12 +6,12 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 
 public final class EmojiFont {
-    public static final FontDescription ID = new FontDescription.Resource(Identifier.fromNamespaceAndPath(TwemojiChat.MOD_ID, "emoji"));
+  public static final FontDescription ID =
+      new FontDescription.Resource(Identifier.fromNamespaceAndPath(TwemojiChat.MOD_ID, "emoji"));
 
-    private EmojiFont() {
-    }
+  private EmojiFont() {}
 
-    public static Style style() {
-        return Style.EMPTY.withFont(ID);
-    }
+  public static Style style() {
+    return Style.EMPTY.withFont(ID);
+  }
 }

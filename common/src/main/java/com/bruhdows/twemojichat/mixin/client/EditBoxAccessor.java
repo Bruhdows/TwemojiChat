@@ -6,6 +6,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(EditBox.class)
 public interface EditBoxAccessor {
-    @Accessor("bordered")
-    boolean twemojichat$isBordered();
+  @Accessor("bordered")
+  boolean twemojichat$isBordered();
 }

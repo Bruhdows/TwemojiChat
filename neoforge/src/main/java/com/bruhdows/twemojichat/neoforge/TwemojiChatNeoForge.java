@@ -7,7 +7,7 @@ import net.neoforged.fml.common.Mod;
 
 @Mod(value = TwemojiChat.MOD_ID, dist = Dist.CLIENT)
 public final class TwemojiChatNeoForge {
-    public TwemojiChatNeoForge(IEventBus modEventBus) {
-        TwemojiChatNeoForgeClient.init(modEventBus);
-    }
+  public TwemojiChatNeoForge(IEventBus modEventBus) {
+    TwemojiChatNeoForgeClient.init(modEventBus);
+  }
 }

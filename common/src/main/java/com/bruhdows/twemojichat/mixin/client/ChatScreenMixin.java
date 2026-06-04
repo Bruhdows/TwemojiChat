@@ -9,8 +9,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ChatScreen.class)
 abstract class ChatScreenMixin {
-    @Inject(method = "normalizeChatMessage", at = @At("RETURN"), cancellable = true)
-    private void twemojichat$normalizeEmojiGlyphs(String message, CallbackInfoReturnable<String> cir) {
-        cir.setReturnValue(EmojiTextRewriter.normalizeOutgoing(cir.getReturnValue()));
-    }
+  @Inject(method = "normalizeChatMessage", at = @At("RETURN"), cancellable = true)
+  private void twemojichat$normalizeEmojiGlyphs(
+      String message, CallbackInfoReturnable<String> cir) {
+    cir.setReturnValue(EmojiTextRewriter.normalizeOutgoing(cir.getReturnValue()));
+  }
 }

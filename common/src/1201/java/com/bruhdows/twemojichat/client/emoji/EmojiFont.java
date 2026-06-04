@@ -5,12 +5,11 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 
 public final class EmojiFont {
-    public static final ResourceLocation ID = new ResourceLocation(TwemojiChat.MOD_ID, "emoji");
+  public static final ResourceLocation ID = new ResourceLocation(TwemojiChat.MOD_ID, "emoji");
 
-    private EmojiFont() {
-    }
+  private EmojiFont() {}
 
-    public static Style style() {
-        return Style.EMPTY.withFont(ID);
-    }
+  public static Style style() {
+    return Style.EMPTY.withFont(ID);
+  }
 }
