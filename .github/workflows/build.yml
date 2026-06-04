@@ -37,114 +37,151 @@ jobs:
           - name: fabric-1.20.1
             task: ':fabric:1_20_1:build'
             artifact: fabric-1_20_1
+            projects: ':common:1_20_1,:fabric:1_20_1'
           - name: forge-1.20.1
             task: ':forge:1_20_1:build'
             artifact: forge-1_20_1
+            projects: ':common:1_20_1,:forge:1_20_1'
           - name: fabric-1.20.2
             task: ':fabric:1_20_2:build'
             artifact: fabric-1_20_2
+            projects: ':common:1_20_2,:fabric:1_20_2'
           - name: forge-1.20.2
             task: ':forge:1_20_2:build'
             artifact: forge-1_20_2
+            projects: ':common:1_20_2,:forge:1_20_2'
           - name: fabric-1.20.3
             task: ':fabric:1_20_3:build'
             artifact: fabric-1_20_3
+            projects: ':common:1_20_3,:fabric:1_20_3'
           - name: forge-1.20.3
             task: ':forge:1_20_3:build'
             artifact: forge-1_20_3
+            projects: ':common:1_20_3,:forge:1_20_3'
           - name: fabric-1.20.4
             task: ':fabric:1_20_4:build'
             artifact: fabric-1_20_4
+            projects: ':common:1_20_4,:fabric:1_20_4'
           - name: forge-1.20.4
             task: ':forge:1_20_4:build'
             artifact: forge-1_20_4
+            projects: ':common:1_20_4,:forge:1_20_4'
           - name: fabric-1.20.5
             task: ':fabric:1_20_5:build'
             artifact: fabric-1_20_5
+            projects: ':common:1_20_5,:fabric:1_20_5'
           - name: fabric-1.20.6
             task: ':fabric:1_20_6:build'
             artifact: fabric-1_20_6
+            projects: ':common:1_20_6,:fabric:1_20_6'
           - name: neoforge-1.20.6
             task: ':neoforge:1_20_6:build'
             artifact: neoforge-1_20_6
+            projects: ':common:1_20_6,:neoforge:1_20_6'
           - name: fabric-1.21
             task: ':fabric:1_21:build'
             artifact: fabric-1_21
+            projects: ':common:1_21,:fabric:1_21'
           - name: neoforge-1.21
             task: ':neoforge:1_21:build'
             artifact: neoforge-1_21
+            projects: ':common:1_21,:neoforge:1_21'
           - name: fabric-1.21.1
             task: ':fabric:1_21_1:build'
             artifact: fabric-1_21_1
+            projects: ':common:1_21_1,:fabric:1_21_1'
           - name: neoforge-1.21.1
             task: ':neoforge:1_21_1:build'
             artifact: neoforge-1_21_1
+            projects: ':common:1_21_1,:neoforge:1_21_1'
           - name: fabric-1.21.2
             task: ':fabric:1_21_2:build'
             artifact: fabric-1_21_2
+            projects: ':common:1_21_2,:fabric:1_21_2'
           - name: neoforge-1.21.2
             task: ':neoforge:1_21_2:build'
             artifact: neoforge-1_21_2
+            projects: ':common:1_21_2,:neoforge:1_21_2'
           - name: fabric-1.21.3
             task: ':fabric:1_21_3:build'
             artifact: fabric-1_21_3
+            projects: ':common:1_21_3,:fabric:1_21_3'
           - name: neoforge-1.21.3
             task: ':neoforge:1_21_3:build'
             artifact: neoforge-1_21_3
+            projects: ':common:1_21_3,:neoforge:1_21_3'
           - name: fabric-1.21.4
             task: ':fabric:1_21_4:build'
             artifact: fabric-1_21_4
+            projects: ':common:1_21_4,:fabric:1_21_4'
           - name: neoforge-1.21.4
             task: ':neoforge:1_21_4:build'
             artifact: neoforge-1_21_4
+            projects: ':common:1_21_4,:neoforge:1_21_4'
           - name: fabric-1.21.5
             task: ':fabric:1_21_5:build'
             artifact: fabric-1_21_5
+            projects: ':common:1_21_5,:fabric:1_21_5'
           - name: neoforge-1.21.5
             task: ':neoforge:1_21_5:build'
             artifact: neoforge-1_21_5
+            projects: ':common:1_21_5,:neoforge:1_21_5'
           - name: fabric-1.21.6
             task: ':fabric:1_21_6:build'
             artifact: fabric-1_21_6
+            projects: ':common:1_21_6,:fabric:1_21_6'
           - name: neoforge-1.21.6
             task: ':neoforge:1_21_6:build'
             artifact: neoforge-1_21_6
+            projects: ':common:1_21_6,:neoforge:1_21_6'
           - name: fabric-1.21.7
             task: ':fabric:1_21_7:build'
             artifact: fabric-1_21_7
+            projects: ':common:1_21_7,:fabric:1_21_7'
           - name: neoforge-1.21.7
             task: ':neoforge:1_21_7:build'
             artifact: neoforge-1_21_7
+            projects: ':common:1_21_7,:neoforge:1_21_7'
           - name: fabric-1.21.8
             task: ':fabric:1_21_8:build'
             artifact: fabric-1_21_8
+            projects: ':common:1_21_8,:fabric:1_21_8'
           - name: neoforge-1.21.8
             task: ':neoforge:1_21_8:build'
             artifact: neoforge-1_21_8
+            projects: ':common:1_21_8,:neoforge:1_21_8'
           - name: fabric-1.21.9
             task: ':fabric:1_21_9:build'
             artifact: fabric-1_21_9
+            projects: ':common:1_21_9,:fabric:1_21_9'
           - name: neoforge-1.21.9
             task: ':neoforge:1_21_9:build'
             artifact: neoforge-1_21_9
+            projects: ':common:1_21_9,:neoforge:1_21_9'
           - name: fabric-1.21.10
             task: ':fabric:1_21_10:build'
             artifact: fabric-1_21_10
+            projects: ':common:1_21_10,:fabric:1_21_10'
           - name: neoforge-1.21.10
             task: ':neoforge:1_21_10:build'
             artifact: neoforge-1_21_10
+            projects: ':common:1_21_10,:neoforge:1_21_10'
           - name: fabric-1.21.11
             task: ':fabric:1_21_11:build'
             artifact: fabric-1_21_11
+            projects: ':common:1_21_11,:fabric:1_21_11'
           - name: neoforge-1.21.11
             task: ':neoforge:1_21_11:build'
             artifact: neoforge-1_21_11
+            projects: ':common:1_21_11,:neoforge:1_21_11'
           - name: fabric-26.1
             task: ':fabric:26_1:build'
             artifact: fabric-26_1
+            projects: ':common:26_1,:fabric:26_1'
           - name: neoforge-26.1
             task: ':neoforge:26_1:build'
             artifact: neoforge-26_1
+            projects: ':common:26_1,:neoforge:26_1'
 
     steps:
       - uses: actions/checkout@v4
@@ -159,7 +196,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build ${{ matrix.name }}
-        run: ./gradlew ${{ matrix.task }}
+        run: ./gradlew -Pci.include=${{ matrix.projects }} ${{ matrix.task }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
