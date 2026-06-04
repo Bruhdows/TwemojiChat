@@ -1,8 +1,8 @@
 # TwemojiChat
 
-**Emoji, the way they were meant to look.**
+Emoji in Minecraft chat, the way they were meant to look.
 
-TwemojiChat is a client-side Minecraft mod that replaces Minecraft's built-in emoji with Twitter's Twemoji set — the colorful, detailed emoji you're used to from other apps. It also adds instant `:shortcode:` autocomplete so you can find and insert emoji without leaving chat.
+TwemojiChat is a client-side mod that adds Twitter's Twemoji set to Minecraft chat. It also brings instant `:shortcode:` autocomplete so you can find and insert emoji without leaving chat.
 
 No server setup required. Just install and go.
 
@@ -22,16 +22,16 @@ No server setup required. Just install and go.
 1. Install [Fabric](https://fabricmc.net/) or [NeoForge](https://neoforged.net/) for your Minecraft version
 2. Download the latest TwemojiChat release for your mod loader and Minecraft version
 3. Drop the `.jar` file into your `mods` folder
-4. Launch Minecraft — emoji in chat will automatically use Twemoji
+4. Launch Minecraft and enjoy emoji in chat
 
 ### Supported versions
 
 | Minecraft | Fabric | NeoForge | Forge |
 |-----------|--------|----------|-------|
-| 1.20.1    | ✅     |          | ✅    |
-| 1.21.1    | ✅     | ✅       |       |
-| 1.21.11   | ✅     | ✅       |       |
-| 26.1      | ✅     | ✅       |       |
+| 1.20.1    | Yes    |          | Yes   |
+| 1.21.1    | Yes    | Yes      |       |
+| 1.21.11   | Yes    | Yes      |       |
+| 26.1      | Yes    | Yes      |       |
 
 ## Usage
 
@@ -81,10 +81,8 @@ tools/      Scripts for syncing upstream Twemoji data
 
 ## Credits
 
-- **Twemoji artwork** — [jdecked/twemoji](https://github.com/jdecked/twemoji) (kept under its upstream license)
+- **Twemoji artwork** — [jdecked/twemoji](https://github.com/jdecked/twemoji)
 - **Shortcode data** — [iamcal/emoji-data](https://github.com/iamcal/emoji-data)
-
-Review upstream asset licenses before redistributing packaged builds.
 
 ## License
 
