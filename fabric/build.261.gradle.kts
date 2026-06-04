@@ -1,10 +1,11 @@
 import net.fabricmc.loom.task.RemapJarTask
 import org.gradle.api.file.DuplicatesStrategy
-import org.gradle.api.tasks.Sync
 import org.gradle.api.tasks.SourceSetContainer
+import org.gradle.api.tasks.Sync
+import org.gradle.api.tasks.compile.JavaCompile
 
 plugins {
-    id("net.fabricmc.fabric-loom-remap") version "1.14.10"
+    id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
 }
 
 fun prop(name: String): String = rootProject.extra[name].toString()
@@ -31,11 +32,10 @@ val prepareVersionedResources = tasks.register<Sync>("prepareVersionedResources"
 
 dependencies {
     minecraft("com.mojang:minecraft:${prop("active_minecraft_version")}")
-    mappings(loom.officialMojangMappings())
-    modImplementation("net.fabricmc:fabric-loader:${prop("active_fabric_loader_version")}")
-    modImplementation(fabricApi.module("fabric-message-api-v1", prop("active_fabric_api_version")))
-    modImplementation(fabricApi.module("fabric-screen-api-v1", prop("active_fabric_api_version")))
-    modImplementation(fabricApi.module("fabric-resource-loader-v0", prop("active_fabric_api_version")))
+    implementation("net.fabricmc:fabric-loader:${prop("active_fabric_loader_version")}")
+    implementation(fabricApi.module("fabric-message-api-v1", prop("active_fabric_api_version")))
+    implementation(fabricApi.module("fabric-screen-api-v1", prop("active_fabric_api_version")))
+    implementation(fabricApi.module("fabric-resource-loader-v0", prop("active_fabric_api_version")))
 
     implementation(commonSourceSets.named("main").get().output)
 }

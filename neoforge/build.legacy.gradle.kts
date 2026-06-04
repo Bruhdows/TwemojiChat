@@ -1,10 +1,11 @@
-import net.fabricmc.loom.task.RemapJarTask
 import org.gradle.api.file.DuplicatesStrategy
-import org.gradle.api.tasks.Sync
 import org.gradle.api.tasks.SourceSetContainer
+import org.gradle.api.tasks.Sync
+import org.gradle.api.tasks.compile.JavaCompile
+import org.slf4j.event.Level
 
 plugins {
-    id("net.fabricmc.fabric-loom-remap") version "1.14.10"
+    id("net.neoforged.moddev.legacyforge") version "2.0.141"
 }
 
 fun prop(name: String): String = rootProject.extra[name].toString()
@@ -30,23 +31,29 @@ val prepareVersionedResources = tasks.register<Sync>("prepareVersionedResources"
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:${prop("active_minecraft_version")}")
-    mappings(loom.officialMojangMappings())
-    modImplementation("net.fabricmc:fabric-loader:${prop("active_fabric_loader_version")}")
-    modImplementation(fabricApi.module("fabric-message-api-v1", prop("active_fabric_api_version")))
-    modImplementation(fabricApi.module("fabric-screen-api-v1", prop("active_fabric_api_version")))
-    modImplementation(fabricApi.module("fabric-resource-loader-v0", prop("active_fabric_api_version")))
-
     implementation(commonSourceSets.named("main").get().output)
 }
 
-loom {
+legacyForge {
+    enable {
+        neoForgeVersion = prop("active_neo_version")
+    }
+
     runs {
-        named("client") {
+        create("client") {
             client()
-            configName = "Fabric Client"
-            ideConfigGenerated(true)
-            runDir("run/fabric-${prop("active_mc_line")}")
+            gameDirectory = rootProject.layout.projectDirectory.dir("run/neoforge-${prop("active_mc_line")}").asFile
+        }
+
+        configureEach {
+            systemProperty("forge.logging.markers", "REGISTRIES")
+            logLevel = Level.DEBUG
+        }
+    }
+
+    mods {
+        create(prop("mod_id")) {
+            sourceSet(sourceSets.main.get())
         }
     }
 }
@@ -61,25 +68,23 @@ tasks.named<JavaCompile>("compileJava") {
     source(commonSourceSets.named("main").get().allSource)
 }
 
-tasks.withType<Jar>().configureEach {
-    destinationDirectory.set(layout.buildDirectory.dir("libs"))
-}
-
-tasks.withType<RemapJarTask>().configureEach {
-    destinationDirectory.set(layout.buildDirectory.dir("libs"))
-}
-
 tasks.processResources {
     dependsOn(prepareVersionedResources, commonPrepareVersionedResources)
     from(commonSourceSets.named("main").get().resources)
-    filesMatching("fabric.mod.json") {
+    filesMatching("META-INF/mods.toml") {
         expand(
             mapOf(
-                "mod_id" to prop("mod_id"),
-                "mod_version" to prop("mod_version"),
                 "minecraft_version" to prop("active_minecraft_version"),
-                "fabric_loader_version" to prop("active_fabric_loader_version"),
-                "java_version" to prop("active_java_version")
+                "minecraft_version_range" to prop("active_minecraft_version_range"),
+                "neo_version" to prop("active_neo_version"),
+                "neo_version_range" to prop("active_neo_version_range"),
+                "loader_version_range" to prop("active_loader_version_range"),
+                "mod_id" to prop("mod_id"),
+                "mod_name" to prop("mod_name"),
+                "mod_license" to prop("mod_license"),
+                "mod_version" to prop("mod_version"),
+                "mod_authors" to prop("mod_authors"),
+                "mod_description" to prop("mod_description")
             )
         )
     }

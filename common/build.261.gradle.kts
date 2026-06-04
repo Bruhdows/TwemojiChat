@@ -1,8 +1,9 @@
-import org.gradle.api.tasks.Sync
 import org.gradle.api.file.DuplicatesStrategy
+import org.gradle.api.tasks.Sync
+import org.gradle.api.tasks.compile.JavaCompile
 
 plugins {
-    id("net.fabricmc.fabric-loom-remap") version "1.14.10"
+    id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
 }
 
 fun prop(name: String): String = rootProject.extra[name].toString()
@@ -25,9 +26,7 @@ val prepareVersionedResources = tasks.register<Sync>("prepareVersionedResources"
 
 dependencies {
     minecraft("com.mojang:minecraft:${prop("active_minecraft_version")}")
-
-    mappings(loom.officialMojangMappings())
-    modImplementation("net.fabricmc:fabric-loader:${prop("active_fabric_loader_version")}")
+    implementation("net.fabricmc:fabric-loader:${prop("active_fabric_loader_version")}")
 }
 
 sourceSets.main {
@@ -39,7 +38,7 @@ tasks.named<JavaCompile>("compileJava") {
     dependsOn(prepareVersionedJava)
 }
 
-tasks.named<ProcessResources>("processResources") {
+tasks.named("processResources") {
     dependsOn(prepareVersionedResources)
 }
 
@@ -48,9 +47,5 @@ tasks.named("sourcesJar") {
 }
 
 tasks.named("jar") {
-    enabled = false
-}
-
-tasks.matching { it.name == "remapJar" }.configureEach {
     enabled = false
 }

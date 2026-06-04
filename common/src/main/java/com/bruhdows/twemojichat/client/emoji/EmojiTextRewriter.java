@@ -130,11 +130,10 @@ public final class EmojiTextRewriter {
     }
 
     private static Style emojiStyle(Style baseStyle) {
-        return Style.EMPTY
+        return EmojiFont.style()
             .withClickEvent(baseStyle.getClickEvent())
             .withHoverEvent(baseStyle.getHoverEvent())
-            .withInsertion(baseStyle.getInsertion())
-            .withFont(EmojiFont.ID);
+            .withInsertion(baseStyle.getInsertion());
     }
 
     private static void flushPending(List<Component> components, StringBuilder pending, Style style) {
