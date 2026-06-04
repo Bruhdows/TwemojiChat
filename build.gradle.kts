@@ -67,30 +67,12 @@ val versionedModules = SUPPORTED_VERSION_LINES.flatMap { line ->
     )
 }
 
-val overlayModules = SUPPORTED_VERSION_LINES
-    .filter { it.sourceSetDirectory != null }
-    .flatMap { line ->
-        listOf(
-            ":common:${line.projectName}",
-            ":fabric:${line.projectName}",
-            ":neoforge:${line.projectName}"
-        )
-    }
-
 tasks.register("compileMatrix") {
     dependsOn(versionedModules.map { "$it:compileJava" })
 }
 
 tasks.register("buildMatrix") {
     dependsOn(versionedModules.map { "$it:build" })
-}
-
-tasks.register("prepareIdeSources") {
-    dependsOn(
-        overlayModules.flatMap { module ->
-            listOf("$module:prepareVersionedJava", "$module:prepareVersionedResources")
-        }
-    )
 }
 
 tasks.named("assemble") {

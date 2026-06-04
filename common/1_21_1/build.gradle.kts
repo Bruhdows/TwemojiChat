@@ -1,10 +1,10 @@
+import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.plugins.BasePluginExtension
 import org.gradle.api.publish.tasks.GenerateModuleMetadata
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.api.tasks.testing.Test
 import org.gradle.jvm.toolchain.JavaLanguageVersion
-import org.gradle.plugins.ide.idea.model.IdeaModel
 
 plugins {
     id("net.fabricmc.fabric-loom-remap") version "1.14.10"
@@ -23,8 +23,14 @@ extensions.configure<BasePluginExtension> {
 }
 
 sourceSets.main {
-    java.setSrcDirs(listOf(parentDir.resolve("src/main/java")))
-    resources.setSrcDirs(listOf(parentDir.resolve("src/main/resources"), parentDir.resolve("src/generated/resources")))
+    java.setSrcDirs(listOf(parentDir.resolve("src/main/java"), parentDir.resolve("src/1211/java")))
+    resources.setSrcDirs(
+        listOf(
+            parentDir.resolve("src/1211/resources"),
+            parentDir.resolve("src/generated/resources"),
+            parentDir.resolve("src/main/resources"),
+        )
+    )
 }
 
 sourceSets.test {
@@ -39,6 +45,10 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.13.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.withType<JavaCompile>().configureEach {
@@ -56,10 +66,4 @@ tasks.withType<GenerateModuleMetadata>().configureEach {
 
 tasks.withType<Jar>().configureEach {
     destinationDirectory.set(layout.buildDirectory.dir("libs"))
-}
-
-extensions.configure<IdeaModel> {
-    module {
-        sourceDirs = sourceDirs + setOf(parentDir.resolve("src/main/java"))
-    }
 }

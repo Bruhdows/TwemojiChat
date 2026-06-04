@@ -1,12 +1,9 @@
-import net.fabricmc.loom.task.RemapJarTask
 import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.plugins.BasePluginExtension
 import org.gradle.api.publish.tasks.GenerateModuleMetadata
-import org.gradle.api.tasks.Sync
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.toolchain.JavaLanguageVersion
-import org.gradle.plugins.ide.idea.model.IdeaModel
 
 plugins {
     id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
@@ -25,28 +22,24 @@ extensions.configure<BasePluginExtension> {
     archivesName.set(prop("mod_id"))
 }
 
-val prepareVersionedJava = tasks.register<Sync>("prepareVersionedJava") {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    into(layout.buildDirectory.dir("generated/versionedMain/java"))
-    from(commonDir.resolve("src/main/java"))
-    from(commonDir.resolve("src/261/java"))
-    from(parentDir.resolve("src/main/java"))
-    from(parentDir.resolve("src/261/java"))
-}
-
-val prepareVersionedResources = tasks.register<Sync>("prepareVersionedResources") {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    into(layout.buildDirectory.dir("generated/versionedMain/resources"))
-    from(commonDir.resolve("src/main/resources"))
-    from(commonDir.resolve("src/generated/resources"))
-    from(commonDir.resolve("src/261/resources"))
-    from(parentDir.resolve("src/main/resources"))
-    from(parentDir.resolve("src/261/resources"))
-}
-
 sourceSets.main {
-    java.setSrcDirs(listOf(layout.buildDirectory.dir("generated/versionedMain/java")))
-    resources.setSrcDirs(listOf(layout.buildDirectory.dir("generated/versionedMain/resources")))
+    java.setSrcDirs(
+        listOf(
+            commonDir.resolve("src/main/java"),
+            commonDir.resolve("src/261/java"),
+            parentDir.resolve("src/main/java"),
+            parentDir.resolve("src/261/java"),
+        )
+    )
+    resources.setSrcDirs(
+        listOf(
+            commonDir.resolve("src/261/resources"),
+            parentDir.resolve("src/261/resources"),
+            commonDir.resolve("src/generated/resources"),
+            commonDir.resolve("src/main/resources"),
+            parentDir.resolve("src/main/resources"),
+        )
+    )
 }
 
 dependencies {
@@ -67,6 +60,7 @@ loom {
 }
 
 tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     filesMatching("fabric.mod.json") {
         expand(
             mapOf(
@@ -81,35 +75,8 @@ tasks.processResources {
 }
 
 tasks.withType<JavaCompile>().configureEach {
-    dependsOn(prepareVersionedJava)
     options.encoding = "UTF-8"
     options.release.set(25)
-}
-
-tasks.named("processResources") {
-    dependsOn(prepareVersionedResources)
-}
-
-tasks.named("sourcesJar") {
-    dependsOn(prepareVersionedJava, prepareVersionedResources)
-}
-
-extensions.configure<IdeaModel> {
-    module {
-        sourceDirs =
-            sourceDirs + setOf(
-                commonDir.resolve("src/main/java"),
-                commonDir.resolve("src/261/java"),
-                parentDir.resolve("src/main/java"),
-                parentDir.resolve("src/261/java"),
-            )
-        generatedSourceDirs =
-            generatedSourceDirs + setOf(layout.buildDirectory.dir("generated/versionedMain/java").get().asFile)
-    }
-}
-
-tasks.matching { it.name == "ideaSyncTask" }.configureEach {
-    dependsOn(prepareVersionedJava, prepareVersionedResources)
 }
 
 tasks.withType<GenerateModuleMetadata>().configureEach {
@@ -117,9 +84,5 @@ tasks.withType<GenerateModuleMetadata>().configureEach {
 }
 
 tasks.withType<Jar>().configureEach {
-    destinationDirectory.set(layout.buildDirectory.dir("libs"))
-}
-
-tasks.withType<RemapJarTask>().configureEach {
     destinationDirectory.set(layout.buildDirectory.dir("libs"))
 }

@@ -1,10 +1,10 @@
 import net.fabricmc.loom.task.RemapJarTask
+import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.plugins.BasePluginExtension
 import org.gradle.api.publish.tasks.GenerateModuleMetadata
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.jvm.toolchain.JavaLanguageVersion
-import org.gradle.plugins.ide.idea.model.IdeaModel
 
 plugins {
     id("net.fabricmc.fabric-loom-remap") version "1.14.10"
@@ -24,8 +24,22 @@ extensions.configure<BasePluginExtension> {
 }
 
 sourceSets.main {
-    java.setSrcDirs(listOf(commonDir.resolve("src/main/java"), parentDir.resolve("src/main/java")))
-    resources.setSrcDirs(listOf(commonDir.resolve("src/main/resources"), commonDir.resolve("src/generated/resources"), parentDir.resolve("src/main/resources")))
+    java.setSrcDirs(
+        listOf(
+            commonDir.resolve("src/main/java"),
+            commonDir.resolve("src/1211/java"),
+            parentDir.resolve("src/main/java"),
+            parentDir.resolve("src/1211/java"),
+        )
+    )
+    resources.setSrcDirs(
+        listOf(
+            commonDir.resolve("src/1211/resources"),
+            commonDir.resolve("src/generated/resources"),
+            commonDir.resolve("src/main/resources"),
+            parentDir.resolve("src/main/resources"),
+        )
+    )
 }
 
 dependencies {
@@ -50,6 +64,7 @@ loom {
 }
 
 tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     filesMatching("fabric.mod.json") {
         expand(
             mapOf(
@@ -78,11 +93,4 @@ tasks.withType<Jar>().configureEach {
 
 tasks.withType<RemapJarTask>().configureEach {
     destinationDirectory.set(layout.buildDirectory.dir("libs"))
-}
-
-extensions.configure<IdeaModel> {
-    module {
-        sourceDirs =
-            sourceDirs + setOf(commonDir.resolve("src/main/java"), parentDir.resolve("src/main/java"))
-    }
 }

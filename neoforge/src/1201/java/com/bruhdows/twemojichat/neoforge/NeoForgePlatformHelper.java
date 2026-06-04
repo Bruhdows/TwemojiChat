@@ -19,6 +19,6 @@ public final class NeoForgePlatformHelper implements PlatformHelper {
 
   @Override
   public LoaderKind getLoaderKind() {
-    return LoaderKind.NEOFORGE;
+    return LoaderKind.FORGE;
   }
 }

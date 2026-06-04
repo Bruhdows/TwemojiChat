@@ -34,7 +34,7 @@ val SUPPORTED_VERSION_LINES = listOf(
     ),
     VersionLine(
         projectName = "1_21_1",
-        sourceSetDirectory = null,
+        sourceSetDirectory = "1211",
         minecraftVersion = "1.21.1",
         minecraftVersionRange = "[1.21.1,1.22)",
         javaVersion = 21,
