@@ -35,10 +35,10 @@ jobs:
       matrix:
         include:
           - name: fabric-1.20.1
-            java: '17'
+            java: '21'
             task: ':fabric:1_20_1:build'
           - name: forge-1.20.1
-            java: '17'
+            java: '21'
             task: ':forge:1_20_1:build'
           - name: fabric-1.21.1
             java: '21'
