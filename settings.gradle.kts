@@ -14,15 +14,20 @@ plugins {
 
 rootProject.name = "TwemojiChat"
 
-include("common", "fabric", "neoforge")
-
-val activeLineKey = providers.gradleProperty("mc_line").orElse("1211").get()
-
-if (activeLineKey == "1201") {
-    project(":neoforge").buildFileName = "build.legacy.gradle.kts"
-}
-
-if (activeLineKey == "261") {
-    project(":common").buildFileName = "build.261.gradle.kts"
-    project(":fabric").buildFileName = "build.261.gradle.kts"
-}
+include(
+    "common",
+    "common:1_20_1",
+    "common:1_21_1",
+    "common:1_21_11",
+    "common:26_1",
+    "fabric",
+    "fabric:1_20_1",
+    "fabric:1_21_1",
+    "fabric:1_21_11",
+    "fabric:26_1",
+    "neoforge",
+    "neoforge:1_20_1",
+    "neoforge:1_21_1",
+    "neoforge:1_21_11",
+    "neoforge:26_1"
+)

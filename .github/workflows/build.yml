@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,12 +25,60 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build with Gradle
-        run: ./gradlew build
+      - name: Run verification
+        run: ./gradlew spotlessCheck :common:1_21_1:test compileMatrix
+
+  matrix-build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: fabric-1.20.1
+            java: '17'
+            task: ':fabric:1_20_1:build'
+          - name: neoforge-1.20.1
+            java: '17'
+            task: ':neoforge:1_20_1:build'
+          - name: fabric-1.21.1
+            java: '21'
+            task: ':fabric:1_21_1:build'
+          - name: neoforge-1.21.1
+            java: '21'
+            task: ':neoforge:1_21_1:build'
+          - name: fabric-1.21.11
+            java: '21'
+            task: ':fabric:1_21_11:build'
+          - name: neoforge-1.21.11
+            java: '21'
+            task: ':neoforge:1_21_11:build'
+          - name: fabric-26.1
+            java: '25'
+            task: ':fabric:26_1:build'
+          - name: neoforge-26.1
+            java: '25'
+            task: ':neoforge:26_1:build'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build ${{ matrix.name }}
+        run: ./gradlew ${{ matrix.task }}
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: twemojichat-${{ github.sha }}
-          path: build/libs/*.jar
+          name: twemojichat-${{ matrix.name }}-${{ github.sha }}
+          path: |
+            fabric/*/build/libs/*.jar
+            neoforge/*/build/libs/*.jar
           retention-days: 14
