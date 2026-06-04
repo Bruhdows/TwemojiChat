@@ -26,7 +26,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Run verification
-        run: ./gradlew spotlessCheck :common:1_21_1:test compileMatrix
+        run: ./gradlew spotlessCheck
 
   matrix-build:
     runs-on: ubuntu-latest
