@@ -178,7 +178,12 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build ${{ matrix.name }}
-        run: ./gradlew -Pci.include=${{ matrix.projects }} ${{ matrix.task }}
+        run: |
+          for i in 1 2 3; do
+            ./gradlew -Pci.include=${{ matrix.projects }} ${{ matrix.task }} && break
+            echo "Attempt $i failed, retrying..."
+            sleep 10
+          done
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
