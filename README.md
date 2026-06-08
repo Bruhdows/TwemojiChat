@@ -1,29 +1,38 @@
 # TwemojiChat
 
-Twemoji in Minecraft chat.
+TwemojiChat adds emoji autocomplete and Twemoji rendering to Minecraft chat.
 
-TwemojiChat is a client-side mod that adds Twemoji rendering and `:shortcode:` autocomplete to Minecraft chat.
-
-No server setup is required.
+It is client-side only, works on any server, and is built for people who want emoji support to feel native instead of bolted on.
 
 ![Emoji autocomplete](assets/tab-completion.png)
 
-## Features
+## What It Does
 
-* Autocomplete emoji shortcodes while typing in chat
-* Render both `:shortcode:` and Unicode emoji using Twemoji
-* Works on any server
-* Client-side only
-* Supports the full Twemoji emoji set
+- Autocompletes `:shortcode:` emoji names while you type in chat
+- Accepts emoji suggestions with both `Tab` and `Enter`
+- Renders both `:shortcode:` text and pasted Unicode emoji with Twemoji
+- Uses Discord-style alias parity where possible, while still keeping legacy aliases searchable
+- Works in normal chat without any server plugin or setup
 
-![Comparison](assets/comparasion.png)
+## How It Feels In Game
+
+- Type `:fire`, `:thumbs_up`, `:heart`, or any other supported shortcode
+- Press `Tab` or `Enter` to accept the current emoji suggestion
+- Keep typing normally after the emoji is inserted
+- Paste Unicode emoji like `😊` and they will render with the same style
+
+The goal is simple: emoji chat that stays fast and unobtrusive.
+
+![Rendering comparison](assets/comparasion.png)
 
 ## Installation
 
 1. Install Fabric, NeoForge, or Forge for your Minecraft version.
-2. Download the correct TwemojiChat release.
-3. Place the `.jar` file in your `mods` folder.
-4. Start Minecraft.
+2. Download the matching TwemojiChat release.
+3. Put the jar in your `mods` folder.
+4. Launch the game.
+
+No server-side install is needed.
 
 ## Supported Versions
 
@@ -34,71 +43,102 @@ No server setup is required.
 | 1.20.3    | Yes    |          | Yes   |
 | 1.20.4    | Yes    |          | Yes   |
 | 1.20.5    | Yes    | Yes      |       |
-| 1.20.6    | Yes    | Yes      |       |
-| 1.21      | Yes    | Yes      |       |
-| 1.21.1    | Yes    | Yes      |       |
+| 1.20.6    | Yes    | Yes      | Yes   |
+| 1.21      | Yes    | Yes      | Yes   |
+| 1.21.1    | Yes    | Yes      | Yes   |
 | 1.21.2    | Yes    | Yes      |       |
-| 1.21.3    | Yes    | Yes      |       |
-| 1.21.4    | Yes    | Yes      |       |
-| 1.21.5    | Yes    | Yes      |       |
-| 1.21.6    | Yes    | Yes      |       |
-| 1.21.7    | Yes    | Yes      |       |
-| 1.21.8    | Yes    | Yes      |       |
-| 1.21.9    | Yes    | Yes      |       |
-| 1.21.10   | Yes    | Yes      |       |
-| 1.21.11   | Yes    | Yes      |       |
-| 26.1      | Yes    | Yes      |       |
+| 1.21.3    | Yes    | Yes      | Yes   |
+| 1.21.4    | Yes    | Yes      | Yes   |
+| 1.21.5    | Yes    | Yes      | Yes   |
+| 1.21.6    | Yes    | Yes      | Yes   |
+| 1.21.7    | Yes    | Yes      | Yes   |
+| 1.21.8    | Yes    | Yes      | Yes   |
+| 1.21.9    | Yes    | Yes      | Yes   |
+| 1.21.10   | Yes    | Yes      | Yes   |
+| 1.21.11   | Yes    | Yes      | Yes   |
+| 26.1.2    | Yes    | Yes      | Yes   |
 
-## Usage
+Forge coverage follows upstream Forge availability. There are no Forge releases for some skipped Minecraft lines such as `1.20.5` and `1.21.2`.
 
-* Type `:smile:` and press **Tab** to insert an emoji
-* Type or paste Unicode emoji such as 😊
-* Browse emoji from the autocomplete menu
+## Emoji Aliases
 
-## For Developers
+TwemojiChat keeps compatibility aliases for search and replacement, but it now prefers more familiar names where possible.
 
-This project uses a shared `common` module with loader-specific modules for Fabric, NeoForge, and Forge.
+Examples:
 
-### Building
+- `:thumbs_up:` is preferred, while older aliases like `:+1:` still resolve
+- `:flag_us:` is available instead of raw fallback names
+- Unicode fallback-only entries are given better display aliases when a maintained shortcode source exists
 
-Requirements:
+This makes autocomplete more useful without breaking old habits.
 
-* Java 21+
-* Python 3
-* Pillow
+## Developer Notes
+
+This repository is split into shared code plus loader-specific modules:
+
+```text
+common/     shared logic, mixins, tests, generated emoji assets
+fabric/     Fabric loader modules by version line
+forge/      Forge loader modules by version line
+neoforge/   NeoForge loader modules by version line
+tools/      Twemoji sync script and shortcode source configuration
+```
+
+### Requirements
+
+- Java 21+ for current lines
+- Java 25 for `26.1.x`
+- Python 3
+- Pillow
+
+### Build
 
 ```bash
 ./gradlew build
 ```
 
-### Running a Development Client
+If you only want a smaller slice of the matrix while working:
 
 ```bash
-./gradlew :fabric:1_21_1:runClient
-./gradlew :neoforge:1_21_1:runClient
+./gradlew -Pci.include=common:1_21_11,fabric:1_21_11 :common:1_21_11:build :fabric:1_21_11:build
 ```
 
-### Updating Emoji Data
+### Run A Development Client
 
-1. Update `tools/twemoji_sources.json`
-2. Run `./gradlew syncTwemoji`
-3. Run `./gradlew build`
-4. Commit the updated files in `common/src/generated/resources`
+```bash
+./gradlew :fabric:1_21_11:runClient
+./gradlew :neoforge:1_21_11:runClient
+./gradlew :forge:1_21_11:runClient
+```
 
-## Project Structure
+### Update Emoji Data
+
+TwemojiChat generates its emoji index and font sheets from upstream data sources.
+
+1. Update `tools/twemoji_sources.json` if you need new upstream refs or alias rules.
+2. Run:
+
+```bash
+./gradlew syncTwemoji
+```
+
+3. Review the generated asset changes in:
 
 ```text
-common/     Shared code and generated emoji assets
-fabric/     Fabric loader implementation
-forge/      Forge loader implementation
-neoforge/   NeoForge loader implementation
-tools/      Twemoji sync tools
+common/src/generated/resources
 ```
+
+The sync pipeline currently combines:
+
+- Twemoji artwork from `jdecked/twemoji`
+- Shortcode data from `iamcal/emoji-data`
+- A Discord-style alias parity source from Emojibase
 
 ## Credits
 
-* Twemoji artwork: https://github.com/jdecked/twemoji
-* Shortcode data: https://github.com/iamcal/emoji-data
+- Twemoji artwork: https://github.com/jdecked/twemoji
+- Shortcode data: https://github.com/iamcal/emoji-data
+- Discord-style shortcode parity source: https://emojibase.dev/
 
 ## License
 

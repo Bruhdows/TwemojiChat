@@ -19,6 +19,8 @@ fun Project.versionLineForProject(): VersionLine = versionLine(project.name)
 
 fun Project.sharedCommonDir() = rootProject.projectDir.resolve("common")
 
+fun Project.descriptionDir() = rootProject.projectDir.resolve("description")
+
 fun Project.moduleSourceDir() = versionLineForProject().sourceSetDirectory
 
 fun Project.configureJavaModule(javaVersion: Int) {
@@ -148,13 +150,22 @@ fun Project.configureModrinthPublishing() {
 
     val vl = versionLineForProject()
     val loaderName = project.parent?.name ?: return
+    val modrinthBodyFile = descriptionDir().resolve("MODRINTH.md")
+    val changelogFile = descriptionDir().resolve("CHANGELOG.md")
 
     extensions.configure(ModrinthExtension::class.java) {
         projectId.set(modProp("modrinth_id"))
         versionNumber.set(modProp("mod_version"))
+        versionName.set("${modProp("mod_name")} ${modProp("mod_version")} for ${vl.minecraftVersion} ${loaderName.replaceFirstChar(Char::uppercaseChar)}")
         versionType.set("release")
         gameVersions.set(listOf(vl.minecraftVersion))
         loaders.set(listOf(loaderName))
+        if (modrinthBodyFile.isFile) {
+            syncBodyFrom.set(modrinthBodyFile.readText())
+        }
+        if (changelogFile.isFile) {
+            changelog.set(changelogFile.readText())
+        }
 
         when (loaderName) {
             "fabric" -> {

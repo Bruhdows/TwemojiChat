@@ -8,6 +8,19 @@
     "repo": "iamcal/emoji-data",
     "ref": "097705020bcf82331c9ef10df3425aad15f5043c",
     "data_path": "emoji.json",
+    "discord_parity": {
+      "source": "emojibase-data",
+      "version": "17.0.0",
+      "locale": "en",
+      "preset": "joypixels"
+    },
+    "preferred_primary_aliases": {
+      "thumbsup": "thumbs_up",
+      "+1": "thumbs_up",
+      "thumbsdown": "thumbs_down",
+      "-1": "thumbs_down",
+      "2764": "heart"
+    },
     "manual_aliases": {
       "rolling_on_the_floor_laughing": [
         "rofl"

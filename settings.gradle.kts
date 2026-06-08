@@ -4,6 +4,7 @@ pluginManagement {
         maven("https://maven.fabricmc.net/")
         maven("https://maven.neoforged.net/releases")
         maven("https://maven.minecraftforge.net/")
+        maven("https://libraries.minecraft.net/")
         gradlePluginPortal()
         mavenCentral()
     }
@@ -63,6 +64,19 @@ if (ciInclude != null) {
         "forge:1_20_2",
         "forge:1_20_3",
         "forge:1_20_4",
+        "forge:1_20_6",
+        "forge:1_21",
+        "forge:1_21_1",
+        "forge:1_21_3",
+        "forge:1_21_4",
+        "forge:1_21_5",
+        "forge:1_21_6",
+        "forge:1_21_7",
+        "forge:1_21_8",
+        "forge:1_21_9",
+        "forge:1_21_10",
+        "forge:1_21_11",
+        "forge:26_1",
         "neoforge:1_20_6",
         "neoforge:1_21",
         "neoforge:1_21_1",

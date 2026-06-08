@@ -34,6 +34,7 @@ allprojects {
         maven("https://maven.neoforged.net/releases")
         maven("https://maven.parchmentmc.org")
         maven("https://maven.minecraftforge.net/")
+        maven("https://libraries.minecraft.net/")
     }
 
     extensions.configure<IdeaModel> {

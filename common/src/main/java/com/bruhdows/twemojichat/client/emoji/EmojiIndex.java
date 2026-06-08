@@ -11,8 +11,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 public final class EmojiIndex {
+  private static final int NO_MATCH = Integer.MAX_VALUE;
   public static final EmojiIndex EMPTY =
       new EmojiIndex(Map.of(), Map.of(), List.of(), new UnicodeNode());
 
@@ -91,22 +93,29 @@ public final class EmojiIndex {
     }
 
     String normalized = query.toLowerCase(Locale.ROOT);
-    List<EmojiDefinition> results = new ArrayList<>(limit);
-    EmojiDefinition exact = this.byAlias.get(normalized);
-    if (exact != null && exact.primaryAlias() != null) {
-      results.add(exact);
+    List<RankedEmoji> matches = new ArrayList<>(this.suggestions.size());
+    for (EmojiDefinition definition : this.suggestions) {
+      MatchQuality quality = this.matchQuality(definition, normalized);
+      if (quality.score() != NO_MATCH) {
+        matches.add(new RankedEmoji(definition, quality));
+      }
     }
 
-    for (EmojiDefinition definition : this.suggestions) {
+    matches.sort(
+        Comparator.comparingInt((RankedEmoji ranked) -> ranked.quality().score())
+            .thenComparingInt(ranked -> ranked.quality().aliasIndex())
+            .thenComparingInt(ranked -> ranked.quality().aliasLength())
+            .thenComparingInt(ranked -> ranked.definition().sortOrder())
+            .thenComparing(
+                ranked -> ranked.definition().primaryAlias(),
+                Comparator.nullsLast(String::compareTo)));
+
+    List<EmojiDefinition> results = new ArrayList<>(Math.min(limit, matches.size()));
+    for (RankedEmoji ranked : matches) {
       if (results.size() >= limit) {
         break;
       }
-      if (definition == exact) {
-        continue;
-      }
-      if (matchesPrefix(definition, normalized)) {
-        results.add(definition);
-      }
+      results.add(ranked.definition());
     }
 
     return results;
@@ -162,16 +171,76 @@ public final class EmojiIndex {
     node.definition = definition;
   }
 
-  private static boolean matchesPrefix(EmojiDefinition definition, String normalizedQuery) {
-    for (String alias : definition.aliases()) {
-      if (alias.startsWith(normalizedQuery)) {
-        return true;
+  private MatchQuality matchQuality(EmojiDefinition definition, String query) {
+    String normalizedQuery = searchKey(query);
+    MatchQuality best = new MatchQuality(NO_MATCH, Integer.MAX_VALUE, Integer.MAX_VALUE);
+    List<String> aliases = definition.aliases();
+
+    for (int index = 0; index < aliases.size(); index++) {
+      String alias = aliases.get(index);
+      int score = matchScore(alias, query, normalizedQuery);
+      if (score == NO_MATCH) {
+        continue;
+      }
+
+      MatchQuality candidate = new MatchQuality(score, index, alias.length());
+      if (best.compareTo(candidate) > 0) {
+        best = candidate;
       }
     }
-    return false;
+
+    return best;
+  }
+
+  private static int matchScore(String alias, String query, String normalizedQuery) {
+    if (alias.equals(query)) {
+      return 0;
+    }
+    if (alias.startsWith(query)) {
+      return 1;
+    }
+
+    String normalizedAlias = searchKey(alias);
+    if (normalizedAlias.equals(normalizedQuery)) {
+      return 2;
+    }
+    if (normalizedAlias.startsWith(normalizedQuery)) {
+      return 3;
+    }
+
+    return NO_MATCH;
+  }
+
+  private static String searchKey(String value) {
+    StringBuilder builder = new StringBuilder(value.length());
+    for (int index = 0; index < value.length(); index++) {
+      char character = value.charAt(index);
+      if (Character.isLetterOrDigit(character)) {
+        builder.append(Character.toLowerCase(character));
+      }
+    }
+    return builder.toString();
   }
 
   public record EmojiUnicodeMatch(EmojiDefinition definition, int length) {}
+
+  private record MatchQuality(int score, int aliasIndex, int aliasLength)
+      implements Comparable<MatchQuality> {
+    @Override
+    public int compareTo(MatchQuality other) {
+      return Comparator.comparingInt(MatchQuality::score)
+          .thenComparingInt(MatchQuality::aliasIndex)
+          .thenComparingInt(MatchQuality::aliasLength)
+          .compare(this, other);
+    }
+  }
+
+  private record RankedEmoji(EmojiDefinition definition, MatchQuality quality) {
+    private RankedEmoji {
+      Objects.requireNonNull(definition);
+      Objects.requireNonNull(quality);
+    }
+  }
 
   private static final class UnicodeNode {
     private final Map<Integer, UnicodeNode> children = new HashMap<>();

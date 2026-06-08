@@ -7,7 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.resources.ResourceManager;
 
 public final class TwemojiChatClientEntrypoint {
-  private final TwemojiChatClientRuntime runtime = new TwemojiChatClientRuntime();
+  private final TwemojiChatClientRuntime runtime = TwemojiChatClientRuntime.instance();
   private boolean initialized;
 
   public void initialize() {

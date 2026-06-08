@@ -11,8 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 
 public final class VersionHooks1201 implements VersionHooks {
+  @SuppressWarnings("removal")
   private static final ResourceLocation EMOJI_FONT =
       new ResourceLocation(TwemojiChat.MOD_ID, "emoji");
+
+  @SuppressWarnings("removal")
   private static final ResourceLocation INDEX_RESOURCE =
       new ResourceLocation(TwemojiChat.MOD_ID, "twemoji/index.json");
 

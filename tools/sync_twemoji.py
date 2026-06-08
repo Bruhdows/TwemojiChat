@@ -9,6 +9,7 @@ import shutil
 import tempfile
 import urllib.request
 import zipfile
+from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -72,6 +73,27 @@ def load_shortcode_rows(config: dict) -> list[dict]:
     raise FileNotFoundError(f"Unable to locate {path} in {repo}@{ref}")
 
 
+def load_discord_shortcode_aliases(config: dict) -> dict[str, list[str]]:
+    parity_config = config["shortcodes"].get("discord_parity")
+    if parity_config is None:
+        return {}
+
+    version = parity_config["version"]
+    locale = parity_config["locale"]
+    preset = parity_config["preset"]
+    url = f"https://unpkg.com/emojibase-data@{version}/{locale}/shortcodes/{preset}.json"
+    request = urllib.request.Request(url, headers={"User-Agent": "twemojichat-sync"})
+    with urllib.request.urlopen(request) as response:
+        raw_aliases = json.load(response)
+
+    aliases_by_unified: dict[str, list[str]] = {}
+    for unified, aliases in raw_aliases.items():
+        normalized_aliases = aliases if isinstance(aliases, list) else [aliases]
+        aliases_by_unified[normalize_unified_key(unified)] = expand_alias_variants(normalized_aliases)
+
+    return aliases_by_unified
+
+
 def extract_assets(config: dict, workdir: Path) -> dict[str, Path]:
     repo = config["assets"]["repo"]
     ref = config["assets"]["ref"]
@@ -103,15 +125,12 @@ def unicode_from_unified(value: str) -> str:
     return "".join(chr(int(part, 16)) for part in value.split("-"))
 
 
+def normalize_unified_key(value: str) -> str:
+    return value.upper()
+
+
 def build_aliases(base_aliases: list[str], modifier_key: str | None) -> list[str]:
-    aliases = list(dict.fromkeys(alias.strip(":").lower() for alias in base_aliases if alias))
-    variants: list[str] = []
-    for alias in aliases:
-        if "_" in alias:
-            variants.append(alias.replace("_", "-"))
-        if "-" in alias:
-            variants.append(alias.replace("-", "_"))
-    aliases = list(dict.fromkeys([*aliases, *variants]))
+    aliases = expand_alias_variants(alias.strip(":").lower() for alias in base_aliases if alias)
     if modifier_key is None:
         return aliases
     tone = SKIN_TONE_NAMES.get(modifier_key)
@@ -131,7 +150,85 @@ def apply_manual_aliases(aliases: list[str], shortcode_config: dict) -> list[str
     return list(dict.fromkeys([*aliases, *normalized]))
 
 
-def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntry]:
+def expand_alias_variants(aliases: Iterable[str]) -> list[str]:
+    normalized_aliases = list(dict.fromkeys(str(alias).strip(":").lower() for alias in aliases if alias))
+    variants: list[str] = []
+    for alias in normalized_aliases:
+        if "_" in alias:
+            variants.append(alias.replace("_", "-"))
+        if "-" in alias:
+            variants.append(alias.replace("-", "_"))
+    return list(dict.fromkeys([*normalized_aliases, *variants]))
+
+
+def tone_suffix(modifier_key: str | None) -> str:
+    if modifier_key is None:
+        return ""
+    tone = SKIN_TONE_NAMES.get(modifier_key)
+    return f"_{tone}" if tone is not None else ""
+
+
+def split_alias_tone(alias: str) -> tuple[str, str]:
+    for tone in SKIN_TONE_NAMES.values():
+        suffix = f"_{tone}"
+        if alias.endswith(suffix):
+            return alias.removesuffix(suffix), suffix
+
+    legacy_tones = {
+        "_tone1": "_light_skin_tone",
+        "_tone2": "_medium_light_skin_tone",
+        "_tone3": "_medium_skin_tone",
+        "_tone4": "_medium_dark_skin_tone",
+        "_tone5": "_dark_skin_tone",
+    }
+    for legacy_suffix, normalized_suffix in legacy_tones.items():
+        if alias.endswith(legacy_suffix):
+            return alias.removesuffix(legacy_suffix), normalized_suffix
+
+    return alias, ""
+
+
+def preferred_primary_alias(
+    aliases: list[str], shortcode_config: dict, modifier_key: str | None
+) -> str | None:
+    preferred_aliases = shortcode_config.get("preferred_primary_aliases", {})
+    desired_tone_suffix = tone_suffix(modifier_key)
+
+    for alias in aliases:
+        base_alias, alias_tone_suffix = split_alias_tone(alias)
+        preferred = preferred_aliases.get(base_alias)
+        if preferred:
+            return preferred.strip(":").lower() + (desired_tone_suffix or alias_tone_suffix)
+
+    return None
+
+
+def finalize_aliases(
+    aliases: list[str], shortcode_config: dict, modifier_key: str | None = None
+) -> list[str]:
+    preferred = preferred_primary_alias(aliases, shortcode_config, modifier_key)
+    if preferred is None:
+        return aliases
+
+    return list(dict.fromkeys([*expand_alias_variants([preferred]), *aliases]))
+
+
+def aliases_for_entry(
+    base_aliases: list[str],
+    unified_key: str,
+    shortcode_config: dict,
+    parity_aliases: dict[str, list[str]],
+    modifier_key: str | None = None,
+) -> list[str]:
+    aliases = [*parity_aliases.get(normalize_unified_key(unified_key), []), *build_aliases(base_aliases, modifier_key)]
+    aliases = expand_alias_variants(aliases)
+    aliases = apply_manual_aliases(aliases, shortcode_config)
+    return finalize_aliases(aliases, shortcode_config, modifier_key)
+
+
+def collect_entries(
+    rows: list[dict], assets: dict[str, Path], parity_aliases: dict[str, list[str]]
+) -> list[EmojiEntry]:
     entries: list[EmojiEntry] = []
     used_assets: set[str] = set()
     next_codepoint = PAGES_START
@@ -144,7 +241,7 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
             used_assets.add(image_name)
             glyph = chr(next_codepoint)
             next_codepoint += 1
-            aliases = apply_manual_aliases(build_aliases(base_aliases, None), shortcode_config)
+            aliases = aliases_for_entry(base_aliases, row["unified"], shortcode_config, parity_aliases)
             entries.append(
                 EmojiEntry(
                     aliases=aliases,
@@ -164,7 +261,13 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
             used_assets.add(image_name)
             glyph = chr(next_codepoint)
             next_codepoint += 1
-            aliases = apply_manual_aliases(build_aliases(base_aliases, modifier_key), shortcode_config)
+            aliases = aliases_for_entry(
+                base_aliases,
+                variant["unified"],
+                shortcode_config,
+                parity_aliases,
+                modifier_key,
+            )
             entries.append(
                 EmojiEntry(
                     aliases=aliases,
@@ -186,15 +289,14 @@ def collect_entries(rows: list[dict], assets: dict[str, Path]) -> list[EmojiEntr
         glyph = chr(next_codepoint)
         next_codepoint += 1
         base_aliases = [alias]
-        aliases = apply_manual_aliases(base_aliases, shortcode_config)
-        has_manual = len(aliases) > len(base_aliases)
+        aliases = aliases_for_entry(base_aliases, codepoint, shortcode_config, parity_aliases)
         entries.append(
             EmojiEntry(
                 aliases=aliases,
                 glyph=glyph,
                 image_name=image_name,
                 name=codepoint.upper(),
-                primary_alias=aliases[-1] if has_manual else alias,
+                primary_alias=aliases[0] if aliases else alias,
                 sort_order=10**9,
                 unicode_value=unicode_from_unified(codepoint.upper()),
             )
@@ -287,7 +389,8 @@ def main() -> None:
         workdir = Path(tempdir)
         shortcode_rows = load_shortcode_rows(config)
         assets = extract_assets(config, workdir)
-        entries = collect_entries(shortcode_rows, assets)
+        parity_aliases = load_discord_shortcode_aliases(config)
+        entries = collect_entries(shortcode_rows, assets, parity_aliases)
         render_font_pages(entries, assets, config)
         write_index(entries, config)
 

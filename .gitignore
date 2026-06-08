@@ -8,6 +8,9 @@
 /.eclipse/
 /bin/
 /run/
+/description/
+__pycache__/
+*.py[cod]
 **/run/
 *.iml
 

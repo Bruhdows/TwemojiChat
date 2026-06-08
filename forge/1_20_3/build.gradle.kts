@@ -9,6 +9,7 @@ import twemojichat.buildlogic.modProp
 plugins {
     id("java")
     id("net.minecraftforge.gradle") version "7.0.25"
+    id("net.minecraftforge.renamer")
 }
 
 configureJavaModule(17)

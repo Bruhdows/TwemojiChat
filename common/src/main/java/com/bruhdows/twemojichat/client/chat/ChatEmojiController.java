@@ -27,6 +27,7 @@ public final class ChatEmojiController {
   private String lastValue = "";
   private int lastCursor = -1;
   private boolean emojiSuggestionsVisible;
+  private List<Suggestion> suggestions = List.of();
   private EmojiIndex cachedPopupWidthIndex = EmojiIndex.EMPTY;
   private int cachedPopupWidth = -1;
 
@@ -40,7 +41,24 @@ public final class ChatEmojiController {
     EditBox input = this.input();
     String value = input.getValue();
     int cursor = input.getCursorPosition();
-    if (value.equals(this.lastValue) && cursor == this.lastCursor) {
+    this.refresh(value, cursor, value.equals(this.lastValue) && cursor == this.lastCursor);
+  }
+
+  public boolean tryCommitCurrentSuggestion() {
+    EditBox input = this.input();
+    this.refresh(input.getValue(), input.getCursorPosition(), false);
+
+    Suggestion suggestion = this.selectedSuggestion();
+    if (suggestion == null) {
+      return false;
+    }
+
+    this.applySuggestion(suggestion);
+    return true;
+  }
+
+  private void refresh(String value, int cursor, boolean allowCached) {
+    if (allowCached && value.equals(this.lastValue) && cursor == this.lastCursor) {
       return;
     }
 
@@ -49,8 +67,8 @@ public final class ChatEmojiController {
 
     CommandSuggestions commandSuggestions = this.commandSuggestions();
     if (value.startsWith("/")) {
-      this.token = null;
-      this.emojiSuggestionsVisible = false;
+      this.clearState();
+      this.hideEmojiSuggestions(commandSuggestions);
       return;
     }
 
@@ -61,18 +79,21 @@ public final class ChatEmojiController {
 
     this.token = EmojiShortcodeParser.findActiveToken(value, cursor);
     if (this.token == null) {
+      this.suggestions = List.of();
       this.hideEmojiSuggestions(commandSuggestions);
       return;
     }
 
     List<EmojiDefinition> matches = index.complete(this.token.query(), index.size());
     if (matches.isEmpty()) {
+      this.suggestions = List.of();
       this.hideEmojiSuggestions(commandSuggestions);
       this.token = null;
       return;
     }
 
     List<Suggestion> suggestionsList = matches.stream().map(this::toSuggestion).toList();
+    this.suggestions = suggestionsList;
     Suggestions suggestions =
         new Suggestions(StringRange.between(this.token.start(), this.token.end()), suggestionsList);
     CommandSuggestionsAccessor accessor = (CommandSuggestionsAccessor) commandSuggestions;
@@ -97,6 +118,11 @@ public final class ChatEmojiController {
     accessor.twemojichat$invokeHide();
     this.input().setSuggestion(null);
     this.emojiSuggestionsVisible = false;
+  }
+
+  private void clearState() {
+    this.token = null;
+    this.suggestions = List.of();
   }
 
   private void installFormatter() {
@@ -197,6 +223,57 @@ public final class ChatEmojiController {
     return index.byAlias(text.substring(1, text.length() - 1));
   }
 
+  private Suggestion selectedSuggestion() {
+    CommandSuggestions.SuggestionsList suggestionsList =
+        ((CommandSuggestionsAccessor) this.commandSuggestions()).twemojichat$getSuggestions();
+    if (suggestionsList != null) {
+      CommandSuggestionsSuggestionsListAccessor accessor =
+          (CommandSuggestionsSuggestionsListAccessor) suggestionsList;
+      List<Suggestion> visibleSuggestions = accessor.twemojichat$getSuggestionList();
+      if (this.areEmojiSuggestions(visibleSuggestions)) {
+        int current = accessor.twemojichat$getCurrent();
+        if (current >= 0 && current < visibleSuggestions.size()) {
+          return visibleSuggestions.get(current);
+        }
+        if (!visibleSuggestions.isEmpty()) {
+          return visibleSuggestions.get(0);
+        }
+      }
+    }
+
+    if (!this.suggestions.isEmpty()) {
+      return this.suggestions.get(0);
+    }
+
+    return null;
+  }
+
+  private boolean areEmojiSuggestions(List<Suggestion> suggestions) {
+    return !suggestions.isEmpty() && suggestions.stream().allMatch(this::isEmojiSuggestion);
+  }
+
+  private boolean isEmojiSuggestion(Suggestion suggestion) {
+    String text = suggestion.getText();
+    return text.length() >= 2 && text.charAt(0) == ':' && text.charAt(text.length() - 1) == ':';
+  }
+
+  private void applySuggestion(Suggestion suggestion) {
+    if (this.token == null) {
+      return;
+    }
+
+    EditBox input = this.input();
+    String value = input.getValue();
+    String replacement = suggestion.apply(value);
+    int newCursor = this.token.start() + suggestion.getText().length();
+    input.setValue(replacement);
+    input.setCursorPosition(newCursor);
+    input.setHighlightPos(newCursor);
+    this.lastValue = replacement;
+    this.lastCursor = newCursor;
+    this.replaceCompletedShortcode(replacement, newCursor, EmojiIndexReloader.getIndex());
+  }
+
   private boolean replaceCompletedShortcode(String value, int cursor, EmojiIndex index) {
     EmojiShortcodeParser.CompletedShortcode match =
         EmojiShortcodeParser.findCompletedShortcode(value, cursor);
@@ -218,7 +295,7 @@ public final class ChatEmojiController {
     input.setHighlightPos(newCursor);
     this.lastValue = updated;
     this.lastCursor = newCursor;
-    this.token = null;
+    this.clearState();
     this.hideEmojiSuggestions(this.commandSuggestions());
     return true;
   }
