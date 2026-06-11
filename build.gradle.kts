@@ -23,14 +23,17 @@ fun prop(name: String): String = providers.gradleProperty(name).get()
 version = prop("mod_version")
 group = prop("mod_group_id")
 
-val syncForgeMojangArtifactsToM2 =
-    tasks.register<Sync>("syncForgeMojangArtifactsToM2") {
-        val mojangCache =
-            gradle.gradleUserHomeDir.resolve("caches/minecraftforge/forgegradle/mavenizer/caches/maven/mojang/com/mojang")
-        from(mojangCache)
-        into(file("${System.getProperty("user.home")}/.m2/repository/com/mojang"))
+val syncForgeJtracyToM2 =
+    tasks.register<Sync>("syncForgeJtracyToM2") {
+        // ForgeGradle's run tasks still resolve this Mojang native out of ~/.m2 on newer lines.
+        val jtracyCache =
+            gradle.gradleUserHomeDir.resolve(
+                "caches/minecraftforge/forgegradle/mavenizer/caches/maven/mojang/com/mojang/jtracy"
+            )
+        from(jtracyCache)
+        into(file("${System.getProperty("user.home")}/.m2/repository/com/mojang/jtracy"))
         includeEmptyDirs = false
-        onlyIf { mojangCache.exists() }
+        onlyIf { jtracyCache.exists() }
     }
 
 allprojects {
@@ -62,7 +65,7 @@ allprojects {
 
     pluginManager.withPlugin("net.minecraftforge.gradle") {
         tasks.withType<JavaCompile>().configureEach {
-            dependsOn(rootProject.tasks.named("syncForgeMojangArtifactsToM2"))
+            dependsOn(rootProject.tasks.named("syncForgeJtracyToM2"))
         }
 
         tasks.matching {
@@ -73,7 +76,7 @@ allprojects {
                     it.name == "runGameTestServer"
             }
             .configureEach {
-                dependsOn(rootProject.tasks.named("syncForgeMojangArtifactsToM2"))
+                dependsOn(rootProject.tasks.named("syncForgeJtracyToM2"))
             }
     }
 }

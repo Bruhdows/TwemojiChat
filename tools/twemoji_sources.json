@@ -19,7 +19,12 @@
       "+1": "thumbs_up",
       "thumbsdown": "thumbs_down",
       "-1": "thumbs_down",
-      "2764": "heart"
+      "2764": "heart",
+      "1f441_200d_1f5e8": "eye_in_speech_bubble",
+      "1f468_200d_1f384": "man_santa",
+      "1f469_200d_1f384": "mrs_claus",
+      "1f574_fe0f_200d_2640_fe0f": "woman_in_suit_levitating",
+      "1f574_fe0f_200d_2642_fe0f": "man_in_suit_levitating"
     },
     "manual_aliases": {
       "rolling_on_the_floor_laughing": [
@@ -27,6 +32,21 @@
       ],
       "2764": [
         "heart"
+      ],
+      "1f441_200d_1f5e8": [
+        "eye_in_speech_bubble"
+      ],
+      "1f468_200d_1f384": [
+        "man_santa"
+      ],
+      "1f469_200d_1f384": [
+        "mrs_claus"
+      ],
+      "1f574_fe0f_200d_2640_fe0f": [
+        "woman_in_suit_levitating"
+      ],
+      "1f574_fe0f_200d_2642_fe0f": [
+        "man_in_suit_levitating"
       ]
     }
   },

@@ -21,7 +21,12 @@
         "+1": "thumbs_up",
         "thumbsdown": "thumbs_down",
         "-1": "thumbs_down",
-        "2764": "heart"
+        "2764": "heart",
+        "1f441_200d_1f5e8": "eye_in_speech_bubble",
+        "1f468_200d_1f384": "man_santa",
+        "1f469_200d_1f384": "mrs_claus",
+        "1f574_fe0f_200d_2640_fe0f": "woman_in_suit_levitating",
+        "1f574_fe0f_200d_2642_fe0f": "man_in_suit_levitating"
       },
       "manual_aliases": {
         "rolling_on_the_floor_laughing": [
@@ -29,6 +34,21 @@
         ],
         "2764": [
           "heart"
+        ],
+        "1f441_200d_1f5e8": [
+          "eye_in_speech_bubble"
+        ],
+        "1f468_200d_1f384": [
+          "man_santa"
+        ],
+        "1f469_200d_1f384": [
+          "mrs_claus"
+        ],
+        "1f574_fe0f_200d_2640_fe0f": [
+          "woman_in_suit_levitating"
+        ],
+        "1f574_fe0f_200d_2642_fe0f": [
+          "man_in_suit_levitating"
         ]
       }
     },
@@ -47790,12 +47810,14 @@
     },
     {
       "aliases": [
+        "eye_in_speech_bubble",
+        "eye-in-speech-bubble",
         "1f441_200d_1f5e8",
         "1f441-200d-1f5e8"
       ],
       "glyph": "",
       "name": "1F441-200D-1F5E8",
-      "primary_alias": "1f441_200d_1f5e8",
+      "primary_alias": "eye_in_speech_bubble",
       "sort_order": 1000000000,
       "unicode": "👁‍🗨"
     },
@@ -48307,12 +48329,14 @@
     },
     {
       "aliases": [
+        "man_santa",
+        "man-santa",
         "1f468_200d_1f384",
         "1f468-200d-1f384"
       ],
       "glyph": "",
       "name": "1F468-200D-1F384",
-      "primary_alias": "1f468_200d_1f384",
+      "primary_alias": "man_santa",
       "sort_order": 1000000000,
       "unicode": "👨‍🎄"
     },
@@ -48813,12 +48837,14 @@
     },
     {
       "aliases": [
+        "mrs_claus",
+        "mrs-claus",
         "1f469_200d_1f384",
         "1f469-200d-1f384"
       ],
       "glyph": "",
       "name": "1F469-200D-1F384",
-      "primary_alias": "1f469_200d_1f384",
+      "primary_alias": "mrs_claus",
       "sort_order": 1000000000,
       "unicode": "👩‍🎄"
     },
@@ -49172,23 +49198,27 @@
     },
     {
       "aliases": [
+        "woman_in_suit_levitating",
+        "woman-in-suit-levitating",
         "1f574_fe0f_200d_2640_fe0f",
         "1f574-fe0f-200d-2640-fe0f"
       ],
       "glyph": "",
       "name": "1F574-FE0F-200D-2640-FE0F",
-      "primary_alias": "1f574_fe0f_200d_2640_fe0f",
+      "primary_alias": "woman_in_suit_levitating",
       "sort_order": 1000000000,
       "unicode": "🕴️‍♀️"
     },
     {
       "aliases": [
+        "man_in_suit_levitating",
+        "man-in-suit-levitating",
         "1f574_fe0f_200d_2642_fe0f",
         "1f574-fe0f-200d-2642-fe0f"
       ],
       "glyph": "",
       "name": "1F574-FE0F-200D-2642-FE0F",
-      "primary_alias": "1f574_fe0f_200d_2642_fe0f",
+      "primary_alias": "man_in_suit_levitating",
       "sort_order": 1000000000,
       "unicode": "🕴️‍♂️"
     },
