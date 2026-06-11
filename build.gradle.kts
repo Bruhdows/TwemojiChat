@@ -1,5 +1,7 @@
 import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.api.tasks.Exec
+import org.gradle.api.tasks.Sync
+import org.gradle.api.tasks.compile.JavaCompile
 import org.gradle.plugins.ide.idea.model.IdeaModel
 import twemojichat.buildlogic.LoaderKind
 import twemojichat.buildlogic.SUPPORTED_VERSION_LINES
@@ -20,6 +22,16 @@ fun prop(name: String): String = providers.gradleProperty(name).get()
 
 version = prop("mod_version")
 group = prop("mod_group_id")
+
+val syncForgeMojangArtifactsToM2 =
+    tasks.register<Sync>("syncForgeMojangArtifactsToM2") {
+        val mojangCache =
+            gradle.gradleUserHomeDir.resolve("caches/minecraftforge/forgegradle/mavenizer/caches/maven/mojang/com/mojang")
+        from(mojangCache)
+        into(file("${System.getProperty("user.home")}/.m2/repository/com/mojang"))
+        includeEmptyDirs = false
+        onlyIf { mojangCache.exists() }
+    }
 
 allprojects {
     apply(plugin = "idea")
@@ -46,6 +58,23 @@ allprojects {
 
     tasks.withType<org.gradle.api.tasks.bundling.Jar>().configureEach {
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+
+    pluginManager.withPlugin("net.minecraftforge.gradle") {
+        tasks.withType<JavaCompile>().configureEach {
+            dependsOn(rootProject.tasks.named("syncForgeMojangArtifactsToM2"))
+        }
+
+        tasks.matching {
+                it.name == "runClient" ||
+                    it.name == "runServer" ||
+                    it.name == "runData" ||
+                    it.name == "runClientData" ||
+                    it.name == "runGameTestServer"
+            }
+            .configureEach {
+                dependsOn(rootProject.tasks.named("syncForgeMojangArtifactsToM2"))
+            }
     }
 }
 

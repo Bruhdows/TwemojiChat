@@ -46,6 +46,8 @@ repositories {
     minecraft.mavenizer(this)
     maven(fg.forgeMaven)
     maven(fg.minecraftLibsMaven)
+    maven("https://libraries.minecraft.net/")
+    maven(uri("${gradle.gradleUserHomeDir}/caches/minecraftforge/forgegradle/mavenizer/caches/maven/mojang"))
 }
 
 dependencies {
